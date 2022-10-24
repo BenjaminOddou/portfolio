@@ -1,0 +1,49 @@
+{
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "PORT=8000 nuxt preview",
+    "preview-h": "HOST=192.168.1.12 PORT=8000 nuxt preview",
+    "upck": "npx --yes npm-check-updates -u",
+    "lighthouse": "npx unlighthouse --site https://www.benjaminoddou-photographe.com",
+    "eslint-fix": "eslint . --fix",
+    "release": "standard-version -a",
+    "release:patch": "standard-version -a --release-as patch",
+    "release:minor": "standard-version -a --release-as minor",
+    "release:major": "standard-version -a --release-as major",
+    "prepare": "husky install"
+  },
+  "devDependencies": {
+    "@botpoison/browser": "^0.1.30",
+    "@kevinmarrec/nuxt-pwa": "^0.9.1",
+    "@nuxt-modules/compression": "^0.1.0",
+    "@nuxt/image-edge": "^1.0.0-27769790.4b27db3",
+    "@nuxtjs/color-mode": "^3.1.8",
+    "@nuxtjs/eslint-config-typescript": "^11.0.0",
+    "@nuxtjs/tailwindcss": "^6.1.1",
+    "@pinia/nuxt": "^0.4.3",
+    "@typescript-eslint/eslint-plugin": "^5.41.0",
+    "@typescript-eslint/parser": "^5.41.0",
+    "eslint": "^8.26.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-nuxt": "^4.0.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "husky": "^8.0.1",
+    "nuxt": "^3.0.0-rc.12",
+    "nuxt-schema-org": "^1.0.2",
+    "prettier": "^2.7.1",
+    "prettier-plugin-tailwindcss": "^0.1.13",
+    "standard-version": "^9.5.0",
+    "vite-plugin-compression": "^0.5.1"
+  },
+  "dependencies": {
+    "@commitlint/cli": "^17.1.2",
+    "@commitlint/config-conventional": "^17.1.0",
+    "@yeger/vue-masonry-wall": "^3.2.14",
+    "gsap": "npm:@gsap/shockingly@^3.11.3",
+    "photoswipe": "^5.3.2"
+  }
+}

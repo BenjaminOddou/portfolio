@@ -1,0 +1,16 @@
+[[plugins]]
+package = "netlify-plugin-submit-sitemap"
+
+	[plugins.inputs]
+
+	# Path to the sitemap URL (optional, default = /sitemap.xml)
+	sitemapPath = "/sitemap.xml"
+
+	# Time in seconds to not submit the sitemap after successful submission
+	ignorePeriod = 0
+
+	# Enabled providers to submit sitemap to (optional, default = 'google', 'yandex'). Possible providers are currently only 'google', 'bing', 'yandex'.
+	providers = [
+		"google",
+		"yandex"
+	]

@@ -6,7 +6,6 @@
 [![made with hearth by Benjamin Oddou](https://img.shields.io/badge/made%20with%20%E2%99%A5%20by-benjamin%20oddou-ff8f5d.svg?style=flat)](https://github.com/BenjaminOddou)
 [![saythanks](https://img.shields.io/badge/say-thanks-d2d4e0.svg?style=flat)](https://saythanks.io/to/BenjaminOddou)
 [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](CODE_OF_CONDUCT.md)
-![Release](https://img.shields.io/github/v/release/BenjaminOddou/portfolio?color=4baaaa)
 
 Welcome to the repository of my personal website dedicated to **Photography** 📸
 

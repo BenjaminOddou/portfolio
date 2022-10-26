@@ -1,14 +1,13 @@
 {
   "types": [
-    { "type": "feat", "section": "Features" },
-    { "type": "fix", "section": "Bug Fixes" },
-    { "type": "chore", "hidden": true },
-    { "type": "docs", "hidden": true },
-    { "type": "style", "hidden": true },
-    { "type": "refactor", "hidden": true },
-    { "type": "perf", "hidden": true },
+    { "type": "feat", "section": "🚀 Enhancements" },
+    { "type": "fix", "section": "🩹 Fixes" },
+    { "type": "chore", "section": "🏡 Chore" },
+    { "type": "docs", "section": "📖 Documentation" },
+    { "type": "refactor", "section": "💅 Refactors" },
+    { "type": "perf", "section": "🔥 Performance" },
     { "type": "test", "hidden": true }
   ],
-  "commitUrlFormat": "https://github.com/BenjaminOddou/Palladium/commits/{{hash}}",
-  "compareUrlFormat": "https://github.com/BenjaminOddou/Palladium/compare/{{previousTag}}...{{currentTag}}"
+  "commitUrlFormat": "https://github.com/BenjaminOddou/portfolio/commits/{{hash}}",
+  "compareUrlFormat": "https://github.com/BenjaminOddou/portfolio/compare/{{previousTag}}...{{currentTag}}"
 }

@@ -1,5 +1,11 @@
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
+  nitro: {
+    compressPublicAssets: {
+      brotli: true,
+      gzip: false
+    }
+  },
   app: {
     pageTransition: false,
     layoutTransition: false
@@ -18,18 +24,6 @@ export default defineNuxtConfig({
     '@nuxtjs/color-mode',
     '@pinia/nuxt',
     'nuxt-schema-org'
-  ],
-  buildModules: [
-    [
-      '@nuxt-modules/compression',
-      {
-        disable: false,
-        algorithm: 'brotliCompress',
-        success: () => {
-          console.log('✅ Success brotli compression')
-        }
-      }
-    ]
   ],
   alias: {
     pinia: '/node_modules/@pinia/nuxt/node_modules/pinia/dist/pinia.mjs'

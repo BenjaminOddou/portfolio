@@ -19,7 +19,6 @@
   "devDependencies": {
     "@botpoison/browser": "^0.1.30",
     "@kevinmarrec/nuxt-pwa": "^0.9.1",
-    "@nuxt-modules/compression": "^0.1.0",
     "@nuxt/image-edge": "^1.0.0-27769790.4b27db3",
     "@nuxtjs/color-mode": "^3.1.8",
     "@nuxtjs/eslint-config-typescript": "^11.0.0",
@@ -36,14 +35,13 @@
     "nuxt-schema-org": "^1.0.2",
     "prettier": "^2.7.1",
     "prettier-plugin-tailwindcss": "^0.1.13",
-    "standard-version": "^9.5.0",
-    "vite-plugin-compression": "^0.5.1"
+    "standard-version": "^9.5.0"
   },
   "dependencies": {
     "@commitlint/cli": "^17.1.2",
     "@commitlint/config-conventional": "^17.1.0",
     "@yeger/vue-masonry-wall": "^3.2.14",
     "gsap": "npm:@gsap/shockingly@^3.11.3",
-    "photoswipe": "^5.3.2"
+    "photoswipe": "^5.3.3"
   }
 }

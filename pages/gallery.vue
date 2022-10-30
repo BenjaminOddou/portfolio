@@ -74,6 +74,14 @@ useHead({
 })
 
 onMounted(() => {
+  if (ScrollTrigger.isTouch === 1) {
+    document
+      .querySelector<HTMLDivElement>('#return-to-top-container')
+      .classList.replace(
+        'top-[calc(100vh_-_70px)]',
+        'top-[calc(100svh_-_70px)]'
+      )
+  }
   document
     .querySelectorAll<HTMLElement>(
       '#gridgalerie_cell1, #return-to-top-container'
@@ -261,7 +269,7 @@ onUnmounted(() => {
   <div id="galerie-page">
     <div
       id="return-to-top-container"
-      class="absolute top-[calc(100svh_-_70px)] left-[calc(100vw_-_80px)] z-[4] sm:av:hidden"
+      class="absolute top-[calc(100vh_-_70px)] left-[calc(100vw_-_80px)] z-[4] sm:av:hidden"
     >
       <button
         id="return-to-top"

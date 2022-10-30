@@ -482,7 +482,7 @@ onMounted(() => {
         >
           <div class="grid items-start">
             <span
-              >Surnom : Benjam 🇫🇷
+              >Surnom : Benjam 😄
               <br />
               Amoureux de la nature 🌍
               <br />

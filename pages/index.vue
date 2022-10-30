@@ -250,7 +250,7 @@ onMounted(() => {
           >
             <div
               id="titleHero"
-              class="baron z-[1] cursor-text self-end overflow-hidden text-center text-[8.7vw] leading-none sm:text-[7vw] xl:text-[calc((7px_*_1200)_/_100)]"
+              class="baron z-[1] cursor-text self-end overflow-hidden text-center text-[8.7vw] leading-tight sm:text-[7vw] xl:text-[calc((7px_*_1200)_/_100)]"
             >
               BenJAmin oddou
             </div>

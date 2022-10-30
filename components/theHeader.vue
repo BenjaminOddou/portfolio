@@ -91,7 +91,7 @@ onMounted(() => {
             <circle cx="12" cy="12" r="6" />
           </svg>
           <svg
-            class="moon translate-y-16 scale-[80%] fill-jet stroke-jet dark:translate-y-0 dark:fill-white dark:stroke-white"
+            class="moon translate-y-16 fill-jet stroke-jet dark:translate-y-0 dark:fill-white dark:stroke-white"
             viewBox="0 0 24 24"
           >
             <path
@@ -130,19 +130,13 @@ Menu Burger
 .menu {
   width: var(--dimensions);
   height: var(--dimensions);
-  --dimensions: 50px;
+  --dimensions: 40px;
   color: currentColor;
 }
 
-@media (max-width: 767px) {
+@media (min-width: 768px) and (min-height: 576px) {
   .menu {
-    --dimensions: 40px;
-  }
-}
-
-@media (max-height: 575px) {
-  .menu {
-    --dimensions: 40px;
+    --dimensions: 50px;
   }
 }
 
@@ -255,11 +249,18 @@ Menu Burger
   top: 0px;
 }
 
-.toggle svg {
+.toggle svg.sun {
   --left: 5px;
   --top: 5px;
   width: calc(var(--dimensions) - 10px);
   height: calc(var(--dimensions) - 10px);
+}
+
+.toggle svg.moon {
+  --left: calc((var(--dimensions) - (0.8 * (var(--dimensions) - 10px))) / 2);
+  --top: calc((var(--dimensions) - (0.8 * (var(--dimensions) - 10px))) / 2);
+  width: calc(0.8 * (var(--dimensions) - 10px));
+  height: calc(0.8 * (var(--dimensions) - 10px));
 }
 
 .moon .star-1 {

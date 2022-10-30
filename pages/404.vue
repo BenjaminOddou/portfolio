@@ -35,7 +35,11 @@ onMounted(() => {
   const qCqC = new SplitText('.baron', {
     type: 'chars'
   })
-  const textContent = new SplitText('#content', {
+  const textContentP = new SplitText('#content', {
+    type: 'lines',
+    linesClass: 'overflow-hidden'
+  })
+  const textContentC = new SplitText('#content', {
     type: 'chars'
   })
   const tl1 = gsap.timeline()
@@ -51,12 +55,16 @@ onMounted(() => {
       ease: 'power4.out'
     })
     .from(
-      textContent.chars,
+      textContentC.chars,
       {
         y: '100%',
         duration: 0.8,
         ease: 'power4.out',
-        stagger: 0.03
+        stagger: 0.03,
+        onComplete: () => {
+          textContentP.revert()
+          textContentC.revert()
+        }
       },
       '<+0.3'
     )
@@ -74,15 +82,11 @@ onMounted(() => {
       },
       '<+=0.6'
     )
-
-  home.addEventListener('click', () => {
-    location.href = '/'
-  })
 })
 </script>
 
 <template>
-  <div class="relative h-[100svh] w-[100svw] overflow-hidden">
+  <div class="relative h-screen w-screen overflow-hidden">
     <div class="tiles">
       <div v-for="(row, i) in images" :key="i" class="tiles__line">
         <div v-for="j in 2" :key="j" class="flex">
@@ -101,27 +105,28 @@ onMounted(() => {
     </div>
     <div class="absolute z-[1] m-auto h-full w-full">
       <div
-        class="grid h-full w-full -translate-y-[5%] content-center justify-center"
+        class="mx-auto grid h-full w-1/2 min-w-[220px] max-w-[700px] -translate-y-[10%] content-center justify-center"
       >
         <div
-          class="baron w-full translate-y-[25%] text-[140px] leading-none will-change-transform sm:text-[30vw] lg:text-[298px]"
+          class="baron flex w-full translate-y-[25%] justify-center text-[115px] leading-tight will-change-transform sm:text-[20vw] lg:text-[198.4px]"
         >
           404
         </div>
         <div
-          class="mt-6 mb-10 p-2 text-sm font-thin leading-loose sm:text-[3vw] lg:text-[29.8px]"
+          class="mt-[1vh] mb-[2vh] p-2 text-base leading-snug sm:text-[2.5vw] lg:text-[29.8px]"
         >
-          <div id="content" class="overflow-hidden">
-            Désolé, la page demandée n'existe pas
+          <div id="content" class="overflow-hidden text-center">
+            Désolé, la page que vous recherchez semble introuvable
           </div>
         </div>
-        <div id="home">
-          <button
-            class="button w-full cursor-pointer justify-center p-2 disabled:pointer-events-none disabled:bg-light-lavender dark:disabled:pointer-events-none dark:disabled:bg-light-orange"
+        <button id="home">
+          <NuxtLink
+            to="/"
+            class="button mx-auto flex w-full cursor-pointer justify-center p-2 disabled:pointer-events-none disabled:bg-light-lavender dark:disabled:pointer-events-none dark:disabled:bg-light-orange sm:w-2/3"
           >
             Retourner à l'Accueil 🏠
-          </button>
-        </div>
+          </NuxtLink>
+        </button>
       </div>
     </div>
   </div>

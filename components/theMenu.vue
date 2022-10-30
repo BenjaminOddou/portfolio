@@ -448,7 +448,7 @@ onMounted(() => {
         </ul>
         <div
           id="navfoot"
-          class="absolute bottom-0 mb-1 flex h-[10svh] min-h-[60px] w-full justify-center md:lt:min-h-[70px]"
+          class="absolute bottom-0 mb-1 flex h-[10vh] min-h-[60px] w-full justify-center md:lt:min-h-[70px]"
         >
           <div
             id="container_icons"

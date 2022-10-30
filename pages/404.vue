@@ -122,7 +122,7 @@ onMounted(() => {
         <button id="home">
           <NuxtLink
             to="/"
-            class="button mx-auto flex w-full cursor-pointer justify-center p-2 disabled:pointer-events-none disabled:bg-light-lavender dark:disabled:pointer-events-none dark:disabled:bg-light-orange sm:w-2/3"
+            class="button mx-auto flex w-full min-w-[225px] cursor-pointer justify-center p-2 disabled:pointer-events-none disabled:bg-light-lavender dark:disabled:pointer-events-none dark:disabled:bg-light-orange sm:w-2/3"
           >
             Retourner à l'Accueil 🏠
           </NuxtLink>

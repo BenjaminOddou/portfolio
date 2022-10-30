@@ -84,5 +84,8 @@ export default defineNuxtConfig({
       display: 'standalone',
       lang: 'fr'
     }
+  },
+  typescript: {
+    shim: false
   }
 })

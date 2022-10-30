@@ -572,7 +572,7 @@ onMounted(() => {
         >
           <div
             id="container_icons"
-            class="grid w-1/2 grid-cols-[repeat(4,_70px)] items-center justify-center gap-[30px]"
+            class="grid w-1/2 grid-cols-[repeat(4,_55px)] items-center justify-center gap-[10px] md:grid-cols-[repeat(4,_70px)] md:gap-[30px]"
           >
             <NuxtLink
               id="logo-insta-nav"

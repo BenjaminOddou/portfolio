@@ -292,7 +292,7 @@ onUnmounted(() => {
         >
           <div
             id="header-content"
-            class="ml-[20%] grid cursor-vertical-text leading-none [writing-mode:vertical-rl]"
+            class="ml-[20%] grid cursor-vertical-text gap-2 leading-none [writing-mode:vertical-rl]"
           >
             <div class="baron overflow-hidden text-[calc(var(--initsize))]">
               photographies

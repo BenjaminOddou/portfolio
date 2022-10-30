@@ -57,7 +57,7 @@
     @apply relative h-[20vw] max-h-[200px] min-h-[150px] w-[16vw] min-w-[120px] max-w-[160px] cursor-grab bg-cover bg-center bg-no-repeat lt:max-h-[750px] lt:max-w-[600px];
   }
   .navanchor {
-    @apply z-[999] mx-auto mb-[0.1em] text-center mix-blend-color-dodge dark:mix-blend-normal lt:mb-[0.4em];
+    @apply z-[999] mx-auto mb-2 text-center mix-blend-color-dodge dark:mix-blend-normal lt:mb-6;
   }
   .rectangle {
     @apply fill-white stroke-transparent transition-fill duration-500 ease-classic dark:fill-jet;

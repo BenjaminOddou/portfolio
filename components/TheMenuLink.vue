@@ -14,7 +14,7 @@ const isLink = linkStore()
       aria-hidden="true"
       @click="isLink.isNewLink++"
     >
-      <div class="perspective-1000 perspective-o-b relative block">
+      <div class="perspective-1000 perspective-o-b leading-tight">
         <span class="splitted absolute">{{ title }}</span>
         <span class="splitted">{{ title }}</span>
       </div>

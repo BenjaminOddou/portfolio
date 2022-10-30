@@ -441,7 +441,7 @@ onMounted(() => {
       >
         <TheImgDrag />
 
-        <ul class="absolute m-auto box-border grid content-center">
+        <ul class="absolute m-auto box-border grid">
           <TheMenuLink to="/" title="accueil" />
           <TheMenuLink to="/gallery" title="galerie" />
           <TheMenuLink to="/about" title="à&#160;propos" />
@@ -452,7 +452,7 @@ onMounted(() => {
         >
           <div
             id="container_icons"
-            class="grid w-1/2 grid-cols-[repeat(3,_70px)] content-center items-center justify-center gap-[30px]"
+            class="grid w-1/2 grid-cols-[repeat(3,_70px)] items-center justify-center gap-[30px]"
           >
             <NuxtLink
               id="logo-insta-nav"

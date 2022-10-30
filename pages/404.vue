@@ -108,7 +108,7 @@ onMounted(() => {
         class="mx-auto grid h-full w-1/2 min-w-[220px] max-w-[700px] -translate-y-[10%] content-center justify-center"
       >
         <div
-          class="baron flex w-full translate-y-[25%] justify-center text-[115px] leading-tight will-change-transform sm:text-[20vw] lg:text-[198.4px]"
+          class="baron flex w-full translate-y-[15%] justify-center text-[115px] leading-tight will-change-transform sm:text-[20vw] lg:text-[198.4px]"
         >
           404
         </div>

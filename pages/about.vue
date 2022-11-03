@@ -596,27 +596,23 @@ onMounted(() => {
         <FAQquestion
           question="Comment as-tu réalisé ce (magnifique) site ?"
           :response="[
-            `Pour vous donner un peu de contexte, j'ai toujours eu l'envie
-            d'avoir mon propre site web. Lorsque toute fin 2020, je me lance ce
-            défi, je ne savais pas dans quoi je me lançais ! J'ai rapidement
-            abandonné l'idée de créer mon site via des outils comme Webflow, Wix
-            ou WordPress, car je voulais quelque chose de très personnalisé et à
-            mon image. Il me restait donc deux choix : payer un designer et un
-            développeur ou m'improviser les deux. Vous vous en doutez, j'ai
-            choisi la deuxième option !`,
+            `Je me suis lancé le défi de créer et coder mon propre site
+        web. J'ai travaillé et finalement réussi à sortir une première version
+        du site en Avril 2022.`,
             `&#160;`,
-            `Non sans difficulté, j'ai fini par créer un premier site fin 2021,
-            mais je me suis finalement rétracté car je n'avais pas bien conçu le
-            projet en amont et le résultat ne me satisfaisait plus. J'en ai tiré
-            une leçon et, en gardant le meilleur de ce que j'avais déjà fait, je
-            me suis remis au travail. Le résultat, le voici !`,
+            `Afin de continuer à faire grandir le
+        site, j'ai totalement repris sa conception pour sortir une
+        version 2.0 en Octobre 2022. Dans le même temps et pour les mêmes raisons, j'ai décidé de rendre le code source publique (à retrouver sur GitHub)`,
             `&#160;`,
-            `Pour les curieux :`,
+            `Les technologies utilisées :`,
             `- Design : Figma, Photoshop.`,
-            `- Technologies : Nuxt 3 (Vue JS), CSS (Tailwind CSS).`,
-            `- Librairies JS : GSAP, PhotoSwipe.`,
+            `-
+        Technologies : Nuxt 3 (Vue JS), CSS (Tailwind CSS).`,
+            `- Librairies JS :
+        GSAP, PhotoSwipe.`,
             `- Gestion de formulaire : Formspark, Botpoison.`,
-            `- Développement et mise en production : Visual Studio Code, GitHub, Netlify.`
+            `- Développement et mise en production : Visual Studio Code, GitHub,
+        Netlify.`
           ]"
         />
       </div>

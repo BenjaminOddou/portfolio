@@ -29,7 +29,7 @@
         </svg>
       </NuxtLink>
       <NuxtLink
-        to="https://www.youtube.com/channel/UCyzy_U--0sIkE-rtjvuwQCA"
+        to="https://youtube.com/@benjaminoddou"
         aria-label="Lien vers ma page YouTube"
         class="flex h-5 w-6 flex-grow-0 transform duration-300 hover:scale-125 motion-reduce:transform-none"
         target="_blank"

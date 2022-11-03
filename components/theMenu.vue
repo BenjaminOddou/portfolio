@@ -611,7 +611,7 @@ onMounted(() => {
             </NuxtLink>
             <NuxtLink
               id="logo-ytube-nav"
-              to="https://www.youtube.com/channel/UCyzy_U--0sIkE-rtjvuwQCA"
+              to="https://youtube.com/@benjaminoddou"
               class="fixed-el h-[55px] w-[55px] md:lt:h-[70px] md:lt:w-[70px]"
               aria-label="Lien vers ma chaine YouTube"
               target="_blank"

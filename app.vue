@@ -232,7 +232,8 @@ useSchemaOrg([
       'https://www.awwwards.com/BenjaminO',
       'https://github.com/BenjaminOddou',
       'https://twitter.com/benjamin_oddou',
-      'https://fr.linkedin.com/in/b-oddou'
+      'https://fr.linkedin.com/in/b-oddou',
+      'https://youtube.com/@benjaminoddou'
     ]
   }),
   defineWebSite({

@@ -602,7 +602,7 @@ onMounted(() => {
             `&#160;`,
             `Afin de continuer à faire grandir le
         site, j'ai totalement repris sa conception pour sortir une
-        version 2.0 en Octobre 2022. Dans le même temps et pour les mêmes raisons, j'ai décidé de rendre le code source publique (à retrouver sur GitHub)`,
+        version 2.0 en Octobre 2022. Dans le même temps et pour les mêmes raisons, j'ai décidé de rendre le code source public (à retrouver sur GitHub)`,
             `&#160;`,
             `Les technologies utilisées :`,
             `- Design : Figma, Photoshop.`,

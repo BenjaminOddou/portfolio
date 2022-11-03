@@ -2,6 +2,28 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.2](https://github.com/BenjaminOddou/portfolio/compare/v0.0.1...v0.0.2) (2022-11-03)
+
+
+### 🚀 Enhancements
+
+* new github socials logos ([4d966d0](https://github.com/BenjaminOddou/portfolio/commits/4d966d055ad6849db239fa14fe0e0f59ba9f1641))
+
+
+### 🩹 Fixes
+
+* change spacing of menu icons ([61a8cc7](https://github.com/BenjaminOddou/portfolio/commits/61a8cc736d2a6fc082ecd582dee413304380bddb))
+
+
+### 🏡 Chore
+
+* update dependencies ([bc889a0](https://github.com/BenjaminOddou/portfolio/commits/bc889a0c3ec743c39619a1b3ce5303bd93f21f22))
+
+
+### 💅 Refactors
+
+* youtube chanel new link + about page ([2b6e6ec](https://github.com/BenjaminOddou/portfolio/commits/2b6e6ec40995127638fe92f97dfaf5ddaa811aa3))
+
 ### [0.0.1](https://github.com/BenjaminOddou/portfolio/compare/v0.0.0...v0.0.1) (2022-10-30)
 
 

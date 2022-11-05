@@ -6,10 +6,6 @@ export default defineNuxtConfig({
       gzip: false
     }
   },
-  app: {
-    pageTransition: false,
-    layoutTransition: false
-  },
   runtimeConfig: {
     IMAGEKIT_B64_API: process.env.IMAGEKIT_B64_API,
     public: {

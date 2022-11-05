@@ -247,15 +247,17 @@ onMounted(() => {
   )
 
   // FAQ section
-  const faqdiv = document.querySelectorAll<HTMLDivElement>(
+  const faqdiv = document.querySelectorAll(
     '#container-FAQ > div'
-  )
+  ) as NodeListOf<HTMLDivElement>
   const allTimelines: Array<GSAPTimeline> = []
-  const seeAll = document.querySelector<HTMLButtonElement>('#see-all > button')
-  const seeAllSVG = seeAll.querySelector<SVGElement>('svg')
-  const seeAllTitles = document.querySelectorAll<HTMLDivElement>(
+  const seeAll = document.querySelector(
+    '#see-all > button'
+  ) as HTMLButtonElement
+  const seeAllSVG = seeAll.querySelector('svg') as SVGElement
+  const seeAllTitles = document.querySelectorAll(
     '#see-all-titles > div'
-  )
+  ) as NodeListOf<HTMLDivElement>
   const tl2 = gsap.timeline()
   tl2.reverse()
   tl2
@@ -319,9 +321,9 @@ onMounted(() => {
       }
     })
     if (element.classList.contains('question')) {
-      const btn = element.querySelector<HTMLButtonElement>('button')
-      const svg = element.querySelector<SVGElement>('svg')
-      const div = element.querySelector<HTMLDivElement>('.FAQ-p-container')
+      const btn = element.querySelector('button') as HTMLButtonElement
+      const svg = element.querySelector('svg') as SVGElement
+      const div = element.querySelector('.FAQ-p-container') as HTMLDivElement
       const tl = gsap.timeline({
         onComplete: () => {
           ScrollTrigger.refresh()

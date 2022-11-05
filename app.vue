@@ -17,12 +17,12 @@ let thisLink: string
 isLink.$subscribe(() => {
   thisLink = location.href
 })
-const init1: string = 'M 0 100 V 100 Q 50 100 100 100 V 100 z'
-const start1: string = 'M 0 100 V 50 Q 50 0 100 50 V 100 z'
-const end1: string = 'M 0 100 V 0 Q 50 0 100 0 V 100 z'
-const init2: string = 'M 0 0 V 100 Q 50 100 100 100 V 0 z'
-const start2: string = 'M 0 0 V 50 Q 50 0 100 50 V 0 z'
-const end2: string = 'M 0 0 V 0 Q 50 0 100 0 V 0 z'
+const init1 = 'M 0 100 V 100 Q 50 100 100 100 V 100 z' as string
+const start1 = 'M 0 100 V 50 Q 50 0 100 50 V 100 z' as string
+const end1 = 'M 0 100 V 0 Q 50 0 100 0 V 100 z' as string
+const init2 = 'M 0 0 V 100 Q 50 100 100 100 V 0 z' as string
+const start2 = 'M 0 0 V 50 Q 50 0 100 50 V 0 z' as string
+const end2 = 'M 0 0 V 0 Q 50 0 100 0 V 0 z' as string
 
 const onBeforeLeave = (_el: HTMLDivElement) => {
   isLock.$patch({
@@ -32,11 +32,14 @@ const onBeforeLeave = (_el: HTMLDivElement) => {
 }
 
 const onLeave = (_el: HTMLDivElement, done: any) => {
-  const menuItems = document.querySelectorAll<HTMLAnchorElement>('.menu-item')
-  const navbar = document.querySelector<HTMLDivElement>('#navbar')
-  const wave = document.querySelector<SVGElement>('#wave')
-  const buttonBurger =
-    document.querySelector<HTMLButtonElement>('#button-burger')
+  const menuItems = document.querySelectorAll(
+    '.menu-item'
+  ) as NodeListOf<HTMLAnchorElement>
+  const navbar = document.querySelector('#navbar') as HTMLDivElement
+  const wave = document.querySelector('#wave') as SVGElement
+  const buttonBurger = document.querySelector(
+    '#button-burger'
+  ) as HTMLButtonElement
   gsap
     .timeline()
     .set('#quadbz', {
@@ -105,7 +108,7 @@ const onLeave = (_el: HTMLDivElement, done: any) => {
 }
 
 const onEnter = (_el: HTMLDivElement, done: any) => {
-  const wave = document.querySelector<SVGElement>('#wave')
+  const wave = document.querySelector('#wave') as SVGElement
   gsap
     .timeline()
     .set('#quadbz', {
@@ -283,12 +286,15 @@ onMounted(() => {
   const tl2 = gsap.timeline()
   tl1.pause()
   tl2.pause()
-  const quadbz = document.querySelector<SVGPathElement>('#quadbz')
-  const wave = document.querySelector<SVGElement>('#wave')
-  const buttonBurger =
-    document.querySelector<HTMLButtonElement>('#button-burger')
-  const navbar = document.querySelector<HTMLDivElement>('#navbar')
-  const menuItems = document.querySelectorAll<HTMLAnchorElement>('.menu-item')
+  const quadbz = document.querySelector('#quadbz') as SVGPathElement
+  const wave = document.querySelector('#wave') as SVGElement
+  const buttonBurger = document.querySelector(
+    '#button-burger'
+  ) as HTMLButtonElement
+  const navbar = document.querySelector('#navbar') as HTMLDivElement
+  const menuItems = document.querySelectorAll(
+    '.menu-item'
+  ) as NodeListOf<HTMLAnchorElement>
 
   tl1
     .set(quadbz, {

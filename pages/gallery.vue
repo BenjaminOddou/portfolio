@@ -393,7 +393,9 @@ onUnmounted(() => {
         >
           <template #default="{ item }: { item: ImageKit }">
             <a
-              v-show="item.tags.find((tag) => tag === filter)"
+              v-show="
+                item.tags !== null && item.tags.find((tag) => tag === filter)
+              "
               :href="item.url"
               :data-pswp-width="item.width"
               :data-pswp-height="item.height"

@@ -22,7 +22,9 @@ useHead({
 
 onMounted(() => {
   const Smooth = ScrollSmoother.get()
-  const buttonsToForm = document.querySelectorAll<HTMLButtonElement>('.to-form')
+  const buttonsToForm = document.querySelectorAll(
+    '.to-form'
+  ) as NodeListOf<HTMLButtonElement>
   const tl1 = gsap.timeline()
   const titleHero = new SplitText('#titleHero', {
     type: 'lines, chars'

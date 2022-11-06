@@ -10,11 +10,11 @@ const isRoute = routeStore()
 
 onMounted(() => {
   if (ScrollTrigger.isTouch !== 1) {
-    const Cursor = document.querySelector<HTMLDivElement>('#cursor')
+    const Cursor = document.querySelector('#cursor') as HTMLDivElement
     Cursor.style.backgroundColor = 'transparent'
-    const fixedItems = document.querySelectorAll<HTMLElement>(
+    const fixedItems = document.querySelectorAll(
       'a.fixed-el, button.fixed-el'
-    )
+    ) as NodeListOf<HTMLElement>
     const ScaleMouse = (Items: NodeListOf<HTMLElement>) => {
       Items.forEach((link) => {
         // On mouse enter scale the media-cursor to 2

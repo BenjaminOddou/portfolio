@@ -20,11 +20,13 @@ onMounted(() => {
   tl3.pause()
   tl4.pause()
   // animation logo insta
-  const logoInsta = document.querySelector<HTMLAnchorElement>('#logo-insta-nav')
-  const lens1 = document.querySelector<SVGPathElement>('#lens1')
-  const lens2 = document.querySelector<SVGPathElement>('#lens2')
-  const dot = document.querySelector<SVGPathElement>('#dot')
-  const textInsta = document.querySelector<SVGPathElement>('#textInsta')
+  const logoInsta = document.querySelector(
+    '#logo-insta-nav'
+  ) as HTMLAnchorElement
+  const lens1 = document.querySelector('#lens1') as SVGPathElement
+  const lens2 = document.querySelector('#lens2') as SVGPathElement
+  const dot = document.querySelector('#dot') as SVGPathElement
+  const textInsta = document.querySelector('#textInsta') as SVGPathElement
   const posinitInsta: string =
     'M35 50.6666C30.405 50.6666 26.6667 54.405 26.6667 59C26.6667 63.595 30.405 67.3333 35 67.3333C39.595 67.3333 43.3333 63.595 43.3333 59C43.3333 54.405 39.595 50.6666 35 50.6666ZM35 54C37.7567 54 40 56.2433 40 59C40 61.7566 37.7567 64 35 64C32.2433 64 30 61.7566 30 59C30 56.2433 32.2433 54 35 54Z'
   const posmiddleInsta: string =
@@ -32,26 +34,32 @@ onMounted(() => {
   const posfinalInsta: string =
     'M35 2.66663C30.405 2.66663 26.6667 6.405 26.6667 11C26.6667 15.595 30.405 19.3333 35 19.3333C39.595 19.3333 43.3333 15.595 43.3333 11C43.3333 6.405 39.595 2.66663 35 2.66663ZM35 5.99996C37.7567 5.99996 40 8.2433 40 11C40 13.7566 37.7567 16 35 16C32.2433 16 30 13.7566 30 11C30 8.2433 32.2433 5.99996 35 5.99996Z'
   // animation logo ytube
-  const logoYtbe = document.querySelector<HTMLAnchorElement>('#logo-ytube-nav')
-  const playYtbe = document.querySelector<SVGPathElement>('#playYtbe')
-  const gAntenne = document.querySelector<SVGRectElement>('#gAntenne')
-  const pAntenne = document.querySelector<SVGRectElement>('#pAntenne')
-  const screenYtbe = document.querySelector<SVGPathElement>('#screenYtbe')
-  const carre1 = document.querySelector<SVGPathElement>('#carre1')
-  const carre2 = document.querySelector<SVGPathElement>('#carre2')
-  const textYtbe = document.querySelector<SVGPathElement>('#textYtbe')
+  const logoYtbe = document.querySelector(
+    '#logo-ytube-nav'
+  ) as HTMLAnchorElement
+  const playYtbe = document.querySelector('#playYtbe') as SVGPathElement
+  const gAntenne = document.querySelector('#gAntenne') as SVGRectElement
+  const pAntenne = document.querySelector('#pAntenne') as SVGRectElement
+  const screenYtbe = document.querySelector('#screenYtbe') as SVGPathElement
+  const carre1 = document.querySelector('#carre1') as SVGPathElement
+  const carre2 = document.querySelector('#carre2') as SVGPathElement
+  const textYtbe = document.querySelector('#textYtbe') as SVGPathElement
   const posmiddleYtbe: string =
     'M42.2393 44.4263C41.6693 45.8888 40.5315 47.0244 38.8215 47.3494L24 44.75C29.51 44.75 36.3485 44.5862 37.6785 44.2612L37.6884 44.257C38.0651 44.096 38.4393 43.936 38.4393 43.6138C39.0093 42.1513 39.2 37.7625 39.2 35C39.2 32.2375 39.0085 27.8487 38.6285 26.3862L38.6263 26.3824C38.4371 26.0587 38.25 25.7388 37.8715 25.7388C36.3515 25.4138 29.51 25.25 24 25.25L38.8215 22.6506C40.5315 23.1381 41.8593 24.1112 42.2393 25.5737C42.9993 28.0112 43 35 43 35C43 35 42.9993 41.9888 42.2393 44.4263Z'
   // animation logo github
-  const logoGit = document.querySelector<HTMLAnchorElement>('#logo-githb-nav')
-  const mainGit = document.querySelector<SVGPathElement>('#mainGit')
-  const moustRightTp = document.querySelector<SVGPathElement>('#moust_right_tp')
-  const moustRightBt = document.querySelector<SVGPathElement>('#moust_right_bt')
-  const moustLeftTp = document.querySelector<SVGPathElement>('#moust_left_tp')
-  const moustLeftBt = document.querySelector<SVGPathElement>('#moust_left_bt')
-  const eyeLeft = document.querySelector<SVGPathElement>('#left_eye')
-  const eyeRight = document.querySelector<SVGPathElement>('#right_eye')
-  const textGit = document.querySelector<SVGPathElement>('#textGit')
+  const logoGit = document.querySelector('#logo-githb-nav') as HTMLAnchorElement
+  const mainGit = document.querySelector('#mainGit')
+  const moustRightTp = document.querySelector(
+    '#moust_right_tp'
+  ) as SVGPathElement
+  const moustRightBt = document.querySelector(
+    '#moust_right_bt'
+  ) as SVGPathElement
+  const moustLeftTp = document.querySelector('#moust_left_tp') as SVGPathElement
+  const moustLeftBt = document.querySelector('#moust_left_bt') as SVGPathElement
+  const eyeLeft = document.querySelector('#left_eye') as SVGPathElement
+  const eyeRight = document.querySelector('#right_eye') as SVGPathElement
+  const textGit = document.querySelector('#textGit') as SVGPathElement
   const finalMainGit =
     'M31.3498 39.7438C30.1679 40.3612 29.2009 41.6693 28.6416 43.0899C27.6013 43.2536 26.4961 43.2963 25.7577 43.2963C24.2347 43.2963 23.851 43.0541 23.0358 41.9848C22.2957 40.8039 22.5 40.5 22 39.5C21.6838 38.8675 21 39 21 40C21 41.5 21.3298 43.7567 22 45C22.6037 46.1188 24.1444 46.6986 25.5445 46.6986C25.8941 46.6986 27.2857 46.6986 28.1163 46.6986V50.1964C28.1163 50.5938 28.1163 51.1822 28.1163 51.1822C28.1163 51.1822 31.6719 51.7986 33.8721 51.8217C36.2988 51.8472 40.0543 51.1907 40.0543 51.1907V50.1964V45.5338C40.0543 43.4651 38.6882 40.7194 36.8157 39.7421M31.3498 39.7438C24.5349 39.0429 21.2826 35.6525 21.2826 31.0496C21.2826 29.0679 22.1268 27.151 23.5611 25.5359C23.0904 23.9328 22.4986 20.6635 23.7419 19.4186C26.8082 19.4186 28.662 21.4071 29.1071 21.9443C30.6352 21.4207 32.3134 21.124 34.0768 21.124C35.8436 21.124 37.5285 21.4207 39.06 21.9477C39.5 21.4139 41.3555 19.4186 44.4287 19.4186C45.6771 20.6652 45.0785 23.9482 44.6026 25.5479C46.0284 27.1595 46.8675 29.0713 46.8675 31.0496C46.8675 35.6491 43.6203 39.0378 36.8157 39.7421M31.3498 39.7438C33.4285 39.9588 34.6278 39.9484 36.8157 39.7421'
   const finalMoustRightTp =
@@ -67,12 +75,14 @@ onMounted(() => {
   const finalEyeRight =
     'M42.3412 31.4349C42.0713 32.9654 40.7246 34.0072 39.3332 33.7619C37.9419 33.5166 37.0327 32.077 37.3026 30.5465C37.5725 29.016 38.9192 27.9742 40.3105 28.2195C39.5878 29.0445 39.7948 30.0839 40.1561 30.7321C40.4686 31.2928 41.3928 31.9027 42.3412 31.4349Z'
   // animation logo mail
-  const logoMail = document.querySelector<HTMLAnchorElement>('#logo-email-nav')
-  const enveloppe = document.querySelector<SVGPathElement>('#enveloppe')
-  const ouverture = document.querySelector<SVGPathElement>('#ouverture')
-  const backDoc = document.querySelector<SVGPathElement>('#backDoc')
-  const contourDoc = document.querySelector<SVGPathElement>('#contourDoc')
-  const textMail = document.querySelector<SVGPathElement>('#textMail')
+  const logoMail = document.querySelector(
+    '#logo-email-nav'
+  ) as HTMLAnchorElement
+  const enveloppe = document.querySelector('#enveloppe') as SVGPathElement
+  const ouverture = document.querySelector('#ouverture') as SVGPathElement
+  const backDoc = document.querySelector('#backDoc') as SVGPathElement
+  const contourDoc = document.querySelector('#contourDoc') as SVGPathElement
+  const textMail = document.querySelector('#textMail') as SVGPathElement
   const posmiddleEnveloppe: string =
     'M19.9175 24.0009L34.6675 24.01L49.4175 24.0009C49.8031 23.9914 50.1866 24.0604 50.5447 24.2037C50.9029 24.3469 51.2282 24.5614 51.5009 24.8341C51.7736 25.1069 51.9881 25.4322 52.1314 25.7903C52.2746 26.1484 52.3436 26.5319 52.3342 26.9175V45.7509C52.3436 46.1364 52.2746 46.5199 52.1314 46.8781C51.9881 47.2362 51.7736 47.5615 51.5009 47.8342C51.2282 48.107 50.9029 48.3215 50.5447 48.4647C50.1866 48.6079 49.8031 48.6769 49.4175 48.6675H19.9175C19.5319 48.6769 19.1484 48.6079 18.7903 48.4647C18.4322 48.3215 18.1069 48.107 17.8341 47.8342C17.5614 47.5615 17.3469 47.2362 17.2037 46.8781C17.0604 46.5199 16.9914 46.1364 17.0009 45.7509V26.9175C16.9914 26.5319 17.0604 26.1484 17.2037 25.7903C17.3469 25.4322 17.5614 25.1069 17.8341 24.8341C18.1069 24.5614 18.4322 24.3469 18.7903 24.2037C19.1484 24.0604 19.5319 23.9914 19.9175 24.0009ZM20.3342 27.3342L34.6675 27.32L49.0009 27.3342L34.6675 36.2509L20.3342 27.3342ZM20.3342 45.3342H49.0009V31.35L34.6675 40L20.3342 31.35V45.3342Z'
   const posendEnveloppe: string =
@@ -523,7 +533,7 @@ onMounted(() => {
         !vx && !vy && !drag.isPressed && gsap.ticker.remove(updateSkew)
       }
 
-      Image.parentNode.append(proxy)
+      Image.parentNode?.append(proxy)
       Image.addEventListener('mouseenter', () => {
         gsap.to(Cursor, {
           opacity: 0,

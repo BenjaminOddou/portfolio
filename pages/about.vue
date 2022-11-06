@@ -206,45 +206,42 @@ onMounted(() => {
     }
   )
 
-  mm.add(
-    { isMobile: '(max-width: 766px)', isDesktop: '(min-width: 767px)' },
-    (context) => {
-      const { isMobile, isDesktop } = context.conditions
-      descriptionAnima = gsap.from(aboutblockTextChild.lines, {
-        y: '100%',
-        delay: isMobile ? 0 : 0.3,
-        duration: 1,
-        stagger: 0.04,
-        ease: 'power4.out',
-        scrollTrigger: {
-          trigger: isMobile ? '#description' : '#caracteristics',
-          start: 'top 60%',
-          toggleActions: 'play none none reverse'
-        }
-      })
-      if (isDesktop) {
-        gsap.fromTo(
-          '#grained',
-          {
-            y: '40%'
-          },
-          {
-            y: '-20%',
-            ease: 'power2.out',
-            scrollTrigger: {
-              trigger: '#description',
-              start: 'top 70%',
-              scrub: true,
-              onUpdate: (self) => skewSetter(clamp(self.getVelocity() / -300)),
-              onLeave: () => {
-                skewSetter(0)
-              }
+  mm.add({ md: '(max-width: 766px)' }, (context) => {
+    const { md } = context.conditions
+    descriptionAnima = gsap.from(aboutblockTextChild.lines, {
+      y: '100%',
+      delay: md ? 0 : 0.3,
+      duration: 1,
+      stagger: 0.04,
+      ease: 'power4.out',
+      scrollTrigger: {
+        trigger: md ? '#description' : '#caracteristics',
+        start: 'top 60%',
+        toggleActions: 'play none none reverse'
+      }
+    })
+    if (!md) {
+      gsap.fromTo(
+        '#grained',
+        {
+          y: '40%'
+        },
+        {
+          y: '-20%',
+          ease: 'power2.out',
+          scrollTrigger: {
+            trigger: '#description',
+            start: 'top 70%',
+            scrub: true,
+            onUpdate: (self) => skewSetter(clamp(self.getVelocity() / -300)),
+            onLeave: () => {
+              skewSetter(0)
             }
           }
-        )
-      }
+        }
+      )
     }
-  )
+  })
 
   // FAQ section
   const faqdiv = document.querySelectorAll(

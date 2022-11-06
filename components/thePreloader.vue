@@ -5,9 +5,9 @@ const isLock = scrollStore()
 const isRoute = routeStore()
 
 onMounted(() => {
-  const preloaderContainer = document.querySelector<HTMLDivElement>(
+  const preloaderContainer = document.querySelector(
     '#preloader-container'
-  )
+  ) as HTMLDivElement
   gsap
     .timeline()
     .to('#quadbz2', {

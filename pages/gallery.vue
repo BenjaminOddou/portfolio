@@ -18,11 +18,11 @@ const { data: images } = await useFetch<ImageKit[]>('/api/imgkit', {
   }
 })
 
-let lightbox = null
-const maxImageNumber = images.value.length
+let lightbox: any = null
+const maxImageNumber = images.value?.length ?? 0
 const countImages = ref(0)
 const imageNumber = ref(25)
-const items = ref(images.value.slice(0, 25))
+const items = ref(images.value?.slice(0, 25))
 const filter = ref('*')
 const isRoute = routeStore()
 
@@ -53,8 +53,8 @@ const handleClick = () => {
   countImages.value = 0
   const cacheImageNumber = imageNumber.value
   imageNumber.value = imageNumber.value + 25
-  const newItems = images.value.slice(cacheImageNumber, imageNumber.value)
-  items.value = items.value.concat(newItems)
+  const newItems = images.value?.slice(cacheImageNumber, imageNumber.value)
+  items.value = items.value?.concat(newItems as ImageKit[])
 }
 
 const refresh = async () => {
@@ -76,16 +76,14 @@ useHead({
 onMounted(() => {
   if (ScrollTrigger.isTouch === 1) {
     document
-      .querySelector<HTMLDivElement>('#return-to-top-container')
-      .classList.replace(
+      .querySelector('#return-to-top-container')
+      ?.classList.replace(
         'top-[calc(100vh_-_70px)]',
         'top-[calc(100svh_-_70px)]'
       )
   }
   document
-    .querySelectorAll<HTMLElement>(
-      '#gridgalerie_cell1, #return-to-top-container'
-    )
+    .querySelectorAll('#gridgalerie_cell1, #return-to-top-container')
     .forEach((Element) => {
       ScrollTrigger.create({
         trigger: Element,

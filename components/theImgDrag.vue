@@ -18,13 +18,13 @@ const { data: images } = useFetch<ImageKit[]>('/api/imgkit', {
       class="img-drag"
       width="600"
       height="750"
-      :src="images[0].filePath"
+      :src="images !== null ? images[0].filePath : undefined"
     />
     <nuxt-img
       class="img-drag"
       width="600"
       height="750"
-      :src="images[1].filePath"
+      :src="images !== null ? images[1].filePath : undefined"
     />
   </div>
 </template>

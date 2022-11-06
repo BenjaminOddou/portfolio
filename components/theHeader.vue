@@ -5,7 +5,7 @@ const setColorTheme = (newTheme: 'light' | 'dark') => {
   useColorMode().preference = newTheme
 }
 onMounted(() => {
-  const reload = document.querySelector<HTMLButtonElement>('#reload')
+  const reload = document.querySelector('#reload') as HTMLButtonElement
   reload.addEventListener('click', () => {
     location.href = '/'
   })

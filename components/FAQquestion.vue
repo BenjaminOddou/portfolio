@@ -12,7 +12,7 @@ defineProps<{
     <button
       class="grid w-full grid-cols-[92%_8%] pb-8 text-start md:grid-cols-[95%_5%]"
     >
-      <span class="text-lg italic">{{ question }}</span>
+      <span class="text-lg italic"><slot name="question"></slot></span>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
@@ -29,9 +29,7 @@ defineProps<{
     <div
       class="FAQ-p-container after:block after:h-8 after:w-full after:content-['']"
     >
-      <p v-for="(item, index) in response" :key="index">
-        {{ item }}
-      </p>
+      <slot name="response"></slot>
     </div>
   </div>
 </template>

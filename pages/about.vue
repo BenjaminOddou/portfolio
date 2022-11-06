@@ -557,67 +557,92 @@ onMounted(() => {
             </svg>
           </button>
         </div>
-        <FAQquestion
-          question="Quelles sont tes prestations ?"
-          :response="[
-            `Pour le
-        moment, mes prestations sont les suivantes : mariages, évènements
-        (baptêmes, naissances, anniversaires, soirées...), photos corporate
-        (portraits d'employés, images pour les réseaux sociaux...), séances
-        portrait en solo ou en couple. Si vous avez d'autres idées, n'hésitez
-        pas à m'envoyer votre demande via le formulaire ci-dessous en mettant en
-        objet 'Autres'.`
-          ]"
-        />
-        <FAQquestion
-          question="Quels sont les tarifs ?"
-          :response="[
-            `les tarifs de mes prestations sont uniquement délivrés sur demande. en fonction de votre projet, de vos demandes et attentes, je m'adapterais pour vous proposer le tarif le plus adapté !`
-          ]"
-        />
-        <FAQquestion
-          question="Peut-on acheter les photos de ton site ?"
-          :response="[
-            `Pour le moment, je ne vends pas mes photos personnelles. En fonction
-            du nombre de demandes, je pourrais envisager d'en vendre certaines
-            (des paysages principalement).`,
-            `NB: Bien que des photos prises lors de prestations soient affichées
-            sur le site, aucune d'entre elles ne seront revendues.`
-          ]"
-        />
-        <FAQquestion
-          question="Comment as tu appris la photo ?"
-          :response="[
-            `Je me suis formé exclusivement en autodidacte. La photographie peut
+        <FAQquestion>
+          <template #question> Quelles sont tes prestations ? </template>
+          <template #response>
+            <p>
+              Pour le moment, mes prestations sont les suivantes : mariages,
+              évènements (baptêmes, naissances, anniversaires, soirées...),
+              photos corporate (portraits d'employés, images pour les réseaux
+              sociaux...), séances portrait en solo ou en couple. Si vous avez
+              d'autres idées, n'hésitez pas à m'envoyer votre demande via le
+              formulaire ci-dessous en mettant en objet 'Autres'.
+            </p>
+          </template>
+        </FAQquestion>
+        <FAQquestion>
+          <template #question> Quels sont les tarifs ? </template>
+          <template #response>
+            <p>
+              les tarifs de mes prestations sont uniquement délivrés sur
+              demande. en fonction de votre projet, de vos demandes et attentes,
+              je m'adapterais pour vous proposer le tarif le plus adapté !
+            </p>
+          </template>
+        </FAQquestion>
+        <FAQquestion>
+          <template #question>
+            Peut-on acheter les photos de ton site ?
+          </template>
+          <template #response>
+            <p>
+              Pour le moment, je ne vends pas mes photos personnelles. En
+              fonction du nombre de demandes, je pourrais envisager d'en vendre
+              certaines (des paysages principalement). <br />
+              <br />
+              NB: Bien que des photos prises lors de prestations soient
+              affichées sur le site, aucune d'entre elles ne seront revendues.
+            </p>
+          </template>
+        </FAQquestion>
+        <FAQquestion>
+          <template #question> Comment as tu appris la photo ? </template>
+          <template #response>
+            Je me suis formé exclusivement en autodidacte. La photographie peut
             sembler technique au premier abord, mais la progression est assez
             rapide ! Mon conseil est finalement assez classique, faire des
             photos tout en ayant un œil critique sur celles-ci. Demander des
             avis extérieurs constructifs est aussi très bénéfique pour prendre
-            du recul et progresser.`
-          ]"
-        />
-        <FAQquestion
-          question="Comment as-tu réalisé ce (magnifique) site ?"
-          :response="[
-            `Je me suis lancé le défi de créer et coder mon propre site
-        web. J'ai travaillé et finalement réussi à sortir une première version
-        du site en Avril 2022.`,
-            `&#160;`,
-            `Afin de continuer à faire grandir le
-        site, j'ai totalement repris sa conception pour sortir une
-        version 2.0 en Octobre 2022. Dans le même temps et pour les mêmes raisons, j'ai décidé de rendre le code source public (à retrouver sur GitHub)`,
-            `&#160;`,
-            `Les technologies utilisées :`,
-            `- Design : Figma, Photoshop.`,
-            `-
-        Technologies : Nuxt 3 (Vue JS), CSS (Tailwind CSS).`,
-            `- Librairies JS :
-        GSAP, PhotoSwipe.`,
-            `- Gestion de formulaire : Formspark, Botpoison.`,
-            `- Développement et mise en production : Visual Studio Code, GitHub,
-        Netlify.`
-          ]"
-        />
+            du recul et progresser.
+          </template>
+        </FAQquestion>
+        <FAQquestion>
+          <template #question>
+            Comment as-tu réalisé ce (magnifique) site ?
+          </template>
+          <template #response>
+            <p>
+              Je me suis lancé le défi de créer et coder mon propre site web.
+              J'ai travaillé et finalement réussi à sortir une première version
+              du site en Avril 2022. <br />
+              <br />
+              Afin de continuer à faire grandir le site, j'ai totalement repris
+              sa conception pour sortir une version 2.0 en Octobre 2022. Dans le
+              même temps et pour les mêmes raisons, j'ai décidé de rendre le
+              code source public (à retrouver sur GitHub) <br />
+              <br />
+              Les technologies utilisées : <br />
+              - Design : Figma, Photoshop. <br />
+              - Technologies : Nuxt 3 (Vue JS), CSS (Tailwind CSS). <br />
+              - Librairies JS : GSAP, PhotoSwipe. <br />
+              - Gestion de formulaire : Formspark, Botpoison. <br />
+              - Développement et mise en production : Visual Studio Code,
+              GitHub, Netlify. <br />
+              <br />
+              Pour plus d'informations, allez voir le
+              <NuxtLink
+                to="https://github.com/BenjaminOddou/portfolio"
+                aria-label="Lien vers le répertoire GitHub"
+                class="text-dark-lavender underline underline-offset-4 dark:text-dark-orange"
+                target="_blank"
+                no-rel
+              >
+                répertoire GitHub
+              </NuxtLink>
+              dédié.
+            </p>
+          </template>
+        </FAQquestion>
       </div>
     </div>
 

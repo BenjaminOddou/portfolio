@@ -17,6 +17,8 @@ onMounted(() => {
       to="https://www.awwwards.com/sites/benjamin-oddou-photographe"
       class="fixed-el"
       aria-label="Mention Honorable Awwward"
+      target="_blank"
+      no-rel
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"

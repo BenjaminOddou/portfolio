@@ -33,8 +33,12 @@ onMounted(() => {
     type: 'lines',
     linesClass: 'overflow-hidden'
   })
-  const ellipseBigCircle = document.querySelector('#big-circle > ellipse')
-  const pathBigLine = document.querySelector('#big-line > path')
+  const ellipseBigCircle = document.querySelector(
+    '#big-circle > ellipse'
+  ) as SVGEllipseElement
+  const pathBigLine = document.querySelector(
+    '#big-line > path'
+  ) as SVGPathElement
   const tl1 = gsap.timeline()
   tl1.pause()
   isRoute.$subscribe(() => {
@@ -207,7 +211,7 @@ onMounted(() => {
   )
 
   mm.add({ md: '(max-width: 766px)' }, (context) => {
-    const { md } = context.conditions
+    const { md } = context.conditions as gsap.Conditions
     descriptionAnima = gsap.from(aboutblockTextChild.lines, {
       y: '100%',
       delay: md ? 0 : 0.3,

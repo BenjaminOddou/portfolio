@@ -1,4 +1,4 @@
-import { defineStore } from 'pinia'
+import { defineStore } from '@pinia/nuxt/node_modules/pinia'
 
 export const scrollStore = defineStore({
   id: 'smooth-store',

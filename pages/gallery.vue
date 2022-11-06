@@ -76,14 +76,16 @@ useHead({
 onMounted(() => {
   if (ScrollTrigger.isTouch === 1) {
     document
-      .querySelector('#return-to-top-container')
+      .querySelector<HTMLDivElement>('#return-to-top-container')
       ?.classList.replace(
         'top-[calc(100vh_-_70px)]',
         'top-[calc(100svh_-_70px)]'
       )
   }
   document
-    .querySelectorAll('#gridgalerie_cell1, #return-to-top-container')
+    .querySelectorAll<HTMLElement>(
+      '#gridgalerie_cell1, #return-to-top-container'
+    )
     .forEach((Element) => {
       ScrollTrigger.create({
         trigger: Element,
@@ -207,7 +209,7 @@ onMounted(() => {
       av: '(max-height: 767px)'
     },
     (context) => {
-      const { vsm, sm, av } = context.conditions
+      const { vsm, sm, av } = context.conditions as gsap.Conditions
       if (vsm || (sm && av)) {
         gsap.fromTo(
           filters,
@@ -385,15 +387,13 @@ onUnmounted(() => {
       >
         <MasonryWall
           id="galerie-masonry"
-          :items="items"
+          :items="items ?? []"
           :column-width="340"
           @redraw="refresh"
         >
           <template #default="{ item }: { item: ImageKit }">
             <a
-              v-show="
-                item.tags !== null && item.tags.find((tag) => tag === filter)
-              "
+              v-show="item.tags?.find((tag) => tag === filter)"
               :href="item.url"
               :data-pswp-width="item.width"
               :data-pswp-height="item.height"

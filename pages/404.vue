@@ -94,7 +94,7 @@ onMounted(() => {
             <div
               :style="`background-image: url(${image.url});`"
               :class="`tiles__line-img ${
-                image.tags !== null && image.tags.find((tag) => tag === 'large' as string)
+                image.tags?.find((tag) => tag === 'large' as string)
                   ? 'tiles__line-img--large'
                   : ''
               }`"

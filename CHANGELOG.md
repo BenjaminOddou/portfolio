@@ -2,6 +2,31 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.3](https://github.com/BenjaminOddou/portfolio/compare/v0.0.2...v0.0.3) (2022-11-06)
+
+
+### 🏡 Chore
+
+* update version of nuxt ([1ca9476](https://github.com/BenjaminOddou/portfolio/commits/1ca94763c97a56f5da807bafbc5929dd483fd8fb))
+
+
+### 💅 Refactors
+
+* disabling shim ([8e966f8](https://github.com/BenjaminOddou/portfolio/commits/8e966f85df399720747695198c254c6a5dc37812))
+* update types ([0d88844](https://github.com/BenjaminOddou/portfolio/commits/0d88844e5057821c15fc5222afadb803f43dfe8b))
+* update types ([50f48b0](https://github.com/BenjaminOddou/portfolio/commits/50f48b0336328556dbe5d613aad565457c2f7df5))
+
+
+### 🩹 Fixes
+
+* pinia alias (1) ([6051c42](https://github.com/BenjaminOddou/portfolio/commits/6051c4263ece21a7ce30cf8e050143b16b76fe30))
+* spelling correction ([1adb3f6](https://github.com/BenjaminOddou/portfolio/commits/1adb3f62f9fcc0e1363c4c645a3444b5ac6e2296))
+
+
+### 🚀 Enhancements
+
+* using slot instead of prop in FAQ ([1a73b8b](https://github.com/BenjaminOddou/portfolio/commits/1a73b8b6c7f14cea937c525db25b1cbeb22e675e))
+
 ### [0.0.2](https://github.com/BenjaminOddou/portfolio/compare/v0.0.1...v0.0.2) (2022-11-03)
 
 

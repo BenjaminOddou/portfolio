@@ -1,10 +1,3 @@
-<script setup lang="ts">
-defineProps<{
-  question?: string
-  response?: Array<string>
-}>()
-</script>
-
 <template>
   <div
     class="question grid grid-cols-1 justify-start border-b border-b-current pt-8"

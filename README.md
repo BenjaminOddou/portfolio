@@ -86,7 +86,7 @@ nvm ls
 Switch versions by passing the version the same way you do when installing:
 
 ```sh
-# version like 16.17.0
+# version like 18.12.1
 nvm use
 ```
 
@@ -95,6 +95,19 @@ Check the [node.js](https://nodejs.org/en/) and [npm](https://docs.npmjs.com/cli
 ```sh
 node -v
 npm -v
+```
+
+To get the latest LTS version of node and migrate your existing installed packages, use :
+
+```sh
+nvm install 'lts/*' --reinstall-packages-from=current
+```
+
+To get the the latest version of npm, use one of the following command :
+
+```sh
+nvm install-latest-npm
+npm install -g npm@latest
 ```
 
 ### VSCode
@@ -140,7 +153,7 @@ Install the [quicktype cli](https://github.com/quicktype/quicktype) globally by 
 npm install -g quicktype
 ```
 
-Use `quicktype` to generate a strongly styped API response :
+Use `quicktype` to generate a strongly typed API response :
 
 ```sh
 quicktype --src tmp/imgkit.json --top-level ImageKit --just-types --nice-property-names --acronym-style pascal --lang ts -o tmp/tmp.ts
@@ -488,7 +501,7 @@ npm run build
 npm run generate
 ```
 
-> ⚗️ [Nitro](https://nitro.unjs.io/deploy/providers/netlify) used by <img src=".github/nuxt.png" height="10" /> [Nuxt 3](https://v3.nuxtjs.org) will detect <img src=".github/netlify.png" height="12" /> [Netlify](https://www.netlify.com) hosting and deploy on the edge
+> ⚗️ [Nitro](https://nitro.unjs.io/deploy/providers/netlify) used by <img src=".github/nuxt.png" height="10" /> [Nuxt 3](https://v3.nuxtjs.org) will detect automatically <img src=".github/netlify.png" height="12" /> [Netlify](https://www.netlify.com) hosting and deploy with preset='netlify'
 
 Environment variable(s) :
 

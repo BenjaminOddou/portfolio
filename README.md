@@ -471,11 +471,12 @@ const { data: images } = useFetch<ImageKit[]>('/api/imgkit')
 │   ├── me.jpg
 │   ├── mstile-150x150.png
 │   ├── robots.txt
-│   ├── safari-pinned-tab.svg
-│   └── sitemap.xml
+│   └──safari-pinned-tab.svg
 ├── server # Directory which register API and server handlers (Nitro routes) with HMR support
 │   ├── api
 │   │   └── imgkit.ts # ImageKit API endpoint (act as proxy)
+│   ├── routes
+│   │   └── sitemap.xml.ts # Sitemap generator
 ├── tmp # Temporary files to perform tests on API
 │   ├── .gitkeep # empty hidden file to keep tmp folder in GitHub repo
 │   ├── imgkit.json # Sample data from ImageKit cURL command (not in GitHub repo ❌)

@@ -5,6 +5,7 @@ if (process.client) {
   gsap.registerPlugin(SplitText)
 }
 
+setResponseStatus(404)
 const isRoute = routeStore()
 
 const { data: images } = await useFetch<ImageKit[][]>('/api/imgkit', {

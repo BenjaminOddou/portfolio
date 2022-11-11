@@ -1,4 +1,4 @@
-<img src=".github/banner_github.jpg" width="100%" />
+<img src=".github/assets/banner_github.jpg" width="100%" />
 
 # [Benjamin Oddou Photographe](https://www.benjaminoddou-photographe.com)
 
@@ -13,28 +13,28 @@ Welcome to the repository of my personal website dedicated to **Photography** �
 
 ### Design
 
-1. <img src=".github/figma.png" height="13" /> [Figma](https://www.figma.com)
-2. <img src=".github/photoshop.png" height="13" /> [Adobe Photoshop](https://www.adobe.com/fr/products/photoshop.html)
+1. <img src=".github/assets/figma.png" height="13" /> [Figma](https://www.figma.com)
+2. <img src=".github/assets/photoshop.png" height="13" /> [Adobe Photoshop](https://www.adobe.com/fr/products/photoshop.html)
 
 ### Front-End
 
-1. <img src=".github/nuxt.png" height="10" /> [Nuxt 3](https://v3.nuxtjs.org)
-2. <img src=".github/tailwindcss.png" height="13" /> [Tailwind CSS](https://tailwindcss.com)
-3. <img src=".github/gsap.png" height="14" /> [GSAP](https://greensock.com/gsap/) with Premium [Shockingly Green](https://greensock.com/club/) Plugins
-4. <img src=".github/imagekit.png" height="12" /> [ImageKit CDN](https://imagekit.io)
-5. <img src=".github/photoswipe.png" height="12" /> [Photoswipe](https://photoswipe.com)
-6. <img src=".github/vue-masonry-wall.png" height="12" /> [Vue Masonry Wall](https://vue-masonry-wall.yeger.eu)
+1. <img src=".github/assets/nuxt.png" height="10" /> [Nuxt 3](https://v3.nuxtjs.org)
+2. <img src=".github/assets/tailwindcss.png" height="13" /> [Tailwind CSS](https://tailwindcss.com)
+3. <img src=".github/assets/gsap.png" height="14" /> [GSAP](https://greensock.com/gsap/) with Premium [Shockingly Green](https://greensock.com/club/) Plugins
+4. <img src=".github/assets/imagekit.png" height="12" /> [ImageKit CDN](https://imagekit.io)
+5. <img src=".github/assets/photoswipe.png" height="12" /> [Photoswipe](https://photoswipe.com)
+6. <img src=".github/assets/vue-masonry-wall.png" height="12" /> [Vue Masonry Wall](https://vue-masonry-wall.yeger.eu)
 
 ### Back-End
 
-1. <img src=".github/formspark.png" height="14" /> [Formspark](https://formspark.io)
-2. <img src=".github/botpoison.png" height="12" /> [Botpoison](https://botpoison.com)
+1. <img src=".github/assets/formspark.png" height="14" /> [Formspark](https://formspark.io)
+2. <img src=".github/assets/botpoison.png" height="12" /> [Botpoison](https://botpoison.com)
 
 ### IDE and Production
 
-1. <img src=".github/vscode.png" height="12" /> [Visual Studio Code](https://code.visualstudio.com)
-2. <img src=".github/github.png" height="12" /> [GitHub](https://github.com)
-3. <img src=".github/netlify.png" height="12" /> [Netlify](https://www.netlify.com)
+1. <img src=".github/assets/vscode.png" height="12" /> [Visual Studio Code](https://code.visualstudio.com)
+2. <img src=".github/assets/github.png" height="12" /> [GitHub](https://github.com)
+3. <img src=".github/assets/netlify.png" height="12" /> [Netlify](https://www.netlify.com)
 
 ## ✨ Code Usage and Contribution
 
@@ -114,18 +114,18 @@ npm install -g npm@latest
 
 1. Install [Visual Studio Code](https://code.visualstudio.com)
 2. Install the following extensions :
-   - <img src=".github/toml.png" height="12" /> [Better TOML](https://marketplace.visualstudio.com/items?itemName=bungcip.better-toml)
-   - <img src=".github/eslint.png" height="12" /> [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
-   - <img src=".github/css.png" height="12" /> [HTML CSS Support](https://marketplace.visualstudio.com/items?itemName=ecmel.vscode-html-css)
-   - <img src=".github/import_cost.png" height="12" /> [Import Cost](https://marketplace.visualstudio.com/items?itemName=wix.vscode-import-cost)
-   - <img src=".github/javascript.png" height="12" /> [JavaScript (ES6) code snippets](https://marketplace.visualstudio.com/items?itemName=xabikos.JavaScriptSnippets)
-   - <img src=".github/material_icons.png" height="13" /> [Material Icon Theme](https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme)
-   - <img src=".github/npm.png" height="12" /> [npm Intellisense](https://marketplace.visualstudio.com/items?itemName=christian-kohler.npm-intellisense)
-   - <img src=".github/path.png" height="12" /> [Path Intellisense](https://marketplace.visualstudio.com/items?itemName=christian-kohler.path-intellisense)
-   - <img src=".github/css.png" height="12" /> [PostCSS Language Support](https://marketplace.visualstudio.com/items?itemName=csstools.postcss)
-   - <img src=".github/prettier.png" height="12" /> [Prettier - Code formatter](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
-   - <img src=".github/tailwindcss.png" height="13" /> [Tailwind CSS IntelliSense](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss)
-   - <img src=".github/volar.png" height="12" /> [Vue Language Features (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.volar)
+   - <img src=".github/assets/toml.png" height="12" /> [Better TOML](https://marketplace.visualstudio.com/items?itemName=bungcip.better-toml)
+   - <img src=".github/assets/eslint.png" height="12" /> [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
+   - <img src=".github/assets/css.png" height="12" /> [HTML CSS Support](https://marketplace.visualstudio.com/items?itemName=ecmel.vscode-html-css)
+   - <img src=".github/assets/import_cost.png" height="12" /> [Import Cost](https://marketplace.visualstudio.com/items?itemName=wix.vscode-import-cost)
+   - <img src=".github/assets/javascript.png" height="12" /> [JavaScript (ES6) code snippets](https://marketplace.visualstudio.com/items?itemName=xabikos.JavaScriptSnippets)
+   - <img src=".github/assets/material_icons.png" height="13" /> [Material Icon Theme](https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme)
+   - <img src=".github/assets/npm.png" height="12" /> [npm Intellisense](https://marketplace.visualstudio.com/items?itemName=christian-kohler.npm-intellisense)
+   - <img src=".github/assets/path.png" height="12" /> [Path Intellisense](https://marketplace.visualstudio.com/items?itemName=christian-kohler.path-intellisense)
+   - <img src=".github/assets/css.png" height="12" /> [PostCSS Language Support](https://marketplace.visualstudio.com/items?itemName=csstools.postcss)
+   - <img src=".github/assets/prettier.png" height="12" /> [Prettier - Code formatter](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
+   - <img src=".github/assets/tailwindcss.png" height="13" /> [Tailwind CSS IntelliSense](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss)
+   - <img src=".github/assets/volar.png" height="12" /> [Vue Language Features (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.volar)
 
 ## 🛠️ Setup
 
@@ -133,7 +133,7 @@ npm install -g npm@latest
 
 > Always reinstall CLI packages after changing the node version
 
-#### <img src=".github/dotenv.png" height="12" /> Dotenv CLI
+#### <img src=".github/assets/dotenv.png" height="12" /> Dotenv CLI
 
 Install the [dotenv cli](https://www.npmjs.com/package/dotenv-cli) globally by running :
 
@@ -143,9 +143,9 @@ npm install -g dotenv-cli
 
 Use `env variables` (e.g. API keys) by creating a `.env` file at the root of the project
 
-<img src=".github/env.png" height="30" />
+<img src=".github/assets/env.png" height="30" />
 
-#### <img src=".github/quicktype.png" height="12" /> Quicktype CLI
+#### <img src=".github/assets/quicktype.png" height="12" /> Quicktype CLI
 
 Install the [quicktype cli](https://github.com/quicktype/quicktype) globally by running :
 
@@ -161,7 +161,7 @@ quicktype --src tmp/imgkit.json --top-level ImageKit --just-types --nice-propert
 
 > To run after generating the proper `.json` file
 
-For <img src=".github/imagekit.png" height="12" /> ImageKit :
+For <img src=".github/assets/imagekit.png" height="12" /> ImageKit :
 
 1. Use the [cURL](#using-curl) command to download a sample response under `tmp` folder.
 2. Run `quicktype` command to generate a `tmp.ts` file and copy it under the global declartion of `./types/imgkit.d.ts`
@@ -184,7 +184,7 @@ dotenv npm install
 
 ### GitHub Hooks
 
-Install [Husky](https://typicode.github.io/husky/#/) to perform actions when commiting or pushing code to <img src=".github/github.png" height="12" /> [GitHub](https://github.com) :
+Install [Husky](https://typicode.github.io/husky/#/) to perform actions when commiting or pushing code to <img src=".github/assets/github.png" height="12" /> [GitHub](https://github.com) :
 
 ```sh
 # Create .husky folder
@@ -314,7 +314,7 @@ npm run release:major
 
 ### Create a performance report
 
-Run [Unlighthouse](https://unlighthouse.dev) to scan an entire website (to define in `package.json` file) with <img src=".github/lighthouse.png" height="15" /> [Google Lighthouse️](https://developer.chrome.com/docs/lighthouse/overview/)
+Run [Unlighthouse](https://unlighthouse.dev) to scan an entire website (to define in `package.json` file) with <img src=".github/assets/lighthouse.png" height="15" /> [Google Lighthouse️](https://developer.chrome.com/docs/lighthouse/overview/)
 
 ```sh
 # it will run "npx unlighthouse --site https://www.benjaminoddou-photographe.com"
@@ -339,7 +339,7 @@ tree --help
 
 ### Encoding API key to Base64
 
-> Used for <img src=".github/imagekit.png" height="12" /> ImageKit API
+> Used for <img src=".github/assets/imagekit.png" height="12" /> ImageKit API
 
 1. Create a file named `my.key` with a `private API key` at the root of the project
 2. Launch the following script to encode the API key
@@ -350,9 +350,9 @@ openssl enc -base64 -in my.key -out my.key.base64
 
 The output looks like this:
 
-<img src=".github/key_b64.jpg" height="60" />
+<img src=".github/assets/key_b64.jpg" height="60" />
 
-### Fetch Data from <img src=".github/imagekit.png" height="15" /> ImageKit API
+### Fetch Data from <img src=".github/assets/imagekit.png" height="15" /> ImageKit API
 
 #### Using cURL
 
@@ -366,7 +366,7 @@ curl "https://api.imagekit.io/v1/files?<query>" \-H 'Authorization: Basic <Base6
 
 The two command lines output the same result. To see the different options for the `<query>`, check the documentation that can be found [here](https://docs.imagekit.io/api-reference/api-introduction)
 
-#### Using API endpoint and $fetch / useFetch() composable from <img src=".github/nuxt.png" height="12" /> Nuxt 3
+#### Using API endpoint and $fetch / useFetch() composable from <img src=".github/assets/nuxt.png" height="12" /> Nuxt 3
 
 ```ts
 // In nuxt.config.ts
@@ -457,10 +457,10 @@ const { data: images } = useFetch<ImageKit[]>('/api/imgkit')
 ├── package-lock.json # Aggregates an immutable version of the package.json file
 ├── package.json # Contains all the dependencies and scripts of the application
 ├── pages # All pages belongs here. Nuxt provides a file-based routing to create routes within the app using Vue Router under the hood.
-│   ├── 404.vue
-│   ├── about.vue
-│   ├── gallery.vue
-│   └── index.vue
+│   ├── [...slug].vue # catch all route (404 not founf)
+│   ├── about.vue # About page
+│   ├── gallery.vue # Gallery page
+│   └── index.vue # Home page
 ├── plugins # All Nuxt and Vue plugins
 │   └── vue-masonry-wall.ts # Vue masonry plugin
 ├── public # files that shouldn't be processed by build tool (Vite)
@@ -489,9 +489,9 @@ const { data: images } = useFetch<ImageKit[]>('/api/imgkit')
 
 ## 🚀 Deploy
 
-The hosting of the website is made available by connecting this <img src=".github/github.png" height="12" /> [GitHub](https://github.com) repository to <img src=".github/netlify.png" height="12" /> [Netlify](https://www.netlify.com).
+The hosting of the website is made available by connecting this <img src=".github/assets/github.png" height="12" /> [GitHub](https://github.com) repository to <img src=".github/assets/netlify.png" height="12" /> [Netlify](https://www.netlify.com).
 
-When deploying, the `command script` and `environment variable(s)` needs to be defined under `Build & deploy | Site settings` on <img src=".github/netlify.png" height="12" /> [Netlify](https://www.netlify.com).
+When deploying, the `command script` and `environment variable(s)` needs to be defined under `Build & deploy | Site settings` on <img src=".github/assets/netlify.png" height="12" /> [Netlify](https://www.netlify.com).
 
 Command scripts :
 
@@ -502,11 +502,11 @@ npm run build
 npm run generate
 ```
 
-> ⚗️ [Nitro](https://nitro.unjs.io/deploy/providers/netlify) used by <img src=".github/nuxt.png" height="10" /> [Nuxt 3](https://v3.nuxtjs.org) will detect automatically <img src=".github/netlify.png" height="12" /> [Netlify](https://www.netlify.com) hosting and deploy with preset='netlify'
+> ⚗️ [Nitro](https://nitro.unjs.io/deploy/providers/netlify) used by <img src=".github/assets/nuxt.png" height="10" /> [Nuxt 3](https://v3.nuxtjs.org) will detect automatically <img src=".github/assets/netlify.png" height="12" /> [Netlify](https://www.netlify.com) hosting and deploy with preset='netlify'
 
 Environment variable(s) :
 
-<img src=".github/netlify_env.jpg" width="100%" />
+<img src=".github/assets/netlify_env.jpg" width="100%" />
 
 ## ⚖️ License
 

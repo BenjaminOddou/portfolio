@@ -3,14 +3,13 @@ import Botpoison from '@botpoison/browser'
 import gsap from 'gsap'
 import ScrollTrigger from 'gsap/ScrollTrigger'
 
-if (process.client) {
+if (process.client)
   gsap.registerPlugin(ScrollTrigger)
-}
 
 const alertMessage = alertStore()
 const config = useRuntimeConfig()
 const botpoison = new Botpoison({
-  publicKey: config.public.BOTPOISON_PK
+  publicKey: config.public.BOTPOISON_PK,
 })
 const loading = ref(false)
 const checked = ref(false)
@@ -32,8 +31,8 @@ const submitForm = async () => {
         Mail: Mail.value,
         Objet: Objet.value,
         Message: Message.value,
-        _botpoison: solution
-      }
+        _botpoison: solution,
+      },
     })
     Prénom.value = ''
     Nom.value = ''
@@ -45,20 +44,20 @@ const submitForm = async () => {
       header: 'Message reçu',
       content: 'Le formulaire a bien été transmis ✅',
       color: 'teal',
-      icon: 'M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z',
       delay: 7000,
-      isAlert: true
+      isAlert: true,
     })
-  } catch {
+  }
+  catch {
     alertMessage.$patch({
       header: 'Oups...',
       content: 'Le message a été perdu en chemin 🚨',
       color: 'red',
-      icon: 'M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z',
       delay: 7000,
-      isAlert: true
+      isAlert: true,
     })
-  } finally {
+  }
+  finally {
     loading.value = false
   }
 }
@@ -66,13 +65,13 @@ const submitForm = async () => {
 onMounted(() => {
   // Animation Contact Section
   const stars = document.querySelectorAll<HTMLParagraphElement>(
-    '.stars:not(#last-star)'
+    '.stars:not(#last-star)',
   )
   const boxAnima = document.querySelectorAll<HTMLDivElement>('.box-animation')
-  const boxAnima2 =
-    document.querySelectorAll<HTMLDivElement>('.box-animation_2')
+  const boxAnima2
+    = document.querySelectorAll<HTMLDivElement>('.box-animation_2')
   const placeHolders = document.querySelectorAll<HTMLElement>(
-    "input[type='email'], input[type='text'], textarea, select"
+    'input[type=\'email\'], input[type=\'text\'], textarea, select',
   )
 
   gsap
@@ -80,127 +79,127 @@ onMounted(() => {
       scrollTrigger: {
         trigger: '#contact-container',
         start: 'top 100%',
-        toggleActions: 'play none none reset'
-      }
+        toggleActions: 'play none none reset',
+      },
     })
     .fromTo(
       '#title-contact, #subtitle-contact',
       {
-        y: '100%'
+        y: '100%',
       },
       {
         y: '0%',
         delay: 0.2,
         duration: 0.7,
         stagger: 0.2,
-        ease: 'power4.out'
-      }
+        ease: 'power4.out',
+      },
     )
     .fromTo(
       stars,
       {
         autoAlpha: 0,
-        scale: 0
+        scale: 0,
       },
       {
         autoAlpha: 1,
         scale: 1,
         duration: 1,
         stagger: 0.2,
-        ease: 'power3.out'
+        ease: 'power3.out',
       },
-      '<+=0.5'
+      '<+=0.5',
     )
     .fromTo(
       boxAnima2,
       {
-        width: '0%'
+        width: '0%',
       },
       {
         width: '100%',
         duration: 1.5,
         stagger: 0.1,
-        ease: 'power4.out'
+        ease: 'power4.out',
       },
-      0.5
+      0.5,
     )
     .fromTo(
       boxAnima,
       {
-        width: '0%'
+        width: '0%',
       },
       {
         width: '100%',
         duration: 1.5,
         stagger: 0.2,
-        ease: 'power4.out'
+        ease: 'power4.out',
       },
-      '<+=0.1'
+      '<+=0.1',
     )
     .fromTo(
       placeHolders,
       {
-        autoAlpha: 0
+        autoAlpha: 0,
       },
       {
         autoAlpha: 1,
         duration: 1,
-        ease: 'power4.out'
+        ease: 'power4.out',
       },
-      '>-=0.5'
+      '>-=0.5',
     )
     .fromTo(
       '#RGPD',
       {
-        y: '100%'
+        y: '100%',
       },
       {
         y: '0%',
         duration: 0.7,
-        ease: 'power4.out'
+        ease: 'power4.out',
       },
-      '<-=0.2'
+      '<-=0.2',
     )
     .fromTo(
       '#last-star, #check',
       {
         autoAlpha: 0,
-        scale: 0
+        scale: 0,
       },
       {
         autoAlpha: 1,
         scale: 1,
         duration: 1,
         stagger: 0.5,
-        ease: 'power3.out'
+        ease: 'power3.out',
       },
-      '<+=0.2'
+      '<+=0.2',
     )
     .fromTo(
       '#label-check',
       {
-        y: '100%'
+        y: '100%',
       },
       {
         y: '0%',
         duration: 0.7,
-        ease: 'power4.out'
+        ease: 'power4.out',
       },
-      '<+=0.7'
+      '<+=0.7',
     )
     .fromTo(
       '#submit-button',
       {
         autoAlpha: 0,
-        scale: 0.7
+        scale: 0.7,
       },
       {
         autoAlpha: 1,
         scale: 1,
         duration: 1,
-        ease: 'back.out(1.4)'
+        ease: 'back.out(1.4)',
       },
-      '<+=0.2'
+      '<+=0.2',
     )
 })
 </script>
@@ -224,18 +223,24 @@ onMounted(() => {
           </p>
         </div>
         <div class="mx-0 mt-0 mb-8 flex flex-wrap overflow-hidden">
-          <p id="subtitle-contact" class="cursor-text">Champs Obligatoires</p>
-          <p class="stars ml-1">*</p>
+          <p id="subtitle-contact" class="cursor-text">
+            Champs Obligatoires
+          </p>
+          <p class="stars ml-1">
+            *
+          </p>
         </div>
         <div class="relative mt-3 flex space-x-5">
           <div class="relative z-0 w-full">
-            <input v-model="Prénom" type="text" placeholder="Prénom" required />
-            <div class="box-animation_2"></div>
+            <input v-model="Prénom" type="text" placeholder="Prénom" required>
+            <div class="box-animation_2" />
           </div>
-          <p class="stars absolute right-1/2">*</p>
+          <p class="stars absolute right-1/2">
+            *
+          </p>
           <div class="relative z-0 w-full">
-            <input v-model="Nom" type="text" placeholder="Nom" />
-            <div class="box-animation_2"></div>
+            <input v-model="Nom" type="text" placeholder="Nom">
+            <div class="box-animation_2" />
           </div>
         </div>
         <div class="relative mt-3 flex">
@@ -245,22 +250,38 @@ onMounted(() => {
               type="email"
               placeholder="Adresse Mail"
               required
-            />
+            >
           </div>
-          <p class="stars absolute -right-2.5">*</p>
+          <p class="stars absolute -right-2.5">
+            *
+          </p>
         </div>
         <div class="relative mt-3 flex">
           <div class="box-animation">
             <select v-model="Objet" required>
-              <option disabled value="">Objet</option>
-              <option value="Mariage / Évènement">Mariage / Évènement</option>
-              <option value="Portrait Entreprise">Portrait Entreprise</option>
-              <option value="Séance Couple">Séance Couple</option>
-              <option value="Séance Solo">Séance Solo</option>
-              <option value="Autres Demandes">Autres</option>
+              <option disabled value="">
+                Objet
+              </option>
+              <option value="Mariage / Évènement">
+                Mariage / Évènement
+              </option>
+              <option value="Portrait Entreprise">
+                Portrait Entreprise
+              </option>
+              <option value="Séance Couple">
+                Séance Couple
+              </option>
+              <option value="Séance Solo">
+                Séance Solo
+              </option>
+              <option value="Autres Demandes">
+                Autres
+              </option>
             </select>
           </div>
-          <p class="stars absolute -right-2.5">*</p>
+          <p class="stars absolute -right-2.5">
+            *
+          </p>
         </div>
         <div class="relative mt-3 flex">
           <div class="box-animation">
@@ -270,16 +291,22 @@ onMounted(() => {
               rows="7"
               placeholder="Message"
               required
-            ></textarea>
+            />
           </div>
-          <p class="stars absolute -right-2.5">*</p>
+          <p class="stars absolute -right-2.5">
+            *
+          </p>
         </div>
         <div class="mx-0 mb-0 mt-8 flex flex-wrap overflow-hidden">
-          <p id="RGPD" class="font-bold">Conformité RGPD</p>
-          <p id="last-star" class="stars ml-1">*</p>
+          <p id="RGPD" class="font-bold">
+            Conformité RGPD
+          </p>
+          <p id="last-star" class="stars ml-1">
+            *
+          </p>
         </div>
         <div class="relative mx-0 mt-2 mb-4 flex items-center overflow-hidden">
-          <input id="check" v-model="checked" type="checkbox" required />
+          <input id="check" v-model="checked" type="checkbox" required>
           <label id="label-check" class="ml-2 cursor-pointer" for="check">
             Je consens à transmettre mes informations à : Benjamin Oddou
           </label>
@@ -290,7 +317,7 @@ onMounted(() => {
             :disabled="loading"
             :value="loading ? 'Envoi en cours...' : 'Envoyer'"
             class="button flex w-full cursor-pointer justify-center p-2 disabled:pointer-events-none disabled:bg-light-lavender dark:disabled:pointer-events-none dark:disabled:bg-light-orange"
-          />
+          >
         </div>
       </form>
     </div>

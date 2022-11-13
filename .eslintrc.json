@@ -1,26 +1,28 @@
 {
-    "env": {
-        "browser": true,
-        "es2022": true,
-        "node": true
-    },
-    "extends": [
-        "@nuxtjs/eslint-config-typescript",
-        "plugin:nuxt/recommended",
-        "plugin:prettier/recommended"
-    ],
-    "ignorePatterns": [
-        "tmp/**",
-        "types/**"
-    ],
-    "rules": {
-        "import/no-named-as-default": 0,
-        "no-console": "off",
-        "no-unused-vars": [
-            "error",
-            {
-                "argsIgnorePattern": "^_"
-            }
-        ]
-    }
+  "env": {
+    "browser": true,
+    "es2022": true,
+    "node": true
+  },
+  "extends": [
+    "@nuxtjs/eslint-config-typescript",
+    "plugin:tailwindcss/recommended",
+    "@antfu"
+  ],
+  "ignorePatterns": [
+    "tmp/**",
+    "README.md"
+  ],
+  "rules": {
+    "import/no-named-as-default": 0,
+    "no-console": "off",
+    "tailwindcss/enforces-negative-arbitrary-values": "off",
+    "tailwindcss/no-custom-classname": "off",
+    "no-unused-vars": [
+      "error",
+      {
+        "argsIgnorePattern": "^_"
+      }
+    ]
+  }
 }

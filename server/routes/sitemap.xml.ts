@@ -3,7 +3,7 @@ import { SitemapStream, streamToPromise } from 'sitemap'
 export default defineEventHandler(() => {
   const sitemap = new SitemapStream({
     hostname: 'https://www.benjaminoddou-photographe.com',
-    lastmodDateOnly: false
+    lastmodDateOnly: false,
   })
 
   // Alternatively create array of objects like so : const endpoints = [{url: '/', changefreq: 'weekly'}, {url: '/gallery', changefreq: 'monthly'}, ...]
@@ -18,7 +18,7 @@ export default defineEventHandler(() => {
       url: endpoint,
       changefreq: changeFreq,
       priority: Priority,
-      lastmod: date
+      lastmod: date,
     })
   }
 

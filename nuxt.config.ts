@@ -3,15 +3,15 @@ export default defineNuxtConfig({
   nitro: {
     compressPublicAssets: {
       brotli: true,
-      gzip: false
-    }
+      gzip: false,
+    },
   },
   runtimeConfig: {
     IMAGEKIT_B64_API: process.env.IMAGEKIT_B64_API,
     public: {
       FORMSPARK_ACTION_URL: process.env.FORMSPARK_ACTION_URL,
-      BOTPOISON_PK: process.env.BOTPOISON_PK
-    }
+      BOTPOISON_PK: process.env.BOTPOISON_PK,
+    },
   },
   modules: [
     '@nuxtjs/tailwindcss',
@@ -19,40 +19,40 @@ export default defineNuxtConfig({
     '@nuxt/image-edge',
     '@nuxtjs/color-mode',
     '@pinia/nuxt',
-    'nuxt-schema-org'
+    'nuxt-schema-org',
   ],
   alias: {
-    pinia: '/node_modules/@pinia/nuxt/node_modules/pinia/dist/pinia.mjs'
+    pinia: '/node_modules/@pinia/nuxt/node_modules/pinia/dist/pinia.mjs',
   },
   schemaOrg: {
     meta: {
       host: 'https://www.benjaminoddou-photographe.com',
-      inLanguage: 'fr-FR'
-    }
+      inLanguage: 'fr-FR',
+    },
   },
   image: {
     provider: 'imagekit',
     imagekit: {
-      baseURL: 'https://ik.imagekit.io/palladium'
+      baseURL: 'https://ik.imagekit.io/palladium',
     },
     screens: {
-      sm: 575,
-      md: 767,
-      lg: 991,
-      xl: 1199,
-      '2xl': 1679
-    }
+      'sm': 575,
+      'md': 767,
+      'lg': 991,
+      'xl': 1199,
+      '2xl': 1679,
+    },
   },
   colorMode: {
     classSuffix: '',
-    dataValue: 'theme'
+    dataValue: 'theme',
   },
   pwa: {
     workbox: {
-      enabled: true
+      enabled: true,
     },
     icon: {
-      source: './assets/pwa-512x512.png'
+      source: './assets/pwa-512x512.png',
     },
     meta: {
       lang: 'fr',
@@ -64,11 +64,11 @@ export default defineNuxtConfig({
         path: '/banner.jpg',
         width: 1874,
         height: 1150,
-        type: 'image/jpeg'
+        type: 'image/jpeg',
       },
       twitterCard: 'summary_large_image',
       twitterCreator: '@benjamin_oddou',
-      twitterSite: '@benjamin_oddou'
+      twitterSite: '@benjamin_oddou',
     },
     manifest: {
       name: 'Benjamin Oddou Photographe',
@@ -78,7 +78,7 @@ export default defineNuxtConfig({
       theme_color: '#ffffff',
       background_color: '#ffffff',
       display: 'standalone',
-      lang: 'fr'
-    }
-  }
+      lang: 'fr',
+    },
+  },
 })

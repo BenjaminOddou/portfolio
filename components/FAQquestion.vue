@@ -5,7 +5,7 @@
     <button
       class="grid w-full grid-cols-[92%_8%] pb-8 text-start md:grid-cols-[95%_5%]"
     >
-      <span class="text-lg italic"><slot name="question"></slot></span>
+      <span class="text-lg italic"><slot name="question" /></span>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
@@ -22,7 +22,7 @@
     <div
       class="FAQ-p-container after:block after:h-8 after:w-full after:content-['']"
     >
-      <slot name="response"></slot>
+      <slot name="response" />
     </div>
   </div>
 </template>

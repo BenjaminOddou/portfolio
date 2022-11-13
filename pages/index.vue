@@ -3,9 +3,8 @@ import gsap from 'gsap'
 import SplitText from 'gsap/SplitText'
 import ScrollTrigger from 'gsap/ScrollTrigger'
 import ScrollSmoother from 'gsap/ScrollSmoother'
-if (process.client) {
+if (process.client)
   gsap.registerPlugin(SplitText, ScrollTrigger, ScrollSmoother)
-}
 
 const isRoute = routeStore()
 
@@ -13,34 +12,34 @@ definePageMeta({
   title: 'Accueil',
   url: 'https://www.benjaminoddou-photographe.com',
   description:
-    'Site en ligne de Benjamin Oddou, photographe de mariage et portrait basé à Paris, réservez un shooting !'
+    'Site en ligne de Benjamin Oddou, photographe de mariage et portrait basé à Paris, réservez un shooting !',
 })
 
 useHead({
-  title: 'Accueil'
+  title: 'Accueil',
 })
 
 onMounted(() => {
   const Smooth = ScrollSmoother.get()
   const buttonsToForm = document.querySelectorAll(
-    '.to-form'
+    '.to-form',
   ) as NodeListOf<HTMLButtonElement>
   const tl1 = gsap.timeline()
   const titleHero = new SplitText('#titleHero', {
-    type: 'lines, chars'
+    type: 'lines, chars',
   })
   const subtitleHero = new SplitText('#subtitleHero', {
-    type: 'lines, chars'
+    type: 'lines, chars',
   })
   const charAbout = new SplitText('#char-about', {
-    type: 'words, chars'
+    type: 'words, chars',
   })
   const imgUnit = document.querySelectorAll<HTMLImageElement>('.img-unit')
   const wordPortfolio = new SplitText('#word-portfolio', {
-    type: 'lines, words'
+    type: 'lines, words',
   })
   gsap.set([charAbout.words, wordPortfolio.lines], {
-    css: { overflow: 'hidden' }
+    css: { overflow: 'hidden' },
   })
 
   tl1.pause()
@@ -52,19 +51,19 @@ onMounted(() => {
     .fromTo(
       titleHero.chars,
       {
-        y: '100%'
+        y: '100%',
       },
       {
         y: '0%',
         stagger: 0.07,
         duration: 0.8,
-        ease: 'power4.out'
-      }
+        ease: 'power4.out',
+      },
     )
     .fromTo(
       subtitleHero.chars,
       {
-        y: '100%'
+        y: '100%',
       },
       {
         y: '0%',
@@ -74,9 +73,9 @@ onMounted(() => {
         onComplete: () => {
           titleHero.revert()
           subtitleHero.revert()
-        }
+        },
       },
-      '<+0.8'
+      '<+0.8',
     )
     .from(
       '#main-img',
@@ -84,9 +83,9 @@ onMounted(() => {
         opacity: 0,
         scale: 0.6,
         duration: 1.2,
-        ease: 'power4.out'
+        ease: 'power4.out',
       },
-      '>-=0.7'
+      '>-=0.7',
     )
     .from(
       '#call-text',
@@ -94,9 +93,9 @@ onMounted(() => {
         opacity: 0,
         y: 80,
         duration: 1.2,
-        ease: 'power4.out'
+        ease: 'power4.out',
       },
-      '<+0.5'
+      '<+0.5',
     )
     .from(
       '#hidden__large',
@@ -104,9 +103,9 @@ onMounted(() => {
         opacity: 0,
         scale: 0.7,
         duration: 1,
-        ease: 'back.out(1.4)'
+        ease: 'back.out(1.4)',
       },
-      '>-=0.5'
+      '>-=0.5',
     )
 
   gsap
@@ -115,32 +114,32 @@ onMounted(() => {
         trigger: '#homesection',
         start: 'top 0px',
         end: '=+100%',
-        scrub: true
-      }
+        scrub: true,
+      },
     })
     .to('#titleHero', {
-      y: '-250%'
+      y: '-250%',
     })
     .to(
       '#subtitleHero',
       {
-        y: '-350%'
+        y: '-350%',
       },
-      '<'
+      '<',
     )
     .to(
       '#img-wrap',
       {
-        scale: 1.4
+        scale: 1.4,
       },
-      '<'
+      '<',
     )
     .to(
       '#call-text',
       {
-        x: '100%'
+        x: '100%',
       },
-      '<'
+      '<',
     )
 
   buttonsToForm.forEach((button) => {
@@ -149,9 +148,9 @@ onMounted(() => {
         duration: 3,
         scrollTop: Math.min(
           ScrollTrigger.maxScroll(window),
-          Smooth.offset('#formsection', 'top top')
+          Smooth.offset('#formsection', 'top top'),
         ),
-        ease: 'power3.inOut'
+        ease: 'power3.inOut',
       })
     })
   })
@@ -162,34 +161,34 @@ onMounted(() => {
         trigger: '#grid-about',
         start: 'top 100%',
         end: 'top 100%',
-        toggleActions: 'play none none reset'
-      }
+        toggleActions: 'play none none reset',
+      },
     })
     .fromTo(
       charAbout.chars,
       {
-        y: '100%'
+        y: '100%',
       },
       {
         y: '0%',
         stagger: 0.025,
         duration: 0.6,
-        ease: 'power4.out'
-      }
+        ease: 'power4.out',
+      },
     )
     .fromTo(
       '.link-about',
       {
         autoAlpha: 0,
-        y: 20
+        y: 20,
       },
       {
         autoAlpha: 1,
         y: 0,
         duration: 1,
-        ease: 'power4.out'
+        ease: 'power4.out',
       },
-      '>-=0.5'
+      '>-=0.5',
     )
 
   imgUnit.forEach((element) => {
@@ -199,8 +198,8 @@ onMounted(() => {
         trigger: element,
         start: 'top 75%',
         end: 'top 75%',
-        toggleActions: 'play none none reverse'
-      }
+        toggleActions: 'play none none reverse',
+      },
     })
   })
 
@@ -210,22 +209,22 @@ onMounted(() => {
         trigger: '#carousel-title',
         start: 'top 75%',
         end: 'top 75%',
-        toggleActions: 'play none none reverse'
-      }
+        toggleActions: 'play none none reverse',
+      },
     })
     .from('#span-portfolio', {
       y: '100%',
       duration: 1.4,
-      ease: 'power4.out'
+      ease: 'power4.out',
     })
     .from(
       wordPortfolio.words,
       {
         y: '100%',
         duration: 1.4,
-        ease: 'power4.out'
+        ease: 'power4.out',
       },
-      '<'
+      '<',
     )
     .from(
       '.link-portfolio',
@@ -233,9 +232,9 @@ onMounted(() => {
         autoAlpha: 0,
         y: 20,
         duration: 1,
-        ease: 'power4.out'
+        ease: 'power4.out',
       },
-      '<+=0.8'
+      '<+=0.8',
     )
 })
 </script>
@@ -270,20 +269,16 @@ onMounted(() => {
             <div
               id="main-img"
               class="m-auto h-full max-h-[853px] w-[63vw] max-w-[63vw] rounded-[8rem] bg-[url('https://ik.imagekit.io/palladium/index-page/Hero_img_light.webp')] bg-cover bg-center bg-no-repeat transition-bg-img duration-500 ease-classic after:hidden after:content-[url('https://ik.imagekit.io/palladium/index-page/Hero_img_light.webp')_url('https://ik.imagekit.io/palladium/index-page/Hero_img_dark.webp')] dark:bg-[url('https://ik.imagekit.io/palladium/index-page/Hero_img_dark.webp')] sm:max-h-full sm:w-full sm:max-w-[454px] lt:rounded-[11rem] av:rounded-full"
-            ></div>
+            />
           </div>
           <div
             id="call-text"
             class="absolute top-2/3 left-[70%] z-20 hidden w-1/5 max-w-[12rem] gap-2 sm:grid md:left-3/4 lt:top-1/2"
           >
-            <span class="hidden cursor-text font-bold lt:block"
-              >Réservation disponible !</span
-            >
-            <span class="hidden cursor-text text-[0.9rem] lt:block"
-              >Veuillez remplir le formulaire en bas tout en précisant le type
-              de réservation.</span
-            >
-            <span class="mx-0 my-2 hidden w-2/5 border-t-4 lt:block"></span>
+            <span class="hidden cursor-text font-bold lt:block">Réservation disponible !</span>
+            <span class="hidden cursor-text text-[0.9rem] lt:block">Veuillez remplir le formulaire en bas tout en précisant le type
+              de réservation.</span>
+            <span class="mx-0 my-2 hidden w-2/5 border-t-4 lt:block" />
             <button
               id="button__hover"
               aria-label="Affichage du Formulaire de contact"
@@ -297,14 +292,13 @@ onMounted(() => {
                 >
                   <span
                     id="arrow"
-                    class="absolute left-[0.625rem] top-0 bottom-0 m-auto h-[0.125rem] w-[1.125rem] bg-transparent transition-all duration-500 ease-smooth before:absolute before:top-[-0.25rem] before:right-[0.0625rem] before:h-[0.625rem] before:w-[0.625rem] before:rotate-45 before:transform before:border-t-[0.125rem] before:border-r-[0.125rem] before:border-white before:content-[''] group-hover:translate-x-4 group-hover:bg-white dark:before:border-jet dark:group-hover:bg-jet"
-                  ></span>
+                    class="absolute left-[0.625rem] inset-y-0 m-auto h-[0.125rem] w-[1.125rem] bg-transparent transition-all duration-500 ease-smooth before:absolute before:top-[-0.25rem] before:right-[0.0625rem] before:h-[0.625rem] before:w-[0.625rem] before:rotate-45 before:border-t-[0.125rem] before:border-r-[0.125rem] before:border-white before:content-[''] group-hover:translate-x-4 group-hover:bg-white dark:before:border-jet dark:group-hover:bg-jet"
+                  />
                 </span>
                 <span
                   id="button-text"
                   class="baron absolute inset-0 ml-[1.85rem] py-[0.9rem] text-center text-sm leading-[1.6rem] transition-all duration-500 ease-smooth group-hover:text-white dark:group-hover:text-jet sm:text-base"
-                  >réserver !</span
-                >
+                >réserver !</span>
               </div>
             </button>
           </div>
@@ -340,15 +334,12 @@ onMounted(() => {
               id="char-about"
               aria-hidden="true"
               class="inline-block cursor-text"
-              >Pour moi,&#160;<b>la photographie</b>&#160;représente le moyen de
-              matérialiser nos&#160;<b>souvenirs</b>&#160;et&#160;nos&#160;<b
-                >émotions vécues</b
-              ></span
-            >
+            >Pour moi,&#160;<b>la photographie</b>&#160;représente le moyen de
+              matérialiser nos&#160;<b>souvenirs</b>&#160;et&#160;nos&#160;<b>émotions vécues</b></span>
           </div>
           <span
             class="link-about mt-2 mb-4 w-[10%] border-t-2 border-current sm:mt-[1vw] sm:mb-[2vw] md:border-t-[3px]"
-          ></span>
+          />
           <span>
             <NuxtLink
               to="/about"
@@ -356,8 +347,7 @@ onMounted(() => {
             >
               <span
                 class="baron text-center text-[16.864px] lg:text-[1.7vw] 2xl:text-[28.56px]"
-                >À propos de Benjamin</span
-              >
+              >À propos de Benjamin</span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 class="arrow-button right-[-12%]"
@@ -393,12 +383,11 @@ onMounted(() => {
           <span
             id="word-portfolio"
             class="w-full cursor-text text-[27.776px] font-thin lg:text-[2.8vw] 2xl:text-[47.04px]"
-            >Paysage / Mariage / Portrait / Nature / Architecture /
-            Astrophotographie</span
-          >
+          >Paysage / Mariage / Portrait / Nature / Architecture /
+            Astrophotographie</span>
           <span
             class="link-portfolio mt-2 mb-4 w-[20%] border-t-2 border-current sm:mt-[1vw] sm:mb-[2vw] md:border-t-[3px]"
-          ></span>
+          />
           <span>
             <NuxtLink
               to="./gallery"
@@ -406,8 +395,7 @@ onMounted(() => {
             >
               <span
                 class="baron text-center text-[16.864px] lg:text-[1.7vw] 2xl:text-[28.56px]"
-                >voir la galerie</span
-              >
+              >voir la galerie</span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 class="arrow-button right-[-18%]"

@@ -21,8 +21,8 @@ onMounted(() => {
         x: 0,
         delay: 4.9,
         duration: 1,
-        ease: 'back.out(1.4)'
-      }
+        ease: 'back.out(1.4)',
+      },
     )
     .fromTo(
       '#reload',
@@ -31,9 +31,9 @@ onMounted(() => {
         opacity: 1,
         x: 0,
         duration: 1,
-        ease: 'back.out(1.4)'
+        ease: 'back.out(1.4)',
       },
-      '<'
+      '<',
     )
 })
 </script>
@@ -114,9 +114,9 @@ onMounted(() => {
         aria-label="Affichage/Désactivation du Menu"
         class="menu fixed-el"
       >
-        <div class="burger-bar bg-jet dark:bg-white"></div>
-        <div class="burger-bar bg-jet dark:bg-white"></div>
-        <div class="burger-bar bg-jet dark:bg-white"></div>
+        <div class="burger-bar bg-jet dark:bg-white" />
+        <div class="burger-bar bg-jet dark:bg-white" />
+        <div class="burger-bar bg-jet dark:bg-white" />
       </button>
     </div>
   </div>
@@ -124,7 +124,7 @@ onMounted(() => {
 
 <style scoped>
 /*
-Menu Burger 
+Menu Burger
 */
 
 .menu {

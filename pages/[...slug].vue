@@ -1,9 +1,8 @@
 <script setup lang="ts">
 import gsap from 'gsap'
 import SplitText from 'gsap/SplitText'
-if (process.client) {
+if (process.client)
   gsap.registerPlugin(SplitText)
-}
 
 setResponseStatus(404)
 const isRoute = routeStore()
@@ -12,36 +11,36 @@ const { data: images } = await useFetch<ImageKit[][]>('/api/imgkit', {
   transform: (images) => {
     const tmp = images
       .flat()
-      .filter((image) => image.filePath.includes('404'))
+      .filter(image => image.filePath.includes('404'))
       .sort((imageA, imageB) => (imageA.name > imageB.name ? 1 : -1))
     const result: ImageKit[][] = []
-    for (let i = 3; i > 0; i--) {
+    for (let i = 3; i > 0; i--)
       result.push(tmp.splice(0, Math.ceil(tmp.length / i)))
-    }
+
     return result
-  }
+  },
 })
 
 useHead({
-  title: 'Oups...'
+  title: 'Oups...',
 })
 
 onMounted(() => {
   const home = document.querySelector<HTMLDivElement>('#home')
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars, no-unused-vars
+  // eslint-disable-next-line no-unused-vars
   const qCqP = new SplitText('.baron', {
     type: 'chars',
-    charsClass: 'overflow-hidden'
+    charsClass: 'overflow-hidden',
   })
   const qCqC = new SplitText('.baron', {
-    type: 'chars'
+    type: 'chars',
   })
   const textContentP = new SplitText('#content', {
     type: 'lines',
-    linesClass: 'overflow-hidden'
+    linesClass: 'overflow-hidden',
   })
   const textContentC = new SplitText('#content', {
-    type: 'chars'
+    type: 'chars',
   })
   const tl1 = gsap.timeline()
   tl1.pause()
@@ -53,7 +52,7 @@ onMounted(() => {
     .from(qCqC.chars, {
       x: '100%',
       duration: 1.2,
-      ease: 'power4.out'
+      ease: 'power4.out',
     })
     .from(
       textContentC.chars,
@@ -65,23 +64,23 @@ onMounted(() => {
         onComplete: () => {
           textContentP.revert()
           textContentC.revert()
-        }
+        },
       },
-      '<+0.3'
+      '<+0.3',
     )
     .fromTo(
       home,
       {
         autoAlpha: 0,
-        scale: 0.7
+        scale: 0.7,
       },
       {
         autoAlpha: 1,
         scale: 1,
         duration: 1,
-        ease: 'back.out(1.4)'
+        ease: 'back.out(1.4)',
       },
-      '<+=0.6'
+      '<+=0.6',
     )
 })
 </script>
@@ -99,7 +98,7 @@ onMounted(() => {
                   ? 'tiles__line-img--large'
                   : ''
               }`"
-            ></div>
+            />
           </div>
         </div>
       </div>

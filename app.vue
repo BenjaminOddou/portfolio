@@ -4,9 +4,8 @@ import ScrollSmoother from 'gsap/ScrollSmoother'
 import ScrollTrigger from 'gsap/ScrollTrigger'
 import SplitText from 'gsap/SplitText'
 
-if (process.client) {
+if (process.client)
   gsap.registerPlugin(ScrollSmoother, ScrollTrigger, SplitText)
-}
 
 const router = useRoute()
 const isLock = scrollStore()
@@ -26,26 +25,26 @@ const end2 = 'M 0 0 V 0 Q 50 0 100 0 V 0 z' as string
 
 const onBeforeLeave = (_el: HTMLDivElement) => {
   isLock.$patch({
-    isReady: true
+    isReady: true,
   })
-  ScrollTrigger.getAll().forEach((t) => t.kill())
+  ScrollTrigger.getAll().forEach(t => t.kill())
 }
 
 const onLeave = (_el: HTMLDivElement, done: any) => {
   const menuItems = document.querySelectorAll(
-    '.menu-item'
+    '.menu-item',
   ) as NodeListOf<HTMLAnchorElement>
   const navbar = document.querySelector('#navbar') as HTMLDivElement
   const wave = document.querySelector('#wave') as SVGElement
   const buttonBurger = document.querySelector(
-    '#button-burger'
+    '#button-burger',
   ) as HTMLButtonElement
   gsap
     .timeline()
     .set('#quadbz', {
       attr: {
-        d: init1
-      }
+        d: init1,
+      },
     })
     .to('#quadbz', {
       onStart: () => {
@@ -56,7 +55,7 @@ const onLeave = (_el: HTMLDivElement, done: any) => {
       },
       duration: 0.5,
       attr: { d: start1 },
-      ease: 'power3.in'
+      ease: 'power3.in',
     })
     .to('#quadbz', {
       duration: 0.3,
@@ -67,16 +66,16 @@ const onLeave = (_el: HTMLDivElement, done: any) => {
         Smooth.scrollTop(0)
         buttonBurger.classList.remove('is-hovered', 'is-open')
         navbar.classList.replace('block', 'hidden')
-      }
+      },
     })
     .to(
       '#to-offset',
       {
         duration: 0.8,
         y: 200,
-        ease: 'power3.in'
+        ease: 'power3.in',
       },
-      0
+      0,
     )
     .to(
       menuItems,
@@ -90,9 +89,9 @@ const onLeave = (_el: HTMLDivElement, done: any) => {
           menuItems.forEach((Navlink) => {
             Navlink.classList.remove('pointer-events-none')
           })
-        }
+        },
       },
-      0
+      0,
     )
     .to(
       '#content__drag-area',
@@ -101,9 +100,9 @@ const onLeave = (_el: HTMLDivElement, done: any) => {
         opacity: 0,
         y: -200,
         ease: 'power3.inOut',
-        onComplete: done
+        onComplete: done,
       },
-      0
+      0,
     )
 }
 
@@ -113,8 +112,8 @@ const onEnter = (_el: HTMLDivElement, done: any) => {
     .timeline()
     .set('#quadbz', {
       attr: {
-        d: init2
-      }
+        d: init2,
+      },
     })
     .to('#quadbz', {
       duration: 0.3,
@@ -122,7 +121,7 @@ const onEnter = (_el: HTMLDivElement, done: any) => {
       ease: 'power3.in',
       onComplete: () => {
         isRoute.isNewPage++
-      }
+      },
     })
     .to('#quadbz', {
       duration: 0.5,
@@ -130,7 +129,7 @@ const onEnter = (_el: HTMLDivElement, done: any) => {
       ease: 'power3',
       onComplete: () => {
         wave.classList.add('hidden')
-      }
+      },
     })
     .to(
       '#to-offset',
@@ -138,9 +137,9 @@ const onEnter = (_el: HTMLDivElement, done: any) => {
         duration: 0.8,
         y: 0,
         ease: 'power3.out',
-        onComplete: done
+        onComplete: done,
       },
-      0
+      0,
     )
 }
 
@@ -148,16 +147,16 @@ const onAfterEnter = (_el: HTMLDivElement) => {
   ScrollTrigger.refresh()
   delay(100).then(() => {
     isLock.$patch({
-      isReady: false
+      isReady: false,
     })
   })
 }
 
 useHead({
   htmlAttrs: {
-    'xmlns:og': 'http://ogp.me/ns#'
+    'xmlns:og': 'http://ogp.me/ns#',
   },
-  titleTemplate: (title) => {
+  titleTemplate: (title: string) => {
     return title
       ? `${title} | Benjamin Oddou Photographe`
       : 'Benjamin Oddou Photographe'
@@ -165,65 +164,65 @@ useHead({
   meta: [
     {
       name: 'description',
-      content: `${router.meta.description}`
+      content: `${router.meta.description}`,
     },
     {
       property: 'og:title',
-      content: `${router.meta.title} | Benjamin Oddou Photographe`
+      content: `${router.meta.title} | Benjamin Oddou Photographe`,
     },
     {
       property: 'og:url',
-      content: `${router.meta.url}`
+      content: `${router.meta.url}`,
     },
     {
       property: 'og:description',
-      content: `${router.meta.description}`
+      content: `${router.meta.description}`,
     },
     {
       name: 'keywords',
       content:
-        'photographe, mariage, portrait, couple, corporate, paris, ile de france, france, photo studio'
+        'photographe, mariage, portrait, couple, corporate, paris, ile de france, france, photo studio',
     },
     { name: 'msapplication-TileColor', content: '#2a2a2a' },
     {
       name: 'theme-color',
       content: '#FFFFFF',
-      media: '(prefers-color-scheme: light)'
+      media: '(prefers-color-scheme: light)',
     },
     {
       name: 'theme-color',
       content: '#2A2A2A',
-      media: '(prefers-color-scheme: dark)'
-    }
+      media: '(prefers-color-scheme: dark)',
+    },
   ],
   link: [
     {
       rel: 'canonical',
-      href: `${router.meta.url}`
+      href: `${router.meta.url}`,
     },
     {
       rel: 'mask-icon',
       href: '/safari-pinned-tab.svg',
-      color: '#fca87f'
+      color: '#fca87f',
     },
     {
       rel: 'preconnect',
-      href: 'https://fonts.googleapis.com'
+      href: 'https://fonts.googleapis.com',
     },
     {
       rel: 'preconnect',
       href: 'https://fonts.gstatic.com',
-      crossorigin: ''
+      crossorigin: '',
     },
     {
       rel: 'stylesheet',
-      href: 'https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap'
+      href: 'https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap',
     },
     {
       rel: 'stylesheet',
-      href: 'https://fonts.cdnfonts.com/css/baron-neue'
-    }
-  ]
+      href: 'https://fonts.cdnfonts.com/css/baron-neue',
+    },
+  ],
 })
 
 useSchemaOrg([
@@ -236,20 +235,20 @@ useSchemaOrg([
       'https://github.com/BenjaminOddou',
       'https://twitter.com/benjamin_oddou',
       'https://fr.linkedin.com/in/b-oddou',
-      'https://youtube.com/@benjaminoddou'
-    ]
+      'https://youtube.com/@benjaminoddou',
+    ],
   }),
   defineWebSite({
-    name: 'Benjamin Oddou Photographe'
+    name: 'Benjamin Oddou Photographe',
   }),
-  defineWebPage()
+  defineWebPage(),
 ])
 
 onBeforeMount(() => {
   ScrollSmoother.create({
     smooth: 2,
     normalizeScroll: true,
-    ignoreMobileResize: true
+    ignoreMobileResize: true,
   })
 })
 
@@ -264,18 +263,19 @@ onMounted(() => {
       '-webkit-text-fill-color: transparent',
       'color: transparent',
       'font-weight: bold',
-      'font-size: 16px'
+      'font-size: 16px',
     ].join(';')
-  } else {
+  }
+  else {
     styles = 'font-size: 16px'
   }
-  const message: string = 'À la recherche de quelque chose ?'
+  const message = 'À la recherche de quelque chose ?'
   console.log(
     '%c👀 %c%s%c 👀',
     'font-size: 16px',
     styles,
     message,
-    'font-size: 16px'
+    'font-size: 16px',
   )
   Smooth.paused(true)
   isLock.$subscribe(() => {
@@ -289,18 +289,18 @@ onMounted(() => {
   const quadbz = document.querySelector('#quadbz') as SVGPathElement
   const wave = document.querySelector('#wave') as SVGElement
   const buttonBurger = document.querySelector(
-    '#button-burger'
+    '#button-burger',
   ) as HTMLButtonElement
   const navbar = document.querySelector('#navbar') as HTMLDivElement
   const menuItems = document.querySelectorAll(
-    '.menu-item'
+    '.menu-item',
   ) as NodeListOf<HTMLAnchorElement>
 
   tl1
     .set(quadbz, {
       attr: {
-        d: init1
-      }
+        d: init1,
+      },
     })
     .to(quadbz, {
       onStart: () => {
@@ -311,7 +311,7 @@ onMounted(() => {
       },
       duration: 0.5,
       attr: { d: start1 },
-      ease: 'power3.in'
+      ease: 'power3.in',
     })
     .to(quadbz, {
       duration: 0.2,
@@ -324,24 +324,25 @@ onMounted(() => {
         navbar.classList.toggle('block')
         if (buttonBurger.classList.contains('is-open')) {
           isLock.$patch({
-            isReady: true
-          })
-        } else {
-          isLock.$patch({
-            isReady: false
+            isReady: true,
           })
         }
-      }
+        else {
+          isLock.$patch({
+            isReady: false,
+          })
+        }
+      },
     })
     .set(quadbz, {
       attr: {
-        d: init2
-      }
+        d: init2,
+      },
     })
     .to(quadbz, {
       duration: 0.2,
       attr: { d: start2 },
-      ease: 'power3.in'
+      ease: 'power3.in',
     })
     .to(quadbz, {
       duration: 0.5,
@@ -352,7 +353,7 @@ onMounted(() => {
         menuItems.forEach((Navlink) => {
           Navlink.classList.remove('pointer-events-none')
         })
-      }
+      },
     })
 
   tl2
@@ -361,7 +362,7 @@ onMounted(() => {
       opacity: 0,
       y: -100,
       stagger: 0.05,
-      ease: 'power2.inOut'
+      ease: 'power2.inOut',
     })
     .to(
       '#content__drag-area',
@@ -369,9 +370,9 @@ onMounted(() => {
         duration: 1,
         opacity: 0,
         y: -200,
-        ease: 'power3.inOut'
+        ease: 'power3.inOut',
       },
-      '<'
+      '<',
     )
 
   buttonBurger.addEventListener('click', () => {
@@ -379,11 +380,12 @@ onMounted(() => {
       tl1.restart()
       if (buttonBurger.classList.contains('is-open') && !tl2.isActive()) {
         tl2.restart()
-      } else {
+      }
+      else {
         gsap
           .timeline()
           .set([menuItems, '#content__drag-area'], {
-            opacity: 0
+            opacity: 0,
           })
           .to(
             menuItems,
@@ -391,13 +393,13 @@ onMounted(() => {
               duration: 0.8,
               opacity: 1,
               startAt: {
-                y: 150
+                y: 150,
               },
               y: 0,
               stagger: -0.05,
-              ease: 'power4'
+              ease: 'power4',
             },
-            0.9
+            0.9,
           )
           .to(
             '#content__drag-area',
@@ -405,12 +407,12 @@ onMounted(() => {
               duration: 1,
               opacity: 1,
               startAt: {
-                y: 300
+                y: 300,
               },
               y: 0,
-              ease: 'power4.out'
+              ease: 'power4.out',
             },
-            0.9
+            0.9,
           )
       }
     }
@@ -445,7 +447,7 @@ onMounted(() => {
         {
           autoAlpha: 0,
           translateY: '-80%',
-          rotateX: -90
+          rotateX: -90,
         },
         {
           autoAlpha: 1,
@@ -455,15 +457,15 @@ onMounted(() => {
           ease: 'power2.inOut',
           stagger: 0.04,
           transformOrigin: 'bottom',
-          force3D: true
-        }
+          force3D: true,
+        },
       )
       .fromTo(
         menuItmTxtBtm.chars,
         {
           autoAlpha: 1,
           translateY: '0%',
-          rotateX: 0
+          rotateX: 0,
         },
         {
           autoAlpha: 0,
@@ -473,9 +475,9 @@ onMounted(() => {
           ease: 'power2.inOut',
           stagger: 0.04,
           transformOrigin: 'top',
-          force3D: true
+          force3D: true,
         },
-        '<'
+        '<',
       )
     if (ScrollTrigger.isTouch !== 1) {
       Navlink.addEventListener('pointerenter', () => {
@@ -504,7 +506,6 @@ onMounted(() => {
       :header="alertMessage.header"
       :content="alertMessage.content"
       :color="alertMessage.color"
-      :icon="alertMessage.icon"
     />
 
     <div id="smooth-content">

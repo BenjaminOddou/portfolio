@@ -1,14 +1,15 @@
 <script setup lang="ts">
 const { data: images } = useFetch<ImageKit[]>('/api/imgkit', {
   transform: (images) => {
-    const filter = images.filter((image) => image.filePath.includes('navbar'))
+    const filter = images.filter(image => image.filePath.includes('navbar'))
     const arr: ImageKit[] = []
     while (arr.length < 2) {
       const r = filter[Math.floor(Math.random() * filter.length)]
-      if (!arr.includes(r)) arr.push(r)
+      if (!arr.includes(r))
+        arr.push(r)
     }
     return arr
-  }
+  },
 })
 </script>
 

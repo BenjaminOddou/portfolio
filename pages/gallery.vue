@@ -3,19 +3,18 @@ import gsap from 'gsap'
 import SplitText from 'gsap/SplitText'
 import ScrollTrigger from 'gsap/ScrollTrigger'
 import ScrollSmoother from 'gsap/ScrollSmoother'
-// @ts-ignore-next-line
+// @ts-expect-error-next-line
 import PhotoSwipeLightbox from 'photoswipe/lightbox'
 import 'photoswipe/style.css'
-if (process.client) {
+if (process.client)
   gsap.registerPlugin(SplitText, ScrollTrigger, ScrollSmoother)
-}
 
 const { data: images } = await useFetch<ImageKit[]>('/api/imgkit', {
   transform: (images) => {
     return images
-      .filter((image) => image.filePath.includes('galerie-page'))
+      .filter(image => image.filePath.includes('galerie-page'))
       .sort((imageA, imageB) => (imageA.name < imageB.name ? 1 : -1))
-  }
+  },
 })
 
 let lightbox: any = null
@@ -31,7 +30,7 @@ const scrollTop = (duration: number, ease: string) => {
   gsap.to(Smooth, {
     duration,
     scrollTop: 0,
-    ease
+    ease,
   })
 }
 
@@ -66,11 +65,11 @@ definePageMeta({
   title: 'Galerie',
   url: 'https://www.benjaminoddou-photographe.com/gallery',
   description:
-    'Galerie de photos en ligne de Benjamin Oddou. Découvrez mes dernières images !'
+    'Galerie de photos en ligne de Benjamin Oddou. Découvrez mes dernières images !',
 })
 
 useHead({
-  title: 'Galerie'
+  title: 'Galerie',
 })
 
 onMounted(() => {
@@ -79,12 +78,12 @@ onMounted(() => {
       .querySelector<HTMLDivElement>('#return-to-top-container')
       ?.classList.replace(
         'top-[calc(100vh_-_70px)]',
-        'top-[calc(100svh_-_70px)]'
+        'top-[calc(100svh_-_70px)]',
       )
   }
   document
     .querySelectorAll<HTMLElement>(
-      '#gridgalerie_cell1, #return-to-top-container'
+      '#gridgalerie_cell1, #return-to-top-container',
     )
     .forEach((Element) => {
       ScrollTrigger.create({
@@ -93,7 +92,7 @@ onMounted(() => {
         pin: true,
         pinSpacing: false,
         anticipatePin: 1,
-        endTrigger: '#gridgalerie'
+        endTrigger: '#gridgalerie',
       })
     })
 
@@ -102,16 +101,16 @@ onMounted(() => {
       gallery: '#galerie-masonry',
       children: 'a:not([style*="display: none"])',
       pswpModule: () => import('photoswipe'),
-      errorMsg: `Oups, il semblerait que l'image se soit perdue en chemin !`
+      errorMsg: 'Oups, il semblerait que l\'image se soit perdue en chemin !',
     })
     lightbox.init()
   }
 
   const filters = document.querySelectorAll(
-    '.filters-group-container > * > div'
+    '.filters-group-container > * > div',
   )
   const titlegalerie = new SplitText('#header-content > div', {
-    type: 'words'
+    type: 'words',
   })
 
   const tl1 = gsap.timeline()
@@ -124,7 +123,7 @@ onMounted(() => {
     .fromTo(
       titlegalerie.words,
       {
-        xPercent: -100
+        xPercent: -100,
       },
       {
         xPercent: 0,
@@ -132,68 +131,68 @@ onMounted(() => {
         ease: 'power2.out',
         onComplete: () => {
           titlegalerie.revert()
-        }
-      }
+        },
+      },
     )
     .fromTo(
       '#galerie-masonry',
       {
         opacity: 0,
-        y: 80
+        y: 80,
       },
       {
         opacity: 1,
         y: 0,
         duration: 1.2,
-        ease: 'power3.out'
+        ease: 'power3.out',
       },
-      0
+      0,
     )
     .fromTo(
       filters,
       {
-        yPercent: 100
+        yPercent: 100,
       },
       {
         yPercent: 0,
         duration: 1,
-        ease: 'back.inOut(1.4)'
+        ease: 'back.inOut(1.4)',
       },
-      '<+0.2'
+      '<+0.2',
     )
     .fromTo(
       '#f-back',
       {
-        strokeDashoffset: 2980
+        strokeDashoffset: 2980,
       },
       {
         strokeDashoffset: 0,
         duration: 1,
-        ease: 'sine.inOut'
+        ease: 'sine.inOut',
       },
-      '>-0.3'
+      '>-0.3',
     )
     .fromTo(
       '#oddou',
       {
-        strokeDashoffset: 930
+        strokeDashoffset: 930,
       },
       {
         strokeDashoffset: 0,
         duration: 1,
-        ease: 'sine.inOut'
-      }
+        ease: 'sine.inOut',
+      },
     )
     .fromTo(
       '#dash',
       {
-        strokeDashoffset: 1824
+        strokeDashoffset: 1824,
       },
       {
         strokeDashoffset: 0,
         duration: 0.3,
-        ease: 'none'
-      }
+        ease: 'none',
+      },
     )
 
   window.addEventListener('orientationchange', async () => {
@@ -206,7 +205,7 @@ onMounted(() => {
     {
       vsm: '(max-width: 575px)',
       sm: '(min-width: 576px)',
-      av: '(max-height: 767px)'
+      av: '(max-height: 767px)',
     },
     (context) => {
       const { vsm, sm, av } = context.conditions as gsap.Conditions
@@ -216,7 +215,7 @@ onMounted(() => {
           {
             display: 'block',
             y: '0%',
-            opacity: 1
+            opacity: 1,
           },
           {
             y: vsm ? '100%' : '0%',
@@ -227,14 +226,14 @@ onMounted(() => {
             scrollTrigger: {
               trigger: '#gridgalerie_cell2',
               start: vsm ? 'top 35%' : 20,
-              toggleActions: 'play none none reverse'
-            }
-          }
+              toggleActions: 'play none none reverse',
+            },
+          },
         )
         gsap.fromTo(
           '#return-to-top',
           {
-            scale: 0
+            scale: 0,
           },
           {
             scale: 1,
@@ -243,12 +242,12 @@ onMounted(() => {
             scrollTrigger: {
               trigger: '#gridgalerie_cell2',
               start: vsm ? 'top 0%' : 200,
-              toggleActions: 'play none none reverse'
-            }
-          }
+              toggleActions: 'play none none reverse',
+            },
+          },
         )
       }
-    }
+    },
   )
 })
 
@@ -276,7 +275,7 @@ onUnmounted(() => {
         aria-label="Retourner en Haut de la Page"
         class="h-[50px] w-[50px] scale-0 rounded-full bg-jet-8a transition-bg-color duration-500 ease-classic after:absolute after:top-[21px] after:left-[19px] after:h-3 after:w-3 after:-rotate-45 after:border-t-2 after:border-r-2 after:border-white after:content-[''] dark:bg-white-8a dark:after:border-jet"
         @click="scrollTop(2, 'power3.inOut')"
-      ></button>
+      />
     </div>
     <div
       id="gridgalerie"
@@ -405,7 +404,7 @@ onUnmounted(() => {
                 :src="item.filePath"
                 :width="700"
                 :height="700 / (item.width / item.height)"
-                class="pl-6 pr-6 pb-6 sm:pl-0"
+                class="px-6 pb-6 sm:pl-0"
               />
             </a>
           </template>
@@ -413,9 +412,7 @@ onUnmounted(() => {
 
         <div class="mx-auto mt-2 w-auto max-w-[220px]">
           <div class="flex w-full text-center text-grey-gallery">
-            <span v-show="imageNumber >= maxImageNumber" class="w-full p-2"
-              >Fin des images</span
-            >
+            <span v-show="imageNumber >= maxImageNumber" class="w-full p-2">Fin des images</span>
           </div>
           <button
             v-show="imageNumber < maxImageNumber"

@@ -3,8 +3,8 @@ export default defineEventHandler(async () => {
   const response = await $fetch('https://api.imagekit.io/v1/files', {
     method: 'GET',
     headers: {
-      Authorization: 'Basic ' + config.IMAGEKIT_B64_API
-    }
+      Authorization: `Basic ${config.IMAGEKIT_B64_API}`,
+    },
   })
   return response
 })

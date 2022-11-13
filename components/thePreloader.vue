@@ -6,43 +6,43 @@ const isRoute = routeStore()
 
 onMounted(() => {
   const preloaderContainer = document.querySelector(
-    '#preloader-container'
+    '#preloader-container',
   ) as HTMLDivElement
   gsap
     .timeline()
     .to('#quadbz2', {
       attr: {
-        d: 'M 0 0 V 70 Q 50 90 100 70 V 0 z'
+        d: 'M 0 0 V 70 Q 50 90 100 70 V 0 z',
       },
       duration: 0.3,
       ease: 'power3.in',
-      delay: 2
+      delay: 2,
     })
     .to('#quadbz2', {
       attr: {
-        d: 'M 0 0 V 0 Q 50 0 100 0 V 0 z'
+        d: 'M 0 0 V 0 Q 50 0 100 0 V 0 z',
       },
       duration: 0.8,
       ease: 'power3',
       onComplete: () => {
         preloaderContainer.classList.add('hidden')
         isLock.$patch({
-          isReady: false
+          isReady: false,
         })
         isRoute.isNewPage++
-      }
+      },
     })
     .fromTo(
       '#logoBO-big',
       {
-        y: '0%'
+        y: '0%',
       },
       {
         duration: 1.4,
         ease: 'power4.out',
-        y: '-100%'
+        y: '-100%',
       },
-      2
+      2,
     )
 })
 </script>

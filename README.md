@@ -123,7 +123,6 @@ npm install -g npm@latest
    - <img src=".github/assets/npm.png" height="12" /> [npm Intellisense](https://marketplace.visualstudio.com/items?itemName=christian-kohler.npm-intellisense)
    - <img src=".github/assets/path.png" height="12" /> [Path Intellisense](https://marketplace.visualstudio.com/items?itemName=christian-kohler.path-intellisense)
    - <img src=".github/assets/css.png" height="12" /> [PostCSS Language Support](https://marketplace.visualstudio.com/items?itemName=csstools.postcss)
-   - <img src=".github/assets/prettier.png" height="12" /> [Prettier - Code formatter](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
    - <img src=".github/assets/tailwindcss.png" height="13" /> [Tailwind CSS IntelliSense](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss)
    - <img src=".github/assets/volar.png" height="12" /> [Vue Language Features (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.volar)
 
@@ -264,16 +263,6 @@ Run globally [ESLint](https://eslint.org) on the project to format the code.
 ```sh
 # it will run "eslint . --fix"
 npm run eslint-fix
-```
-
-ESLint is working along with Prettier to format the code.
-
-When saving the chages of a file, the code inside will be formatted automatically. You can change this behavior in `.vscode/settings.json`
-
-```json
-{
-  "editor.formatOnSave": true
-}
 ```
 
 ### Push a release on GitHub
@@ -417,8 +406,6 @@ const { data: images } = useFetch<ImageKit[]>('/api/imgkit')
 ├── .npmrc # Npm config file with GSAP connexion to private repository
 ├── .nuxt # Nuxt uses the .nuxt/ directory in development to generate Vue application (not in GitHub repo ❌)
 ├── .output # Nuxt creates the .output/ directory when building the application for production. (not in GitHub repo ❌)
-├── .prettierignore # List of files that should be ignore by Prettier
-├── .prettierrc.json # Prettier config file used by ESLint
 ├── .versionrc.json # Changelog format configuration file
 ├── .vscode
 │   └── settings.json # VSCode local settings

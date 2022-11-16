@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const { data: images } = useFetch<ImageKit[]>('/api/imgkit', {
+const { data: images } = await useFetch<ImageKit[]>('/api/imgkit', {
   transform: (images) => {
     const filter = images.filter(image => image.filePath.includes('navbar'))
     const arr: ImageKit[] = []
@@ -16,16 +16,11 @@ const { data: images } = useFetch<ImageKit[]>('/api/imgkit', {
 <template>
   <div class="flex items-center justify-center">
     <nuxt-img
+      v-for="(image, k) in images" :key="k"
       class="img-drag"
       width="600"
       height="750"
-      :src="images !== null ? images[0].filePath : undefined"
-    />
-    <nuxt-img
-      class="img-drag"
-      width="600"
-      height="750"
-      :src="images !== null ? images[1].filePath : undefined"
+      :src="image.filePath"
     />
   </div>
 </template>

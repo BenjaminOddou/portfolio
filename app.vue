@@ -156,7 +156,7 @@ useHead({
   htmlAttrs: {
     'xmlns:og': 'http://ogp.me/ns#',
   },
-  titleTemplate: (title: string) => {
+  titleTemplate: (title) => {
     return title
       ? `${title} | Benjamin Oddou Photographe`
       : 'Benjamin Oddou Photographe'

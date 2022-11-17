@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.1](https://github.com/BenjaminOddou/portfolio/compare/v0.1.0...v0.1.1) (2022-11-17)
+
+
+### 📖 Documentation
+
+* remove prettier doc + assets ([7924c3c](https://github.com/BenjaminOddou/portfolio/commits/7924c3c8e70542938e0a2eb1ddd1d579ea7144b1))
+
+
+### 🩹 Fixes
+
+* ImageDrag component ([ee4deda](https://github.com/BenjaminOddou/portfolio/commits/ee4dedafab5a30334be45b908ef74272f4da9591))
+
 ## 0.1.0 (2022-11-13)
 
 

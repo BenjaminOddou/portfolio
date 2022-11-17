@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.2](https://github.com/BenjaminOddou/portfolio/compare/v0.1.1...v0.1.2) (2022-11-17)
+
+
+### 🩹 Fixes
+
+* menu hydration bug ([376179b](https://github.com/BenjaminOddou/portfolio/commits/376179b566994048a9bc60bf183738736227f6cc))
+
 ### [0.1.1](https://github.com/BenjaminOddou/portfolio/compare/v0.1.0...v0.1.1) (2022-11-17)
 
 

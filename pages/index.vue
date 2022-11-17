@@ -292,7 +292,7 @@ onMounted(() => {
                 >
                   <span
                     id="arrow"
-                    class="absolute left-[0.625rem] inset-y-0 m-auto h-[0.125rem] w-[1.125rem] bg-transparent transition-all duration-500 ease-smooth before:absolute before:top-[-0.25rem] before:right-[0.0625rem] before:h-[0.625rem] before:w-[0.625rem] before:rotate-45 before:border-t-[0.125rem] before:border-r-[0.125rem] before:border-white before:content-[''] group-hover:translate-x-4 group-hover:bg-white dark:before:border-jet dark:group-hover:bg-jet"
+                    class="absolute inset-y-0 left-[0.625rem] m-auto h-[0.125rem] w-[1.125rem] bg-transparent transition-all duration-500 ease-smooth before:absolute before:top-[-0.25rem] before:right-[0.0625rem] before:h-[0.625rem] before:w-[0.625rem] before:rotate-45 before:border-t-[0.125rem] before:border-r-[0.125rem] before:border-white before:content-[''] group-hover:translate-x-4 group-hover:bg-white dark:before:border-jet dark:group-hover:bg-jet"
                   />
                 </span>
                 <span

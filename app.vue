@@ -497,7 +497,7 @@ onMounted(() => {
 
     <LazyTheAwwwards />
 
-    <LazyTheMenu />
+    <TheMenu />
 
     <LazyTheTransition />
 

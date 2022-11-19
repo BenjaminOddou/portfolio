@@ -14,12 +14,12 @@ export default defineNuxtConfig({
     },
   },
   modules: [
-    '@nuxtjs/tailwindcss',
-    '@kevinmarrec/nuxt-pwa',
-    '@nuxt/image-edge',
-    '@nuxtjs/color-mode',
-    '@pinia/nuxt',
     'nuxt-schema-org',
+    '@kevinmarrec/nuxt-pwa',
+    '@nuxtjs/color-mode',
+    '@nuxt/image-edge',
+    '@nuxtjs/tailwindcss',
+    '@pinia/nuxt',
   ],
   alias: {
     pinia: '/node_modules/@pinia/nuxt/node_modules/pinia/dist/pinia.mjs',

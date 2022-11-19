@@ -18,7 +18,7 @@
     "prepare": "husky install"
   },
   "dependencies": {
-    "@yeger/vue-masonry-wall": "^3.2.24",
+    "@yeger/vue-masonry-wall": "^3.2.27",
     "gsap": "npm:@gsap/shockingly@^3.11.3",
     "photoswipe": "^5.3.3"
   },
@@ -27,13 +27,13 @@
     "@botpoison/browser": "^0.1.30",
     "@commitlint/cli": "^17.2.0",
     "@commitlint/config-conventional": "^17.2.0",
-    "@kevinmarrec/nuxt-pwa": "^0.10.0",
+    "@kevinmarrec/nuxt-pwa": "^0.11.1",
     "@nuxt/image-edge": "^1.0.0-27809804.194d2d6",
     "@nuxtjs/color-mode": "^3.1.8",
-    "@nuxtjs/eslint-config-typescript": "^11.0.0",
+    "@nuxtjs/eslint-config-typescript": "^12.0.0",
     "@nuxtjs/tailwindcss": "^6.1.3",
-    "@pinia/nuxt": "^0.4.3",
-    "eslint": "^8.27.0",
+    "@pinia/nuxt": "^0.4.4",
+    "eslint": "^8.28.0",
     "eslint-plugin-nuxt": "^4.0.0",
     "eslint-plugin-tailwindcss": "^3.7.0",
     "husky": "^8.0.2",

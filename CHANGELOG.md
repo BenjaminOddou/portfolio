@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.3](https://github.com/BenjaminOddou/portfolio/compare/v0.1.2...v0.1.3) (2022-12-15)
+
+
+### 🏡 Chore
+
+* update dependencies ([81a4581](https://github.com/BenjaminOddou/portfolio/commits/81a45814ffb8f40230e0e0b7dd1661552e4158de))
+
+
+### 💅 Refactors
+
+* CSS update ([fcba2f5](https://github.com/BenjaminOddou/portfolio/commits/fcba2f5d4dc4ac1de7aa358b3e2705b238d28c82))
+* delete ImgDrag component ([de4495b](https://github.com/BenjaminOddou/portfolio/commits/de4495b325e2b70ee558443bee84c17f84211aaf))
+
 ### [0.1.2](https://github.com/BenjaminOddou/portfolio/compare/v0.1.1...v0.1.2) (2022-11-17)
 
 

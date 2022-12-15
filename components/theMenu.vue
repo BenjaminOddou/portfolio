@@ -591,7 +591,7 @@ onMounted(() => {
             :src="image.filePath"
           />
         </div>
-        <ul class="absolute m-auto box-border grid">
+        <ul class="absolute grid">
           <TheMenuLink to="/" title="accueil" />
           <TheMenuLink to="/gallery" title="galerie" />
           <TheMenuLink to="/about" title="à&#160;propos" />
@@ -825,4 +825,3 @@ onMounted(() => {
   }
 }
 </style>
-

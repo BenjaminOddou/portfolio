@@ -59,16 +59,20 @@ module.exports = {
     extend: {
       keyframes: {
         fillwhite: {
-          '0%': { fill: 'transparent' },
-          '100%': { fill: 'white' },
+          from: { fill: 'transparent' },
+          to: { fill: 'white' },
         },
         filldark: {
-          '0%': { fill: 'transparent' },
-          '100%': { fill: '#2a2a2aff' },
+          from: { fill: 'transparent' },
+          to: { fill: '#2a2a2aff' },
         },
         spin: {
-          '0%': { transform: 'rotate(0deg)' },
-          '100%': { transform: 'rotate(360deg)' },
+          from: { transform: 'rotate(0deg)' },
+          to: { transform: 'rotate(360deg)' },
+        },
+        runner: {
+          from: { transform: 'translateX(25%)' },
+          to: { transform: 'translateX(-25%)' },
         },
       },
       transitionProperty: {

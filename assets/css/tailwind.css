@@ -56,14 +56,8 @@
   .img-drag {
     @apply relative h-[20vw] max-h-[200px] min-h-[150px] w-[16vw] min-w-[120px] max-w-[160px] cursor-grab bg-cover bg-center bg-no-repeat lt:max-h-[750px] lt:max-w-[600px];
   }
-  .navanchor {
-    @apply z-[999] mx-auto mb-2 text-center mix-blend-color-dodge dark:mix-blend-normal lt:mb-6;
-  }
   .rectangle {
     @apply fill-white stroke-transparent transition-fill duration-500 ease-classic dark:fill-jet;
-  }
-  .menu-item-text-bottom {
-    @apply absolute top-0 left-0;
   }
   .box-animation {
     @apply relative border border-current;
@@ -102,12 +96,6 @@
     font-family: 'Baron Neue', sans-serif;
     font-display: swap;
     text-rendering: optimizeSpeed;
-  }
-  .perspective-1000 {
-    perspective: 1000px;
-  }
-  .perspective-o-b {
-    perspective-origin: bottom;
   }
   .img-h {
     --aspect-ratio: 1.5; /* 3/2 */

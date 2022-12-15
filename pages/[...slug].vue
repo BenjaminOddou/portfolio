@@ -28,11 +28,11 @@ useHead({
 onMounted(() => {
   const home = document.querySelector<HTMLDivElement>('#home')
   // eslint-disable-next-line no-unused-vars
-  const qCqP = new SplitText('.baron', {
+  const qCqP = new SplitText('#ErrorCode', {
     type: 'chars',
     charsClass: 'overflow-hidden',
   })
-  const qCqC = new SplitText('.baron', {
+  const qCqC = new SplitText('#ErrorCode', {
     type: 'chars',
   })
   const textContentP = new SplitText('#content', {
@@ -87,16 +87,16 @@ onMounted(() => {
 
 <template>
   <div class="relative h-screen w-screen overflow-hidden">
-    <div class="tiles">
-      <div v-for="(row, i) in images" :key="i" class="tiles__line">
+    <div class="absolute top-1/2 left-1/2 flex h-[150vh] -translate-x-1/2 -translate-y-1/2 rotate-[22.5deg] transform-gpu flex-col justify-center opacity-50">
+      <div v-for="(row, i) in images" :key="i" :style="`animation-duration: ${10 + 4 * i}s; transform: translateX(25%)`" class="flex animate-[runner_linear_infinite]">
         <div v-for="j in 2" :key="j" class="flex">
           <div v-for="(image, k) in row" :key="k">
             <div
               :style="`background-image: url(${image.url});`"
-              :class="`tiles__line-img ${
+              :class="`flex-none h-[30vh] m-[3vw] bg-center bg-cover ${
                 image.tags?.find((tag) => tag === 'large' as string)
-                  ? 'tiles__line-img--large'
-                  : ''
+                  ? 'w-[100vh] rounded-[20vh]'
+                  : 'w-[30vh] rounded-[50%]'
               }`"
             />
           </div>
@@ -108,7 +108,8 @@ onMounted(() => {
         class="mx-auto grid h-full w-1/2 min-w-[220px] max-w-[700px] -translate-y-[10%] content-center justify-center"
       >
         <div
-          class="baron flex w-full translate-y-[15%] justify-center text-[115px] leading-tight will-change-transform sm:text-[20vw] lg:text-[198.4px]"
+          id="ErrorCode"
+          class="baron flex w-full translate-y-[15%] justify-center text-[115px] leading-tight sm:text-[20vw] lg:text-[198.4px]"
         >
           404
         </div>
@@ -131,53 +132,3 @@ onMounted(() => {
     </div>
   </div>
 </template>
-
-<style scoped>
-.tiles {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  height: 150vh;
-  display: flex;
-  opacity: 0.5;
-  flex-direction: column;
-  justify-content: center;
-  transform: translate3d(-50%, -50%, 0) rotate(22.5deg);
-}
-
-.tiles__line {
-  display: flex;
-  animation: runner 10s linear infinite;
-  will-change: transform;
-  transform: translateX(25%);
-}
-
-.tiles__line:nth-child(2) {
-  animation-duration: 16s;
-}
-
-.tiles__line:nth-child(3) {
-  animation-duration: 22s;
-}
-
-.tiles__line-img {
-  flex: none;
-  width: 30vh;
-  height: 30vh;
-  margin: 3vw;
-  background-size: cover;
-  background-position: center;
-  border-radius: 50%;
-}
-
-.tiles__line-img--large {
-  width: 100vh;
-  border-radius: 20vh;
-}
-
-@keyframes runner {
-  to {
-    transform: translateX(-25%);
-  }
-}
-</style>

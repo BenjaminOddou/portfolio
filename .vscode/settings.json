@@ -1,7 +1,20 @@
 {
-  "prettier.enable": false,
+  "window.zoomLevel": 0,
+  "editor.minimap.enabled": false,
+  "editor.formatOnPaste": false,
   "editor.formatOnSave": false,
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
-  }
+  },
+  "editor.renderWhitespace": "trailing",
+  "editor.linkedEditing": true,
+  "editor.occurrencesHighlight": false,
+  "editor.suggest.insertMode": "replace",
+  "editor.acceptSuggestionOnCommitCharacter": false,
+  "explorer.autoReveal": false,
+  "workbench.tree.indent": 20,
+  "workbench.tree.renderIndentGuides": "always",
+  "emmet.triggerExpansionOnTab": true,
+  "editor.lineHeight": 26,
+  "editor.fontSize": 16
 }

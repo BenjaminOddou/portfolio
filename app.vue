@@ -27,7 +27,7 @@ const onBeforeLeave = (_el: HTMLDivElement) => {
   isLock.$patch({
     isReady: true,
   })
-  ScrollTrigger.getAll().forEach(t => t.kill())
+  ScrollTrigger.killAll()
 }
 
 const onLeave = (_el: HTMLDivElement, done: any) => {
@@ -62,7 +62,7 @@ const onLeave = (_el: HTMLDivElement, done: any) => {
       attr: { d: end1 },
       ease: 'power3',
       onComplete: () => {
-        const Smooth = ScrollSmoother.get()
+        const Smooth = ScrollSmoother.get() as globalThis.ScrollSmoother
         Smooth.scrollTop(0)
         buttonBurger.classList.remove('is-hovered', 'is-open')
         navbar.classList.replace('block', 'hidden')
@@ -253,7 +253,7 @@ onBeforeMount(() => {
 })
 
 onMounted(() => {
-  const Smooth = ScrollSmoother.get()
+  const Smooth = ScrollSmoother.get() as globalThis.ScrollSmoother
   let styles: string
   if (!navigator.userAgent.includes('Chrome')) {
     styles = [

@@ -184,18 +184,29 @@ onMounted(() => {
   const mm = gsap.matchMedia()
   const skewSetter = gsap.quickTo('#grained', 'skewY')
   const clamp = gsap.utils.clamp(-6, 6)
-  let descriptionAnima: GSAPTween
 
   gsap.set('#grained', {
     transformOrigin: 'center center',
     force3D: true,
   })
 
-  gsap.fromTo(
+  const descriptionAnima = gsap.from(aboutblockTextChild.lines, {
+    y: '100%',
+    delay: 0.3,
+    duration: 1,
+    stagger: 0.04,
+    ease: 'power4.out',
+    scrollTrigger: {
+      trigger: '#description',
+      start: 'top 60%',
+      toggleActions: 'play none none reverse',
+    },
+  })
+
+  gsap.from(
     '#caracteristics',
-    { y: '100%' },
     {
-      y: '0%',
+      y: '100%',
       duration: 0.8,
       ease: 'power4.out',
       onComplete: () => {
@@ -209,41 +220,26 @@ onMounted(() => {
     },
   )
 
-  mm.add({ md: '(max-width: 766px)' }, (context) => {
-    const { md } = context.conditions as gsap.Conditions
-    descriptionAnima = gsap.from(aboutblockTextChild.lines, {
-      y: '100%',
-      delay: md ? 0 : 0.3,
-      duration: 1,
-      stagger: 0.04,
-      ease: 'power4.out',
-      scrollTrigger: {
-        trigger: md ? '#description' : '#caracteristics',
-        start: 'top 60%',
-        toggleActions: 'play none none reverse',
+  mm.add('(min-width: 767px)', () => {
+    gsap.fromTo(
+      '#grained',
+      {
+        y: '40%',
       },
-    })
-    if (!md) {
-      gsap.fromTo(
-        '#grained',
-        {
-          y: '40%',
-        },
-        {
-          y: '-20%',
-          ease: 'power2.out',
-          scrollTrigger: {
-            trigger: '#description',
-            start: 'top 70%',
-            scrub: true,
-            onUpdate: self => skewSetter(clamp(self.getVelocity() / -300)),
-            onLeave: () => {
-              skewSetter(0)
-            },
+      {
+        y: '-20%',
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: '#description',
+          start: 'top 70%',
+          scrub: true,
+          onUpdate: self => skewSetter(clamp(self.getVelocity() / -300)),
+          onLeave: () => {
+            skewSetter(0)
           },
         },
-      )
-    }
+      },
+    )
   })
 
   // FAQ section
@@ -324,14 +320,7 @@ onMounted(() => {
       const btn = element.querySelector('button') as HTMLButtonElement
       const svg = element.querySelector('svg') as SVGElement
       const div = element.querySelector('.FAQ-p-container') as HTMLDivElement
-      const tl = gsap.timeline({
-        onComplete: () => {
-          ScrollTrigger.refresh()
-        },
-        onReverseComplete: () => {
-          ScrollTrigger.refresh()
-        },
-      })
+      const tl = gsap.timeline()
       tl.reverse()
       allTimelines.push(tl)
       tl.fromTo(
@@ -538,7 +527,7 @@ onMounted(() => {
             class="grid w-full grid-cols-[92%_8%] pb-8 text-start md:grid-cols-[95%_5%]"
           >
             <div id="see-all-titles" class="relative h-full overflow-hidden">
-              <div class="absolute text-lg font-semibold">
+              <div class="absolute top-0 left-0 text-lg font-semibold">
                 TOUT DÉVELOPPER
               </div>
               <div

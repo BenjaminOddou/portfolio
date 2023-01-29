@@ -1,3 +1,7 @@
+<script setup lang="ts">
+import simpleChevron from '/assets/svgs/simple-chevron.svg?component'
+</script>
+
 <template>
   <div
     class="question grid grid-cols-1 justify-start border-b border-b-current pt-8"
@@ -6,18 +10,7 @@
       class="grid w-full grid-cols-[92%_8%] pb-8 text-start md:grid-cols-[95%_5%]"
     >
       <span class="text-lg italic"><slot name="question" /></span>
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 24 24"
-        class="h-5 w-5 place-self-center stroke-current stroke-2"
-      >
-        <path
-          stroke-linecap="square"
-          stroke-linejoin="round"
-          d="M19 9l-7 7-7-7"
-        />
-      </svg>
+      <simpleChevron class="h-5 w-5 place-self-center stroke-current stroke-2" />
     </button>
     <div
       class="FAQ-p-container after:block after:h-8 after:w-full after:content-['']"

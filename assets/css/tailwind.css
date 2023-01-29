@@ -56,9 +56,6 @@
   .img-drag {
     @apply relative h-[20vw] max-h-[200px] min-h-[150px] w-[16vw] min-w-[120px] max-w-[160px] cursor-grab bg-cover bg-center bg-no-repeat lt:max-h-[750px] lt:max-w-[600px];
   }
-  .rectangle {
-    @apply fill-white stroke-transparent transition-fill duration-500 ease-classic dark:fill-jet;
-  }
   .box-animation {
     @apply relative border border-current;
   }
@@ -102,5 +99,19 @@
   }
   .img-v {
     --aspect-ratio: 0.66666667; /* 2/3 */
+  }
+  .dark .rectangle {
+    fill: #2a2a2aff;
+    stroke: transparent;
+    transition-property: fill;
+    transition-timing-function: ease;
+    transition-duration: 500ms;
+  }
+  .light .rectangle {
+    fill: white;
+    stroke: transparent;
+    transition-property: fill;
+    transition-timing-function: ease;
+    transition-duration: 500ms;
   }
 }

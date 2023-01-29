@@ -1,3 +1,5 @@
+import svgLoader from 'vite-svg-loader'
+
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
   nitro: {
@@ -5,6 +7,13 @@ export default defineNuxtConfig({
       brotli: true,
       gzip: false,
     },
+  },
+  vite: {
+    plugins: [
+      svgLoader({
+        svgo: false,
+      }),
+    ],
   },
   runtimeConfig: {
     IMAGEKIT_B64_API: process.env.IMAGEKIT_B64_API,

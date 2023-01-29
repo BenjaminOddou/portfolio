@@ -3,6 +3,8 @@ import gsap from 'gsap'
 import SplitText from 'gsap/SplitText'
 import ScrollTrigger from 'gsap/ScrollTrigger'
 import ScrollSmoother from 'gsap/ScrollSmoother'
+import arrowButton from '/assets/svgs/arrow-button.svg?component'
+
 if (process.client)
   gsap.registerPlugin(SplitText, ScrollTrigger, ScrollSmoother)
 
@@ -348,18 +350,7 @@ onMounted(() => {
               <span
                 class="baron text-center text-[16.864px] lg:text-[1.7vw] 2xl:text-[28.56px]"
               >À propos de Benjamin</span>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="arrow-button right-[-12%]"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M11.707 3.29297C18 10 11.707 3.29297 18 10C11.707 16.707 18 10 11.707 16.707C11 15.9999 11 15.9999 10.293 15.293L14.586 11H3C3 9.99994 3.00001 9.99994 3 8.99997H14.586L10.293 4.70697C11 3.99993 11 3.99993 11.707 3.29297Z"
-                  clip-rule="evenodd"
-                />
-              </svg>
+              <arrowButton class="arrow-button right-[-12%] fill-current" />
             </NuxtLink>
           </span>
         </div>
@@ -396,18 +387,7 @@ onMounted(() => {
               <span
                 class="baron text-center text-[16.864px] lg:text-[1.7vw] 2xl:text-[28.56px]"
               >voir la galerie</span>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="arrow-button right-[-18%]"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M11.707 3.29297C18 10 11.707 3.29297 18 10C11.707 16.707 18 10 11.707 16.707C11 15.9999 11 15.9999 10.293 15.293L14.586 11H3C3 9.99994 3.00001 9.99994 3 8.99997H14.586L10.293 4.70697C11 3.99993 11 3.99993 11.707 3.29297Z"
-                  clip-rule="evenodd"
-                />
-              </svg>
+              <arrowButton class="arrow-button right-[-18%] fill-current" />
             </NuxtLink>
           </span>
         </div>

@@ -3,6 +3,7 @@ import gsap from 'gsap'
 import ScrollSmoother from 'gsap/ScrollSmoother'
 import ScrollTrigger from 'gsap/ScrollTrigger'
 import SplitText from 'gsap/SplitText'
+import fullWave from '/assets/svgs/full-wave.svg?component'
 
 if (process.client)
   gsap.registerPlugin(ScrollSmoother, ScrollTrigger, SplitText)
@@ -499,7 +500,7 @@ onMounted(() => {
 
     <TheMenu />
 
-    <LazyTheTransition />
+    <fullWave id="wave" class="pointer-events-none fixed left-0 top-0 z-[1000] hidden h-full w-full fill-light-lavender dark:fill-light-orange" />
 
     <LazyTheAlert
       v-if="alertMessage.isAlert === true"

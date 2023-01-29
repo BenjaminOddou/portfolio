@@ -1,0 +1,12 @@
+<svg
+    stroke-linecap="round"
+    viewBox="0 0 240 240"
+>
+    <ellipse
+    vector-effect="non-scaling-stroke"
+    cx="240"
+    cy="0"
+    rx="120"
+    ry="120"
+    />
+</svg>

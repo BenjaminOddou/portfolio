@@ -86,7 +86,7 @@ onMounted(() => {
   />
 </template>
 
-<style>
+<style scoped>
 @media (pointer: coarse) {
   #cursor {
     display: none !important;

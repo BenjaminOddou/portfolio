@@ -2,14 +2,6 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-### [0.1.4](https://github.com/BenjaminOddou/portfolio/compare/v0.1.3...v0.1.4) (2023-01-29)
-
-
-### 💅 Refactors
-
-* migrate svg + update dependencies ([5f66966](https://github.com/BenjaminOddou/portfolio/commits/5f66966645f28e57e80fbe175696e8dd62e4ecd0))
-* style + update dependencies ([b77d498](https://github.com/BenjaminOddou/portfolio/commits/b77d498dfa2bf89a92e042510d70ad19fabd07b1))
-
 ### [0.1.3](https://github.com/BenjaminOddou/portfolio/compare/v0.1.2...v0.1.3) (2022-12-15)
 
 

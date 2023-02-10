@@ -20,7 +20,8 @@ useHead({
   title: 'À Propos',
 })
 
-onMounted(() => {
+onMounted(async () => {
+  await delay(100)
   // Disable warnings
   console.warn = () => {}
 
@@ -33,10 +34,10 @@ onMounted(() => {
     linesClass: 'overflow-hidden',
   })
   const ellipseBigCircle = document.querySelector(
-    '#big-circle > ellipse',
+    '#big-circle ellipse',
   ) as SVGEllipseElement
   const pathBigLine = document.querySelector(
-    '#big-line > path',
+    '#big-line path',
   ) as SVGPathElement
   const tl1 = gsap.timeline()
   tl1.pause()
@@ -45,38 +46,28 @@ onMounted(() => {
   })
 
   tl1
-    .fromTo(
+    .from(
       '#hello',
       {
-        y: '100%',
-      },
-      {
-        y: '0%',
+        yPercent: 100,
         duration: 1,
         ease: 'power4.out',
       },
     )
-    .fromTo(
+    .from(
       '#star-sticky',
       {
         scale: 0,
         rotateZ: 45,
-      },
-      {
-        scale: 1,
-        rotateZ: 0,
         duration: 1.5,
         ease: 'power4.out',
       },
       '<+0.3',
     )
-    .fromTo(
+    .from(
       aboutLinesChild.lines,
       {
-        y: '100%',
-      },
-      {
-        y: '0%',
+        yPercent: 100,
         stagger: 0.04,
         duration: 1,
         ease: 'power4.out',
@@ -89,9 +80,6 @@ onMounted(() => {
         drawSVG: '0% 0%',
       },
       {
-        onStart: () => {
-          gsap.set(ellipseBigCircle, { autoAlpha: 1 })
-        },
         drawSVG: '20% 38%',
         duration: 1.5,
       },
@@ -110,11 +98,6 @@ onMounted(() => {
       {
         drawSVG: '100% 100%',
         duration: 0.4,
-        onComplete: () => {
-          gsap.set(ellipseBigCircle, {
-            autoAlpha: 0,
-          })
-        },
       },
       '>-0.4',
     )
@@ -124,11 +107,8 @@ onMounted(() => {
     aboutLinesChild.revert()
   })
 
-  gsap.fromTo(
+  gsap.to(
     '#star-sticky',
-    {
-      rotateZ: 0,
-    },
     {
       rotateZ: 360 * 2,
       ease: 'none',
@@ -159,15 +139,9 @@ onMounted(() => {
         drawSVG: '-10% -10%',
       },
       {
-        drawSVG: '25% 50%',
+        drawSVG: '40% 65%',
       },
     )
-    .to(pathBigLine, {
-      drawSVG: '50% 75%',
-    })
-    .to(pathBigLine, {
-      drawSVG: '75% 100%',
-    })
     .to(pathBigLine, {
       drawSVG: '100% 100%',
     })
@@ -176,7 +150,7 @@ onMounted(() => {
   const aboutblockTextChild = new SplitText('#description span', {
     type: 'lines',
   })
-  // eslint-disable-next-line no-unused-vars
+  // eslint-disable-next-line no-unused-vars, unused-imports/no-unused-vars
   const aboutblockTextParent = new SplitText('#description span', {
     type: 'lines',
     linesClass: 'overflow-hidden',
@@ -191,7 +165,7 @@ onMounted(() => {
   })
 
   const descriptionAnima = gsap.from(aboutblockTextChild.lines, {
-    y: '100%',
+    yPercent: 100,
     delay: 0.3,
     duration: 1,
     stagger: 0.04,
@@ -206,7 +180,7 @@ onMounted(() => {
   gsap.from(
     '#caracteristics',
     {
-      y: '100%',
+      yPercent: 100,
       duration: 0.8,
       ease: 'power4.out',
       onComplete: () => {
@@ -224,10 +198,10 @@ onMounted(() => {
     gsap.fromTo(
       '#grained',
       {
-        y: '40%',
+        yPercent: 40,
       },
       {
-        y: '-20%',
+        yPercent: -20,
         ease: 'power2.out',
         scrollTrigger: {
           trigger: '#description',
@@ -246,7 +220,7 @@ onMounted(() => {
   const faqdiv = document.querySelectorAll(
     '#container-FAQ > div',
   ) as NodeListOf<HTMLDivElement>
-  const allTimelines: Array<GSAPTimeline> = []
+  const allTimelines = [] as Array<GSAPTimeline>
   const seeAll = document.querySelector(
     '#see-all > button',
   ) as HTMLButtonElement
@@ -255,45 +229,39 @@ onMounted(() => {
     '#see-all-titles > div',
   ) as NodeListOf<HTMLDivElement>
   const tl2 = gsap.timeline()
-  tl2.reverse()
+  tl2.pause()
   tl2
-    .fromTo(
-      seeAllTitles[0],
-      { y: '0%' },
-      {
-        y: '-100%',
-        duration: 0.9,
-        ease: 'power2.out',
-      },
-    )
-    .fromTo(
+    .from(
       seeAllTitles[1],
-      { y: '100%' },
       {
-        y: '0%',
+        yPercent: 100,
         duration: 0.9,
         ease: 'power2.out',
       },
-      '<',
     )
-    .fromTo(
-      seeAllSVG,
+    .to(
+      seeAllTitles[0],
       {
-        rotateZ: 0,
+        yPercent: -100,
+        duration: 0.9,
+        ease: 'power2.out',
       },
+      0,
+    )
+    .to(
+      seeAllSVG,
       {
         rotateZ: -180,
         duration: 0.8,
         ease: 'power2.inOut',
       },
-      '<',
+      0,
     )
 
-  gsap.fromTo(
+  gsap.from(
     '#FAQ-title',
-    { y: '100%' },
     {
-      y: '0%',
+      yPercent: 100,
       duration: 0.8,
       ease: 'power4.out',
       scrollTrigger: {
@@ -323,22 +291,18 @@ onMounted(() => {
       const tl = gsap.timeline()
       tl.reverse()
       allTimelines.push(tl)
-      tl.fromTo(
+      tl.to(
         svg,
-        {
-          rotateZ: 0,
-        },
         {
           rotateZ: -180,
           duration: 0.8,
           ease: 'power2.inOut',
         },
       )
-        .fromTo(
+        .from(
           div,
-          { height: 0 },
           {
-            height: 'auto',
+            height: 0,
             duration: 0.6,
             ease: 'power2.out',
           },
@@ -384,38 +348,12 @@ onMounted(() => {
 
 <template>
   <div>
-    <svg
-      id="big-circle"
-      class="absolute right-0 top-0 z-0 w-full fill-transparent stroke-light-lavender stroke-[8px] dark:stroke-light-orange lg:w-4/5"
-      stroke-linecap="round"
-      viewBox="0 0 240 240"
-    >
-      <ellipse
-        vector-effect="non-scaling-stroke"
-        cx="240"
-        cy="0"
-        rx="120"
-        ry="120"
-      />
-    </svg>
-
+    <TheSVG id="big-circle" name="big-circle" class="absolute right-0 top-0 z-0 w-full fill-transparent stroke-light-lavender stroke-[8px] dark:stroke-light-orange lg:w-4/5" />
     <div
       id="section-about"
       class="relative mx-auto max-w-[2500px] px-6 pt-56 pb-[calc(8rem_+_10vh)] sm:px-[10%]"
     >
-      <svg
-        id="big-line"
-        class="absolute top-1/3 -left-3 z-0 h-4/5 w-11/12 fill-transparent stroke-light-lavender stroke-[8px] dark:stroke-light-orange lg:w-4/6"
-        stroke-linecap="round"
-        viewBox="0 0 520 425"
-        xmlns="http://www.w3.org/2000/svg"
-        preserveAspectRatio="none"
-      >
-        <path
-          vector-effect="non-scaling-stroke"
-          d="M0 81.0296C52.6424 49.7372 128.544 30.88 188.413 20.0104C272.045 4.82638 398.026 -10.6194 470.821 37.4142C492.171 51.5025 511.647 88.4415 514.664 109.589C518.058 133.378 495.16 174.08 470.821 191.633C440.483 213.513 405.641 231.278 388.065 261.777C366.503 299.191 361.191 335.896 361.902 376.179C362.163 390.982 361.902 411.084 364.43 429"
-        />
-      </svg>
+      <TheSVG id="big-line" name="big-line" class="absolute top-1/3 -left-3 z-0 h-4/5 w-11/12 fill-transparent stroke-light-lavender stroke-[8px] dark:stroke-light-orange lg:w-4/6" />
       <div
         class="baron z-0 mb-12 overflow-hidden text-[calc(2rem_+_3vw)] text-dark-lavender dark:text-dark-orange"
       >
@@ -432,17 +370,7 @@ onMounted(() => {
             id="star-sticky"
             class="text-dark-lavender dark:text-dark-orange"
           >
-            <svg
-              class="h-[calc(1rem_+_2vw)] w-[calc(1rem_+_2vw)] fill-current"
-              width="13"
-              height="13"
-              viewBox="0 0 13 13"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M4.176 12.536C3.824 12.664 3.424 12.584 2.976 12.296C2.56 12.008 2.352 11.672 2.352 11.288C2.352 10.904 2.416 10.632 2.544 10.472C2.704 10.312 2.992 10.136 3.408 9.944C3.952 9.624 4.432 9.304 4.848 8.984C5.296 8.632 5.776 8.104 6.288 7.4C5.52 7.016 4.864 6.776 4.32 6.68C3.776 6.552 3.2 6.472 2.592 6.44C2.144 6.408 1.808 6.36 1.584 6.296C1.392 6.2 1.232 6.008 1.104 5.72C1.008 5.528 0.96 5.336 0.96 5.144C0.96 4.792 1.072 4.472 1.296 4.184C1.552 3.896 1.84 3.752 2.16 3.752C2.48 3.752 2.72 3.816 2.88 3.944C3.04 4.04 3.232 4.248 3.456 4.568C3.84 5.048 4.224 5.464 4.608 5.816C5.024 6.168 5.6 6.568 6.336 7.016C6.304 6.088 6.224 5.368 6.096 4.856C5.968 4.312 5.776 3.704 5.52 3.032C5.328 2.52 5.232 2.184 5.232 2.024C5.232 1.832 5.28 1.64 5.376 1.448C5.568 1.096 5.968 0.919998 6.576 0.919998C7.152 0.919998 7.552 1.08 7.776 1.4C7.872 1.592 7.92 1.768 7.92 1.928C7.92 2.152 7.808 2.52 7.584 3.032C7.296 3.704 7.072 4.328 6.912 4.904C6.784 5.448 6.704 6.168 6.672 7.064C7.376 6.712 7.952 6.36 8.4 6.008C8.848 5.624 9.296 5.16 9.744 4.616C10.032 4.264 10.272 4.008 10.464 3.848C10.688 3.656 10.928 3.56 11.184 3.56C11.504 3.528 11.808 3.672 12.096 3.992C12.384 4.28 12.528 4.6 12.528 4.952C12.528 5.176 12.448 5.368 12.288 5.528C12.128 5.688 11.888 5.816 11.568 5.912C11.28 6.008 10.96 6.088 10.608 6.152C9.872 6.248 9.232 6.376 8.688 6.536C8.144 6.696 7.52 6.984 6.816 7.4C7.872 8.52 8.96 9.304 10.08 9.752C10.432 9.88 10.688 10.008 10.848 10.136C11.008 10.264 11.136 10.456 11.232 10.712C11.328 10.968 11.28 11.256 11.088 11.576C10.928 11.896 10.688 12.152 10.368 12.344C10.048 12.536 9.76 12.568 9.504 12.44C9.248 12.344 9.072 12.216 8.976 12.056C8.88 11.864 8.752 11.56 8.592 11.144C8.432 10.6 8.208 10.056 7.92 9.512C7.632 8.968 7.168 8.344 6.528 7.64C6.048 8.344 5.712 8.968 5.52 9.512C5.328 10.024 5.184 10.568 5.088 11.144C5.024 11.592 4.944 11.912 4.848 12.104C4.752 12.296 4.528 12.44 4.176 12.536Z"
-              />
-            </svg>
+            <TheSVG name="spin-star" class="h-[calc(1rem_+_2vw)] w-[calc(1rem_+_2vw)] fill-current" />
           </div>
         </div>
         <div class="z-[1] pt-5 pl-4 text-[calc(1rem_+_2vw)] font-light italic">
@@ -531,23 +459,12 @@ onMounted(() => {
                 TOUT DÉVELOPPER
               </div>
               <div
-                class="absolute translate-y-full text-lg font-semibold"
+                class="absolute text-lg font-semibold"
               >
                 TOUT RÉDUIRE
               </div>
             </div>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              class="h-5 w-5 place-self-center stroke-current stroke-2"
-            >
-              <path
-                stroke-linecap="square"
-                stroke-linejoin="round"
-                d="M19 13l-7 7-7-7m14-8l-7 7-7-7"
-              />
-            </svg>
+            <TheSVG name="double-chevron" class="h-5 w-5 place-self-center fill-none stroke-current stroke-2" />
           </button>
         </div>
         <FAQquestion>

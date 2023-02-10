@@ -35,12 +35,12 @@ onMounted(() => {
     .fromTo(
       '#logoBO-big',
       {
-        y: '0%',
+        yPercent: 0,
       },
       {
+        yPercent: -100,
         duration: 1.4,
         ease: 'power4.out',
-        y: '-100%',
       },
       2,
     )
@@ -68,23 +68,10 @@ onMounted(() => {
     </svg>
     <div class="relative z-10 grid h-full w-full place-items-center">
       <div class="z-30 h-1/4 w-1/2 overflow-hidden">
-        <svg
-          id="logoBO-big"
-          xmlns="http://www.w3.org/2000/svg"
-          version="1.1"
-          stroke-width="20"
-          viewBox="0 0 3000 3000"
-          class="h-full w-full animate-[filldark_0.8s_ease-in-out_1.5s_forwards] fill-transparent stroke-jet dark:animate-[fillwhite_0.8s_ease-in-out_1.5s_forwards] dark:stroke-white"
-        >
-          <path
-            id="B"
-            d="M1169.06,1481.25c125-31.25,243.75-129.17,243.75-320.84C1412.81,739.58,927.392,750,927.392,750H441.977V2208.33H927.392c97.918,0,506.248-18.75,506.248-418.75C1433.64,1789.58,1444.06,1537.5,1169.06,1481.25ZM683.643,991.663H927.392s241.668-10.417,241.668,185.417c0,181.25-241.668,181.25-241.668,181.25H683.643V991.663Zm243.749,975H683.643V1602.08H927.392s262.5-14.59,262.5,181.25C1189.89,1941.66,1029.48,1966.66,927.392,1966.66Z"
-          />
-          <path
-            id="O"
-            d="M2071.9,1124.97c-297.92,0-541.67,243.75-541.67,541.67s243.75,541.67,541.67,541.67,541.66-243.75,541.66-541.67S2369.81,1124.97,2071.9,1124.97Zm0,841.67c-166.67,0-300-133.33-300-300s133.33-300,300-300,299.99,133.33,299.99,300S2238.56,1966.64,2071.9,1966.64Z"
-          />
-          <path id="-" d="M1596.9,991.808h962.49V750.142H1596.9V991.808Z" />
+        <svg id="logoBO-big" name="logo-bo" class="h-full w-full animate-[filldark_0.8s_ease-in-out_1.5s_forwards] fill-transparent stroke-jet stroke-[20] dark:animate-[fillwhite_0.8s_ease-in-out_1.5s_forwards] dark:stroke-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3000 3000">
+          <path id="B" d="M1169 1481a310 310 0 0 0 244-321c0-420-486-410-486-410H442v1458h485c98 0 507-18 507-418 0 0 10-252-265-309ZM684 992h243s242-11 242 185c0 181-242 181-242 181H684V992Zm243 975H684v-365h243s263-15 263 181c0 159-161 184-263 184Z" />
+          <path id="O" d="M2072 1125a544 544 0 0 0-542 542 543 543 0 0 0 1084 0c0-298-244-542-542-542Zm0 842c-167 0-300-134-300-300s133-300 300-300 300 133 300 300-133 300-300 300Z" />
+          <path id="-" d="M1597 992h962V750h-962v242Z" />
         </svg>
       </div>
 

@@ -82,28 +82,21 @@ onMounted(() => {
         toggleActions: 'play none none reset',
       },
     })
-    .fromTo(
+    .from(
       '#title-contact, #subtitle-contact',
       {
-        y: '100%',
-      },
-      {
-        y: '0%',
+        yPercent: 100,
         delay: 0.2,
         duration: 0.7,
         stagger: 0.2,
         ease: 'power4.out',
       },
     )
-    .fromTo(
+    .from(
       stars,
       {
         autoAlpha: 0,
         scale: 0,
-      },
-      {
-        autoAlpha: 1,
-        scale: 1,
         duration: 1,
         stagger: 0.2,
         ease: 'power3.out',
@@ -136,66 +129,49 @@ onMounted(() => {
       },
       '<+=0.1',
     )
-    .fromTo(
+    .from(
       placeHolders,
       {
         autoAlpha: 0,
-      },
-      {
-        autoAlpha: 1,
         duration: 1,
         ease: 'power4.out',
       },
       '>-=0.5',
     )
-    .fromTo(
+    .from(
       '#RGPD',
       {
-        y: '100%',
-      },
-      {
-        y: '0%',
+        yPercent: 100,
         duration: 0.7,
         ease: 'power4.out',
       },
       '<-=0.2',
     )
-    .fromTo(
+    .from(
       '#last-star, #check',
       {
         autoAlpha: 0,
         scale: 0,
-      },
-      {
-        autoAlpha: 1,
-        scale: 1,
         duration: 1,
         stagger: 0.5,
         ease: 'power3.out',
       },
       '<+=0.2',
     )
-    .fromTo(
+    .from(
       '#label-check',
       {
-        y: '100%',
-      },
-      {
-        y: '0%',
+        yPercent: 100,
         duration: 0.7,
         ease: 'power4.out',
       },
       '<+=0.7',
     )
-    .fromTo(
+    .from(
       '#submit-button',
       {
         autoAlpha: 0,
         scale: 0.7,
-      },
-      {
-        autoAlpha: 1,
-        scale: 1,
         duration: 1,
         ease: 'back.out(1.4)',
       },

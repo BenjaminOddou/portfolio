@@ -12,10 +12,7 @@ const isLock = scrollStore()
 const isRoute = routeStore()
 const isLink = linkStore()
 const alertMessage = alertStore()
-let thisLink: string
-isLink.$subscribe(() => {
-  thisLink = location.href
-})
+
 const init1 = 'M 0 100 V 100 Q 50 100 100 100 V 100 z' as string
 const start1 = 'M 0 100 V 50 Q 50 0 100 50 V 100 z' as string
 const end1 = 'M 0 100 V 0 Q 50 0 100 0 V 100 z' as string
@@ -23,14 +20,21 @@ const init2 = 'M 0 0 V 100 Q 50 100 100 100 V 0 z' as string
 const start2 = 'M 0 0 V 50 Q 50 0 100 50 V 0 z' as string
 const end2 = 'M 0 0 V 0 Q 50 0 100 0 V 0 z' as string
 
-const onBeforeLeave = (_el: HTMLDivElement) => {
+let thisLink = ''
+isLink.$subscribe(() => {
+  thisLink = location.href
+})
+
+await preloadComponents(['ThePreloader'])
+
+const onBeforeLeave = (_el: Element) => {
   isLock.$patch({
     isReady: true,
   })
   ScrollTrigger.killAll()
 }
 
-const onLeave = (_el: HTMLDivElement, done: any) => {
+const onLeave = (_el: Element, done: any) => {
   const menuItems = document.querySelectorAll(
     '.menu-item',
   ) as NodeListOf<HTMLAnchorElement>
@@ -72,7 +76,7 @@ const onLeave = (_el: HTMLDivElement, done: any) => {
       '#to-offset',
       {
         duration: 0.8,
-        y: 200,
+        yPercent: 3,
         ease: 'power3.in',
       },
       0,
@@ -106,7 +110,7 @@ const onLeave = (_el: HTMLDivElement, done: any) => {
     )
 }
 
-const onEnter = (_el: HTMLDivElement, done: any) => {
+const onEnter = (_el: Element, done: any) => {
   const wave = document.querySelector('#wave') as SVGElement
   gsap
     .timeline()
@@ -135,7 +139,7 @@ const onEnter = (_el: HTMLDivElement, done: any) => {
       '#to-offset',
       {
         duration: 0.8,
-        y: 0,
+        yPercent: 0,
         ease: 'power3.out',
         onComplete: done,
       },
@@ -143,7 +147,7 @@ const onEnter = (_el: HTMLDivElement, done: any) => {
     )
 }
 
-const onAfterEnter = (_el: HTMLDivElement) => {
+const onAfterEnter = (_el: Element) => {
   ScrollTrigger.refresh()
   delay(100).then(() => {
     isLock.$patch({
@@ -252,9 +256,10 @@ onBeforeMount(() => {
   })
 })
 
-onMounted(() => {
+onMounted(async () => {
+  await delay(100)
   const Smooth = ScrollSmoother.get() as globalThis.ScrollSmoother
-  let styles: string
+  let styles = 'font-size: 16px'
   if (!navigator.userAgent.includes('Chrome')) {
     styles = [
       'background: linear-gradient(90deg, #80EEC0, #00DC82)',
@@ -266,15 +271,11 @@ onMounted(() => {
       'font-size: 16px',
     ].join(';')
   }
-  else {
-    styles = 'font-size: 16px'
-  }
-  const message = 'À la recherche de quelque chose ?'
   console.log(
     '%c👀 %c%s%c 👀',
     'font-size: 16px',
     styles,
-    message,
+    'À la recherche de quelque chose ?',
     'font-size: 16px',
   )
   Smooth.paused(true)
@@ -442,17 +443,12 @@ onMounted(() => {
     tl3.pause()
 
     tl3
-      .fromTo(
+      .from(
         menuItmTxtTop.chars,
         {
           autoAlpha: 0,
           translateY: '-80%',
           rotateX: -90,
-        },
-        {
-          autoAlpha: 1,
-          translateY: '0%',
-          rotateX: 0,
           duration: 0.4,
           ease: 'power2.inOut',
           stagger: 0.04,
@@ -460,13 +456,8 @@ onMounted(() => {
           force3D: true,
         },
       )
-      .fromTo(
+      .to(
         menuItmTxtBtm.chars,
-        {
-          autoAlpha: 1,
-          translateY: '0%',
-          rotateX: 0,
-        },
         {
           autoAlpha: 0,
           translateY: '80%',
@@ -499,7 +490,7 @@ onMounted(() => {
 
     <TheMenu />
 
-    <LazyTheTransition />
+    <TheSVG id="wave" name="full-wave" class="pointer-events-none fixed left-0 top-0 z-[1000] hidden h-full w-full fill-light-lavender dark:fill-light-orange" />
 
     <LazyTheAlert
       v-if="alertMessage.isAlert === true"
@@ -519,7 +510,7 @@ onMounted(() => {
             @enter="onEnter"
             @after-enter="onAfterEnter"
           >
-            <component :is="Component" />
+            <component :is="Component" v-if="Component" />
           </Transition>
         </router-view>
       </div>

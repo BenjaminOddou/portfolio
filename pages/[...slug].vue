@@ -27,7 +27,7 @@ useHead({
 
 onMounted(() => {
   const home = document.querySelector<HTMLDivElement>('#home')
-  // eslint-disable-next-line no-unused-vars
+  // eslint-disable-next-line no-unused-vars, unused-imports/no-unused-vars
   const qCqP = new SplitText('#ErrorCode', {
     type: 'chars',
     charsClass: 'overflow-hidden',
@@ -50,14 +50,14 @@ onMounted(() => {
 
   tl1
     .from(qCqC.chars, {
-      x: '100%',
+      xPercent: 100,
       duration: 1.2,
       ease: 'power4.out',
     })
     .from(
       textContentC.chars,
       {
-        y: '100%',
+        yPercent: 100,
         duration: 0.8,
         ease: 'power4.out',
         stagger: 0.03,
@@ -68,15 +68,11 @@ onMounted(() => {
       },
       '<+0.3',
     )
-    .fromTo(
+    .from(
       home,
       {
         autoAlpha: 0,
         scale: 0.7,
-      },
-      {
-        autoAlpha: 1,
-        scale: 1,
         duration: 1,
         ease: 'back.out(1.4)',
       },

@@ -1,6 +1,17 @@
+import svgLoader from 'vite-svg-loader'
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
+  vite: {
+    plugins: [
+      svgLoader({
+        svgo: false,
+      }),
+    ],
+  },
   nitro: {
+    routeRules: {
+      '/api/**': { cors: true, headers: { 'access-control-allowed-methods': 'GET' } },
+    },
     compressPublicAssets: {
       brotli: true,
       gzip: false,

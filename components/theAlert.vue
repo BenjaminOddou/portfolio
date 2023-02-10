@@ -21,9 +21,8 @@ onMounted(() => {
     },
   )
   delay(alertMessage.delay).then(() => {
-    gsap.fromTo(
+    gsap.to(
       '#alertComponent',
-      { autoAlpha: 1, scale: 1 },
       {
         scale: 0,
         autoAlpha: 0,

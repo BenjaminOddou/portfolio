@@ -83,14 +83,22 @@ onMounted(() => {
       },
     })
     .from(
-      '#title-contact, #subtitle-contact',
+      '#title-contact',
       {
         yPercent: 100,
-        delay: 0.2,
         duration: 0.7,
-        stagger: 0.2,
+        delay: 0.2,
         ease: 'power4.out',
       },
+    )
+    .from(
+      '#subtitle-contact',
+      {
+        yPercent: 100,
+        duration: 0.7,
+        ease: 'power4.out',
+      },
+      '<+=0.2',
     )
     .from(
       stars,
@@ -191,17 +199,17 @@ onMounted(() => {
     >
       <form class="relative w-full" @submit.prevent="submitForm()">
         <div class="overflow-hidden">
-          <p
+          <div
             id="title-contact"
             class="baron cursor-text text-[24.775px] lg:text-[2.5vw] 2xl:text-[42px]"
           >
             me contacter
-          </p>
+          </div>
         </div>
         <div class="mx-0 mt-0 mb-8 flex flex-wrap overflow-hidden">
-          <p id="subtitle-contact" class="cursor-text">
+          <div id="subtitle-contact" class="cursor-text">
             Champs Obligatoires
-          </p>
+          </div>
           <p class="stars ml-1">
             *
           </p>
@@ -342,7 +350,7 @@ select:focus {
 
 input[type='checkbox']::after {
   content: '';
-  mask: url('../assets/svgs/checkmark.svg') 0px 1px;
+  mask: url('../assets/svg/checkmark.svg') 0px 1px;
   height: 15px;
   width: 15px;
 }

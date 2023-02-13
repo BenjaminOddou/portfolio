@@ -4,7 +4,7 @@
 
 @layer base {
   body {
-    @apply min-h-[320px] min-w-[320px] bg-white font-normal text-jet transition-bg-color duration-500 ease-classic dark:bg-jet dark:text-white;
+    @apply min-h-[320px] min-w-[320px] bg-white font-normal text-jet transition-bg-color duration-500 ease-[ease] dark:bg-jet dark:text-white;
     font-family: 'Roboto';
     text-rendering: optimizeSpeed;
   }
@@ -71,9 +71,6 @@
   .p-container {
     @apply mx-auto grid h-full max-w-[2500px] px-[10vw] sm:px-[20vw];
   }
-  .arrow-button {
-    @apply absolute z-[1] ml-[0.6vw] h-4/5 origin-center translate-y-[5%] rotate-[-45deg] transform stroke-current stroke-[0.2] transition-all duration-300 ease-in-out group-hover:rotate-0;
-  }
   .carousel-cell {
     @apply relative h-0 overflow-hidden bg-light-grey-alt pb-[calc(100%_/_var(--aspect-ratio))] dark:bg-dark-grey-alt;
   }
@@ -89,20 +86,6 @@
 }
 
 @layer utilities {
-  .dark .rectangle {
-    fill: #2a2a2aff;
-    stroke: transparent;
-    transition-property: fill;
-    transition-timing-function: ease;
-    transition-duration: 500ms;
-  }
-  .light .rectangle {
-    fill: white;
-    stroke: transparent;
-    transition-property: fill;
-    transition-timing-function: ease;
-    transition-duration: 500ms;
-  }
   .baron {
     font-family: 'Baron Neue', sans-serif;
     font-display: swap;

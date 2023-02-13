@@ -13,19 +13,19 @@ const isRoute = routeStore()
 const isLink = linkStore()
 const alertMessage = alertStore()
 
-const init1 = 'M 0 100 V 100 Q 50 100 100 100 V 100 z' as string
-const start1 = 'M 0 100 V 50 Q 50 0 100 50 V 100 z' as string
-const end1 = 'M 0 100 V 0 Q 50 0 100 0 V 100 z' as string
-const init2 = 'M 0 0 V 100 Q 50 100 100 100 V 0 z' as string
-const start2 = 'M 0 0 V 50 Q 50 0 100 50 V 0 z' as string
-const end2 = 'M 0 0 V 0 Q 50 0 100 0 V 0 z' as string
+const init1 = 'M 0 100 V 100 Q 50 100 100 100 V 100 z'
+const start1 = 'M 0 100 V 50 Q 50 0 100 50 V 100 z'
+const end1 = 'M 0 100 V 0 Q 50 0 100 0 V 100 z'
+const init2 = 'M 0 0 V 100 Q 50 100 100 100 V 0 z'
+const start2 = 'M 0 0 V 50 Q 50 0 100 50 V 0 z'
+const end2 = 'M 0 0 V 0 Q 50 0 100 0 V 0 z'
+
+const waveHidden = ref(true)
 
 let thisLink = ''
 isLink.$subscribe(() => {
   thisLink = location.href
 })
-
-await preloadComponents(['ThePreloader'])
 
 const onBeforeLeave = (_el: Element) => {
   isLock.$patch({
@@ -39,7 +39,6 @@ const onLeave = (_el: Element, done: any) => {
     '.menu-item',
   ) as NodeListOf<HTMLAnchorElement>
   const navbar = document.querySelector('#navbar') as HTMLDivElement
-  const wave = document.querySelector('#wave') as SVGElement
   const buttonBurger = document.querySelector(
     '#button-burger',
   ) as HTMLButtonElement
@@ -52,7 +51,7 @@ const onLeave = (_el: Element, done: any) => {
     })
     .to('#quadbz', {
       onStart: () => {
-        wave.classList.remove('hidden')
+        waveHidden.value = false
         menuItems.forEach((Navlink) => {
           Navlink.classList.add('pointer-events-none')
         })
@@ -111,7 +110,6 @@ const onLeave = (_el: Element, done: any) => {
 }
 
 const onEnter = (_el: Element, done: any) => {
-  const wave = document.querySelector('#wave') as SVGElement
   gsap
     .timeline()
     .set('#quadbz', {
@@ -132,7 +130,7 @@ const onEnter = (_el: Element, done: any) => {
       attr: { d: end2 },
       ease: 'power3',
       onComplete: () => {
-        wave.classList.add('hidden')
+        waveHidden.value = true
       },
     })
     .to(
@@ -256,8 +254,7 @@ onBeforeMount(() => {
   })
 })
 
-onMounted(async () => {
-  await delay(100)
+onMounted(() => {
   const Smooth = ScrollSmoother.get() as globalThis.ScrollSmoother
   let styles = 'font-size: 16px'
   if (!navigator.userAgent.includes('Chrome')) {
@@ -288,7 +285,6 @@ onMounted(async () => {
   tl1.pause()
   tl2.pause()
   const quadbz = document.querySelector('#quadbz') as SVGPathElement
-  const wave = document.querySelector('#wave') as SVGElement
   const buttonBurger = document.querySelector(
     '#button-burger',
   ) as HTMLButtonElement
@@ -305,7 +301,7 @@ onMounted(async () => {
     })
     .to(quadbz, {
       onStart: () => {
-        wave.classList.remove('hidden')
+        waveHidden.value = false
         menuItems.forEach((Navlink) => {
           Navlink.classList.add('pointer-events-none')
         })
@@ -350,7 +346,7 @@ onMounted(async () => {
       attr: { d: end2 },
       ease: 'power3',
       onComplete: () => {
-        wave.classList.add('hidden')
+        waveHidden.value = true
         menuItems.forEach((Navlink) => {
           Navlink.classList.remove('pointer-events-none')
         })
@@ -486,11 +482,19 @@ onMounted(async () => {
   <div id="smooth-wrapper">
     <ThePreloader />
 
-    <LazyTheAwwwards />
-
     <TheMenu />
 
-    <TheSVG id="wave" name="full-wave" class="pointer-events-none fixed left-0 top-0 z-[1000] hidden h-full w-full fill-light-lavender dark:fill-light-orange" />
+    <SvgAwwwards />
+
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 100 100"
+      preserveAspectRatio="none"
+      :class="{ hidden: waveHidden }"
+      class="pointer-events-none fixed left-0 top-0 z-[1000] h-full w-full fill-light-lavender dark:fill-light-orange"
+    >
+      <path id="quadbz" vector-effect="non-scaling-stroke" d="M 0 100 V 100 Q 50 100 100 100 V 100 z" />
+    </svg>
 
     <LazyTheAlert
       v-if="alertMessage.isAlert === true"
@@ -513,6 +517,16 @@ onMounted(async () => {
             <component :is="Component" v-if="Component" />
           </Transition>
         </router-view>
+        <!-- <NuxtPage
+          :transition="{
+            mode: 'out-in',
+            css: false,
+            onBeforeLeave,
+            onLeave,
+            onEnter,
+            onAfterEnter,
+          }"
+        /> -->
       </div>
     </div>
   </div>

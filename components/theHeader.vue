@@ -45,7 +45,7 @@ onMounted(() => {
       aria-label="Retour à l'Accueil"
       class="menu fixed-el fixed top-[1.4rem] z-[11] ml-6"
     >
-      <TheSVG id="logo-bo" name="logo-bo" class="fill-current stroke-current stroke-[10]" />
+      <SvgLogoBO class="fill-current stroke-current stroke-[10]" />
     </button>
 
     <div
@@ -58,8 +58,21 @@ onMounted(() => {
         @click="setColorTheme($colorMode.value === 'dark' ? 'light' : 'dark')"
       >
         <div>
-          <TheSVG name="head-sun" class="sun origin-center translate-y-0 animate-[20s_linear_infinite_spin] fill-jet stroke-jet dark:translate-y-16 dark:animate-none dark:fill-white dark:stroke-white" />
-          <TheSVG name="head-moon" class="moon translate-y-16 fill-jet stroke-jet dark:translate-y-0 dark:fill-white dark:stroke-white" />
+          <svg
+            class="sun origin-center translate-y-0 animate-[20s_linear_infinite_spin] fill-jet stroke-jet dark:translate-y-16 dark:animate-none dark:fill-white dark:stroke-white"
+            viewBox="0 0 24 24"
+          >
+            <path d="M1 12h1m2.2-7.8.7.7M12 1v1m7.8 2.2-.7.7M23 12h-1m-2.2 7.8-.7-.7M12 23v-1m-7.8-2.2.7-.7" />
+            <circle cx="12" cy="12" r="6" />
+          </svg>
+          <svg
+            class="moon translate-y-16 fill-jet stroke-jet dark:translate-y-0 dark:fill-white dark:stroke-white"
+            viewBox="0 0 24 24"
+          >
+            <path d="M18 16A10 10 0 0 1 8 6c0-.9.1-1.8.4-2.6A9.9 9.9 0 0 0 1 13a10 10 0 0 0 10 10c4.6 0 8.5-3.1 9.6-7.4-.8.3-1.7.4-2.6.4z" />
+            <path d="M15 1v4m-2-2h4" class="star-1" />
+            <path d="M21 7v4m-2-2h4" class="star-2" />
+          </svg>
         </div>
       </button>
 
@@ -76,7 +89,7 @@ onMounted(() => {
   </div>
 </template>
 
-<style>
+<style scoped>
 /*
 Menu Burger
 */

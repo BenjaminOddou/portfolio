@@ -255,7 +255,7 @@ onMounted(() => {
           >
             <div
               id="main-img"
-              class="m-auto h-full max-h-[853px] w-[63vw] max-w-[63vw] rounded-[8rem] bg-[url('https://ik.imagekit.io/palladium/index-page/Hero_img_light.webp')] bg-cover bg-center bg-no-repeat transition-bg-img duration-500 ease-classic after:hidden after:content-[url('https://ik.imagekit.io/palladium/index-page/Hero_img_light.webp')_url('https://ik.imagekit.io/palladium/index-page/Hero_img_dark.webp')] dark:bg-[url('https://ik.imagekit.io/palladium/index-page/Hero_img_dark.webp')] sm:max-h-full sm:w-full sm:max-w-[454px] lt:rounded-[11rem] av:rounded-full"
+              class="m-auto h-full max-h-[853px] w-[63vw] max-w-[63vw] rounded-[8rem] bg-[url('https://ik.imagekit.io/palladium/index-page/Hero_img_light.webp')] bg-cover bg-center bg-no-repeat transition-bg-img duration-500 ease-[ease] after:hidden after:content-[url('https://ik.imagekit.io/palladium/index-page/Hero_img_light.webp')_url('https://ik.imagekit.io/palladium/index-page/Hero_img_dark.webp')] dark:bg-[url('https://ik.imagekit.io/palladium/index-page/Hero_img_dark.webp')] sm:max-h-full sm:w-full sm:max-w-[454px] lt:rounded-[11rem] av:rounded-full"
             />
           </div>
           <div
@@ -335,7 +335,7 @@ onMounted(() => {
               <span
                 class="baron text-center text-[16.864px] lg:text-[1.7vw] 2xl:text-[28.56px]"
               >À propos de Benjamin</span>
-              <TheSVG name="arrow-button" class="arrow-button right-[-12%] fill-current" />
+              <SvgArrowButton class="right-[-12%]" />
             </NuxtLink>
           </span>
         </div>
@@ -372,7 +372,7 @@ onMounted(() => {
               <span
                 class="baron text-center text-[16.864px] lg:text-[1.7vw] 2xl:text-[28.56px]"
               >voir la galerie</span>
-              <TheSVG name="arrow-button" class="arrow-button right-[-18%] fill-current" />
+              <SvgArrowButton class="right-[-18%]" />
             </NuxtLink>
           </span>
         </div>

@@ -81,7 +81,6 @@ module.exports = {
         'fill': 'fill',
       },
       transitionTimingFunction: {
-        classic: 'ease',
         smooth: 'cubic-bezier(0.65, 0, 0.076, 1)',
       },
     },

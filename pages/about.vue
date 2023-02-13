@@ -20,11 +20,7 @@ useHead({
   title: 'À Propos',
 })
 
-onMounted(async () => {
-  await delay(100)
-  // Disable warnings
-  console.warn = () => {}
-
+onMounted(() => {
   // Hello section
   const aboutLinesChild = new SplitText('#about_block', {
     type: 'lines',
@@ -348,12 +344,22 @@ onMounted(async () => {
 
 <template>
   <div>
-    <TheSVG id="big-circle" name="big-circle" class="absolute right-0 top-0 z-0 w-full fill-transparent stroke-light-lavender stroke-[8px] dark:stroke-light-orange lg:w-4/5" />
+    <svg
+      id="big-circle" class="absolute right-0 top-0 z-0 w-full fill-transparent stroke-light-lavender stroke-[8px] dark:stroke-light-orange lg:w-4/5"
+      stroke-linecap="round" viewBox="0 0 240 240"
+    >
+      <ellipse cx="240" cy="0" rx="120" ry="120" vector-effect="non-scaling-stroke" />
+    </svg>
     <div
       id="section-about"
       class="relative mx-auto max-w-[2500px] px-6 pt-56 pb-[calc(8rem_+_10vh)] sm:px-[10%]"
     >
-      <TheSVG id="big-line" name="big-line" class="absolute top-1/3 -left-3 z-0 h-4/5 w-11/12 fill-transparent stroke-light-lavender stroke-[8px] dark:stroke-light-orange lg:w-4/6" />
+      <svg
+        id="big-line" class="absolute top-1/3 -left-3 z-0 h-4/5 w-11/12 fill-transparent stroke-light-lavender stroke-[8px] dark:stroke-light-orange lg:w-4/6"
+        xmlns="http://www.w3.org/2000/svg" stroke-linecap="round" preserveAspectRatio="none" viewBox="0 0 520 425"
+      >
+        <path d="M0 81c53-31 129-50 188-61 84-15 210-31 283 17 21 15 41 51 44 73 3 23-20 64-44 82-31 22-65 39-83 70-21 37-27 74-26 114 0 15 0 35 2 53" vector-effect="non-scaling-stroke" />
+      </svg>
       <div
         class="baron z-0 mb-12 overflow-hidden text-[calc(2rem_+_3vw)] text-dark-lavender dark:text-dark-orange"
       >
@@ -370,7 +376,12 @@ onMounted(async () => {
             id="star-sticky"
             class="text-dark-lavender dark:text-dark-orange"
           >
-            <TheSVG name="spin-star" class="h-[calc(1rem_+_2vw)] w-[calc(1rem_+_2vw)] fill-current" />
+            <svg
+              class="h-[calc(1rem_+_2vw)] w-[calc(1rem_+_2vw)] fill-current"
+              xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 13"
+            >
+              <path d="M4.2 12.5c-.4.2-.8 0-1.2-.2-.4-.3-.6-.6-.6-1l.1-.8 1-.6c.5-.3 1-.6 1.3-1a8 8 0 0 0 1.5-1.5 9.8 9.8 0 0 0-3.7-1l-1-.1a1 1 0 0 1-.5-.6L1 5.1c0-.3 0-.6.3-1 .3-.2.5-.3.9-.3l.7.1.6.7 1.1 1.2L6.3 7a11 11 0 0 0-.8-4l-.3-1c0-.2 0-.4.2-.6.2-.3.6-.5 1.2-.5s1 .2 1.2.5l.1.5c0 .3 0 .6-.3 1.1a15 15 0 0 0-.7 2l-.2 2.2 1.7-1 1.3-1.5.8-.8.7-.2c.3 0 .6 0 .9.4.3.3.4.6.4 1 0 .2 0 .4-.2.5l-.7.4a7 7 0 0 1-1 .3c-.7 0-1.4.2-2 .3l-1.8.9c1 1.1 2.2 1.9 3.3 2.4.3 0 .6.2.7.3l.4.6c.1.3 0 .6-.1.9-.2.3-.4.6-.7.7-.4.2-.6.3-.9.1a1 1 0 0 1-.5-.3l-.4-1a8.8 8.8 0 0 0-2-3.5A8.4 8.4 0 0 0 5 11.1c0 .5-.2.8-.3 1 0 .2-.3.3-.6.4Z" />
+            </svg>
           </div>
         </div>
         <div class="z-[1] pt-5 pl-4 text-[calc(1rem_+_2vw)] font-light italic">
@@ -389,7 +400,7 @@ onMounted(async () => {
     </div>
 
     <div
-      class="relative z-[1] mx-auto max-w-[2500px] bg-white px-[10%] pb-[calc(2rem_+_10vh)] transition-bg-color duration-500 ease-classic dark:bg-jet"
+      class="relative z-[1] mx-auto max-w-[2500px] bg-white px-[10%] pb-[calc(2rem_+_10vh)] transition-bg-color duration-500 ease-[ease] dark:bg-jet"
     >
       <div
         class="baron mb-12 overflow-hidden text-[8.5vw] md:text-[calc(2rem_+_3vw)]"
@@ -464,7 +475,12 @@ onMounted(async () => {
                 TOUT RÉDUIRE
               </div>
             </div>
-            <TheSVG name="double-chevron" class="h-5 w-5 place-self-center fill-none stroke-current stroke-2" />
+            <svg
+              class="h-5 w-5 place-self-center fill-none stroke-current stroke-2"
+              xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+            >
+              <path d="m19 13-7 7-7-7m14-8-7 7-7-7" />
+            </svg>
           </button>
         </div>
         <FAQquestion>
@@ -576,7 +592,7 @@ onMounted(async () => {
   position: absolute;
   display: block;
   z-index: 2;
-  animation: noise 8s steps(10) infinite;
+  animation: noise 6s steps(20) infinite;
   opacity: 0.15;
   background: url('https://ik.imagekit.io/palladium/about-page/Image_gaussian_noise.jpg');
 }
@@ -586,32 +602,17 @@ onMounted(async () => {
   100% {
     background-position: 0 0;
   }
-  10% {
-    background-position: -5% -10%;
-  }
   20% {
     background-position: -15% 5%;
-  }
-  30% {
-    background-position: 7% -25%;
   }
   40% {
     background-position: 20% 25%;
   }
-  50% {
-    background-position: -25% 10%;
-  }
   60% {
     background-position: 15% 5%;
   }
-  70% {
-    background-position: 0% 15%;
-  }
   80% {
     background-position: 25% 35%;
-  }
-  90% {
-    background-position: -10% 10%;
   }
 }
 </style>

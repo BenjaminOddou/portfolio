@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.5](https://github.com/BenjaminOddou/portfolio/compare/v0.1.4...v0.1.5) (2023-02-13)
+
+
+### 💅 Refactors
+
+* simplify gsap functions, migrate svgs ([661ddf7](https://github.com/BenjaminOddou/portfolio/commits/661ddf7b95ad2399260139b534a1e3f88ba5cbd9))
+
+
+### 🔥 Performance
+
+* optimizing svgs ([3da926c](https://github.com/BenjaminOddou/portfolio/commits/3da926c413e54777b248ac367e56b64ccbc0e386))
+
+
+### 🏡 Chore
+
+* **release:** 0.1.4 ([0e0b1c6](https://github.com/BenjaminOddou/portfolio/commits/0e0b1c60ab78f90ae3a1890a251582f7ad28ac82))
+
 ### [0.1.3](https://github.com/BenjaminOddou/portfolio/compare/v0.1.2...v0.1.3) (2022-12-15)
 
 

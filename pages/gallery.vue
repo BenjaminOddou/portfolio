@@ -1,13 +1,9 @@
 <script setup lang="ts">
-import gsap from 'gsap'
-import SplitText from 'gsap/SplitText'
-import ScrollTrigger from 'gsap/ScrollTrigger'
-import ScrollSmoother from 'gsap/ScrollSmoother'
 // @ts-expect-error-next-line
 import PhotoSwipeLightbox from 'photoswipe/lightbox'
 import 'photoswipe/style.css'
-if (process.client)
-  gsap.registerPlugin(SplitText, ScrollTrigger, ScrollSmoother)
+
+const { $gsap: gsap, $SplitText: SplitText, $ScrollTrigger: ScrollTrigger, $ScrollSmoother: ScrollSmoother } = useNuxtApp()
 
 const { data: images } = await useFetch<ImageKit[]>('/api/imgkit', {
   transform: (images) => {
@@ -113,8 +109,7 @@ onMounted(() => {
     type: 'words',
   })
 
-  const tl1 = gsap.timeline()
-  tl1.pause()
+  const tl1 = gsap.timeline().pause()
   isRoute.$subscribe(() => {
     tl1.play()
   })

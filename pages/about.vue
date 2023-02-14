@@ -1,12 +1,5 @@
 <script setup lang="ts">
-import gsap from 'gsap'
-import SplitText from 'gsap/SplitText'
-import DrawSVGPlugin from 'gsap/DrawSVGPlugin'
-import ScrollTrigger from 'gsap/ScrollTrigger'
-
-if (process.client)
-  gsap.registerPlugin(SplitText, DrawSVGPlugin, ScrollTrigger)
-
+const { $gsap: gsap, $SplitText: SplitText } = useNuxtApp()
 const isRoute = routeStore()
 
 definePageMeta({
@@ -35,8 +28,7 @@ onMounted(() => {
   const pathBigLine = document.querySelector(
     '#big-line path',
   ) as SVGPathElement
-  const tl1 = gsap.timeline()
-  tl1.pause()
+  const tl1 = gsap.timeline().pause()
   isRoute.$subscribe(() => {
     tl1.play()
   })
@@ -224,8 +216,7 @@ onMounted(() => {
   const seeAllTitles = document.querySelectorAll(
     '#see-all-titles > div',
   ) as NodeListOf<HTMLDivElement>
-  const tl2 = gsap.timeline()
-  tl2.pause()
+  const tl2 = gsap.timeline().pause()
   tl2
     .from(
       seeAllTitles[1],

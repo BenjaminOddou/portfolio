@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import gsap from 'gsap'
+const { $gsap: gsap } = useNuxtApp()
 let tl: gsap.core.Timeline
 const isHover = () => tl.play()
 const isNotHover = () => tl.reverse()

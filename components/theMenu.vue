@@ -1,9 +1,5 @@
 <script setup lang="ts">
-import gsap from 'gsap'
-import Draggable from 'gsap/Draggable'
-import InertiaPlugin from 'gsap/InertiaPlugin'
-if (process.client)
-  gsap.registerPlugin(Draggable, InertiaPlugin)
+const { $gsap: gsap, $Draggable: Draggable, $InertiaPlugin: InertiaPlugin } = useNuxtApp()
 
 const { data: images } = await useFetch<ImageKit[]>('/api/imgkit', {
   transform: (images) => {

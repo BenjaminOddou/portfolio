@@ -1,8 +1,5 @@
 <script setup lang="ts">
-import gsap from 'gsap'
-import SplitText from 'gsap/SplitText'
-if (process.client)
-  gsap.registerPlugin(SplitText)
+const { $gsap: gsap, $SplitText: SplitText } = useNuxtApp()
 
 setResponseStatus(404)
 const isRoute = routeStore()
@@ -42,8 +39,7 @@ onMounted(() => {
   const textContentC = new SplitText('#content', {
     type: 'chars',
   })
-  const tl1 = gsap.timeline()
-  tl1.pause()
+  const tl1 = gsap.timeline().pause()
   isRoute.$subscribe(() => {
     tl1.play()
   })

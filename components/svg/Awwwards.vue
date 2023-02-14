@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import gsap from 'gsap'
+const { $gsap: gsap } = useNuxtApp()
 
 onMounted(() => {
   gsap.from('#awwwards', {

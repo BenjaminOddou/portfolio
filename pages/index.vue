@@ -1,11 +1,5 @@
 <script setup lang="ts">
-import gsap from 'gsap'
-import SplitText from 'gsap/SplitText'
-import ScrollTrigger from 'gsap/ScrollTrigger'
-import ScrollSmoother from 'gsap/ScrollSmoother'
-if (process.client)
-  gsap.registerPlugin(SplitText, ScrollTrigger, ScrollSmoother)
-
+const { $gsap: gsap, $SplitText: SplitText, $ScrollTrigger: ScrollTrigger, $ScrollSmoother: ScrollSmoother } = useNuxtApp()
 const isRoute = routeStore()
 
 definePageMeta({
@@ -24,7 +18,6 @@ onMounted(() => {
   const buttonsToForm = document.querySelectorAll(
     '.to-form',
   ) as NodeListOf<HTMLButtonElement>
-  const tl1 = gsap.timeline()
   const titleHero = new SplitText('#titleHero', {
     type: 'lines, chars',
   })
@@ -41,8 +34,7 @@ onMounted(() => {
   gsap.set([charAbout.words, wordPortfolio.lines], {
     css: { overflow: 'hidden' },
   })
-
-  tl1.pause()
+  const tl1 = gsap.timeline().pause()
   isRoute.$subscribe(() => {
     tl1.play()
   })

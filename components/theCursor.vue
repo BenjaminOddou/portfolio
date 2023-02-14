@@ -1,9 +1,5 @@
 <script setup lang="ts">
-import gsap from 'gsap'
-import ScrollTrigger from 'gsap/ScrollTrigger'
-
-if (process.client)
-  gsap.registerPlugin(ScrollTrigger)
+const { $gsap: gsap, $ScrollTrigger: ScrollTrigger } = useNuxtApp()
 
 const isRoute = routeStore()
 

@@ -1,11 +1,5 @@
 <script setup lang="ts">
-import gsap from 'gsap'
-import ScrollSmoother from 'gsap/ScrollSmoother'
-import ScrollTrigger from 'gsap/ScrollTrigger'
-import SplitText from 'gsap/SplitText'
-
-if (process.client)
-  gsap.registerPlugin(ScrollSmoother, ScrollTrigger, SplitText)
+const { $gsap: gsap, $SplitText: SplitText, $ScrollTrigger: ScrollTrigger, $ScrollSmoother: ScrollSmoother } = useNuxtApp()
 
 const router = useRoute()
 const isLock = scrollStore()
@@ -164,66 +158,22 @@ useHead({
       : 'Benjamin Oddou Photographe'
   },
   meta: [
-    {
-      name: 'description',
-      content: `${router.meta.description}`,
-    },
-    {
-      property: 'og:title',
-      content: `${router.meta.title} | Benjamin Oddou Photographe`,
-    },
-    {
-      property: 'og:url',
-      content: `${router.meta.url}`,
-    },
-    {
-      property: 'og:description',
-      content: `${router.meta.description}`,
-    },
-    {
-      name: 'keywords',
-      content:
-        'photographe, mariage, portrait, couple, corporate, paris, ile de france, france, photo studio',
-    },
+    { name: 'description', content: `${router.meta.description}` },
+    { property: 'og:title', content: `${router.meta.title} | Benjamin Oddou Photographe` },
+    { property: 'og:url', content: `${router.meta.url}` },
+    { property: 'og:description', content: `${router.meta.description}` },
+    { name: 'keywords', content: 'photographe, mariage, portrait, couple, corporate, paris, ile de france, france, photo studio' },
     { name: 'msapplication-TileColor', content: '#2a2a2a' },
-    {
-      name: 'theme-color',
-      content: '#FFFFFF',
-      media: '(prefers-color-scheme: light)',
-    },
-    {
-      name: 'theme-color',
-      content: '#2A2A2A',
-      media: '(prefers-color-scheme: dark)',
-    },
+    { name: 'theme-color', content: '#FFFFFF', media: '(prefers-color-scheme: light)' },
+    { name: 'theme-color', content: '#2A2A2A', media: '(prefers-color-scheme: dark)' },
   ],
   link: [
-    {
-      rel: 'canonical',
-      href: `${router.meta.url}`,
-    },
-    {
-      rel: 'mask-icon',
-      href: '/safari-pinned-tab.svg',
-      color: '#fca87f',
-    },
-    {
-      rel: 'preconnect',
-      href: 'https://fonts.googleapis.com',
-    },
-    {
-      rel: 'preconnect',
-      href: 'https://fonts.gstatic.com',
-      crossorigin: '',
-    },
-    {
-      rel: 'stylesheet',
-      href: 'https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap',
-    },
-    {
-      rel: 'stylesheet',
-      href: 'https://fonts.cdnfonts.com/css/baron-neue',
-    },
+    { rel: 'canonical', href: `${router.meta.url}` },
+    { rel: 'mask-icon', href: '/safari-pinned-tab.svg', color: '#fca87f' },
+    { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
+    { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' },
+    { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap' },
+    { rel: 'stylesheet', href: 'https://fonts.cdnfonts.com/css/baron-neue' },
   ],
 })
 
@@ -280,10 +230,8 @@ onMounted(() => {
     isLock.isReady === true ? Smooth.paused(true) : Smooth.paused(false)
   })
 
-  const tl1 = gsap.timeline()
-  const tl2 = gsap.timeline()
-  tl1.pause()
-  tl2.pause()
+  const tl1 = gsap.timeline().pause()
+  const tl2 = gsap.timeline().pause()
   const quadbz = document.querySelector('#quadbz') as SVGPathElement
   const buttonBurger = document.querySelector(
     '#button-burger',
@@ -435,8 +383,7 @@ onMounted(() => {
     const menuItmSpan = Navlink.querySelectorAll<HTMLSpanElement>('.splitted')
     const menuItmTxtTop = new SplitText(menuItmSpan[0], { type: 'chars' })
     const menuItmTxtBtm = new SplitText(menuItmSpan[1], { type: 'chars' })
-    const tl3 = gsap.timeline()
-    tl3.pause()
+    const tl3 = gsap.timeline().pause()
 
     tl3
       .from(

@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import gsap from 'gsap'
-
 defineProps<{
   header: string
   content: string
   color: 'teal' | 'red'
 }>()
+
+const { $gsap: gsap } = useNuxtApp()
 
 const alertMessage = alertStore()
 

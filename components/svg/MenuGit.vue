@@ -1,8 +1,5 @@
 <script setup lang="ts">
-import gsap from 'gsap'
-import MorphSVGPlugin from 'gsap/MorphSVGPlugin'
-if (process.client)
-  gsap.registerPlugin(MorphSVGPlugin)
+const { $gsap: gsap } = useNuxtApp()
 let tl: gsap.core.Timeline
 const isHover = () => tl.play()
 const isNotHover = () => tl.reverse()

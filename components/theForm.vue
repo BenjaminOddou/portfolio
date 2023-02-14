@@ -1,10 +1,6 @@
 <script setup lang="ts">
 import Botpoison from '@botpoison/browser'
-import gsap from 'gsap'
-import ScrollTrigger from 'gsap/ScrollTrigger'
-
-if (process.client)
-  gsap.registerPlugin(ScrollTrigger)
+const { $gsap: gsap } = useNuxtApp()
 
 const alertMessage = alertStore()
 const config = useRuntimeConfig()

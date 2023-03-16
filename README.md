@@ -3,7 +3,7 @@
 # [Benjamin Oddou Photographe](https://www.benjaminoddou-photographe.com)
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/b4f86ea8-7cc1-45f7-aba6-ea1b2cc7855b/deploy-status)](https://app.netlify.com/sites/benjaminoddou-photographe/deploys)
-[![made with hearth by Benjamin Oddou](https://img.shields.io/badge/made%20with%20%E2%99%A5%20by-benjamin%20oddou-ff8f5d.svg?style=flat)](https://github.com/BenjaminOddou)
+[![made with heart by Benjamin Oddou](https://img.shields.io/badge/made%20with%20%E2%99%A5%20by-benjamin%20oddou-ff8f5d.svg?style=flat)](https://github.com/BenjaminOddou)
 [![saythanks](https://img.shields.io/badge/say-thanks-d2d4e0.svg?style=flat)](https://saythanks.io/to/BenjaminOddou)
 [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](CODE_OF_CONDUCT.md)
 
@@ -34,13 +34,13 @@ Welcome to the repository of my personal website dedicated to **Photography** �
 
 1. <img src=".github/assets/vscode.png" height="12" /> [Visual Studio Code](https://code.visualstudio.com)
 2. <img src=".github/assets/github.png" height="12" /> [GitHub](https://github.com)
-3. <img src=".github/assets/netlify.png" height="12" /> [Netlify](https://www.netlify.com)
+3. <img src=".github/assets/netlify.png" height="14" /> [Netlify](https://www.netlify.com)
 
 ## ✨ Code Usage and Contribution
 
 ### Code Usage
 
-The project is open source so you can use part of the code but <u>**not entirely**</u>. Also, <u>**don't use the style**</u> (CSS and assets) as it is personnal and makes this website unique.
+The project is open source so you can use part of the code but <u>**not entirely**</u>. Also, <u>**don't use the style**</u> (CSS and assets) as it is personal and makes this website unique.
 
 This code is under [MIT Licence](LICENSE) ⚖️
 
@@ -473,9 +473,9 @@ const { data: images } = useFetch<ImageKit[]>('/api/imgkit')
 
 ## 🚀 Deploy
 
-The hosting of the website is made available by connecting this <img src=".github/assets/github.png" height="12" /> [GitHub](https://github.com) repository to <img src=".github/assets/netlify.png" height="12" /> [Netlify](https://www.netlify.com).
+The hosting of the website is made available by connecting this <img src=".github/assets/github.png" height="12" /> [GitHub](https://github.com) repository to <img src=".github/assets/netlify.png" height="14" /> [Netlify](https://www.netlify.com).
 
-When deploying, the `command script` and `environment variable(s)` needs to be defined under `Build & deploy | Site settings` on <img src=".github/assets/netlify.png" height="12" /> [Netlify](https://www.netlify.com).
+When deploying, the `command script` and `environment variable(s)` needs to be defined under `Build & deploy | Site settings` on <img src=".github/assets/netlify.png" height="14" /> [Netlify](https://www.netlify.com).
 
 Command scripts :
 
@@ -486,7 +486,7 @@ npm run build
 npm run generate
 ```
 
-> ⚗️ [Nitro](https://nitro.unjs.io/deploy/providers/netlify) used by <img src=".github/assets/nuxt.png" height="10" /> [Nuxt 3](https://v3.nuxtjs.org) will detect automatically <img src=".github/assets/netlify.png" height="12" /> [Netlify](https://www.netlify.com) hosting and deploy with preset='netlify'
+> ⚗️ [Nitro](https://nitro.unjs.io/deploy/providers/netlify) used by <img src=".github/assets/nuxt.png" height="10" /> [Nuxt 3](https://v3.nuxtjs.org) will detect automatically <img src=".github/assets/netlify.png" height="14" /> [Netlify](https://www.netlify.com) hosting and deploy with preset='netlify'
 
 Environment variable(s) :
 

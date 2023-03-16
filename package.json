@@ -6,7 +6,6 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "PORT=8000 nuxt preview",
-    "preview-h": "HOST=192.168.1.12 PORT=8000 nuxt preview",
     "test": "nuxi test",
     "upck": "npx --yes npm-check-updates -u",
     "lighthouse": "npx unlighthouse --site https://www.benjaminoddou-photographe.com",
@@ -17,28 +16,33 @@
     "release:major": "standard-version -a --release-as major",
     "prepare": "husky install"
   },
+  "author": {
+    "name": "Benjamin Oddou",
+    "email": "benjaminoddou@hotmail.fr"
+  },
+  "license": "MIT",
   "dependencies": {
-    "@yeger/vue-masonry-wall": "^3.4.3",
+    "@yeger/vue-masonry-wall": "^3.4.4",
     "gsap": "npm:@gsap/shockingly@^3.11.4",
-    "photoswipe": "^5.3.5"
+    "photoswipe": "^5.3.6"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^0.35.2",
+    "@antfu/eslint-config": "^0.36.0",
     "@botpoison/browser": "^0.1.30",
-    "@commitlint/cli": "^17.4.3",
-    "@commitlint/config-conventional": "^17.4.3",
-    "@kevinmarrec/nuxt-pwa": "^0.16.2",
-    "@nuxt/image-edge": "^1.0.0-27919678.2f5b64b",
+    "@commitlint/cli": "^17.4.4",
+    "@commitlint/config-conventional": "^17.4.4",
+    "@kevinmarrec/nuxt-pwa": "^0.17.0",
+    "@nuxt/image-edge": "^1.0.0-27968280.9739e4d",
     "@nuxtjs/color-mode": "^3.2.0",
     "@nuxtjs/eslint-config-typescript": "^12.0.0",
-    "@nuxtjs/tailwindcss": "^6.4.0",
-    "@pinia/nuxt": "^0.4.6",
-    "eslint": "^8.34.0",
+    "@nuxtjs/tailwindcss": "^6.6.0",
+    "@pinia/nuxt": "^0.4.7",
+    "eslint": "^8.36.0",
     "eslint-plugin-nuxt": "^4.0.0",
-    "eslint-plugin-tailwindcss": "^3.8.3",
+    "eslint-plugin-tailwindcss": "^3.10.1",
     "husky": "^8.0.3",
-    "nuxt": "^3.2.0",
-    "nuxt-schema-org": "^2.1.1",
+    "nuxt": "^3.3.1",
+    "nuxt-schema-org": "^2.1.2",
     "sitemap": "^7.1.1",
     "standard-version": "^9.5.0"
   }

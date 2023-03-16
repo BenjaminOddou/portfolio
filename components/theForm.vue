@@ -78,19 +78,25 @@ onMounted(() => {
         toggleActions: 'play none none reset',
       },
     })
-    .from(
+    .fromTo(
       '#title-contact',
       {
         yPercent: 100,
+      },
+      {
+        yPercent: 0,
         duration: 0.7,
         delay: 0.2,
         ease: 'power4.out',
       },
     )
-    .from(
+    .fromTo(
       '#subtitle-contact',
       {
         yPercent: 100,
+      },
+      {
+        yPercent: 0,
         duration: 0.7,
         ease: 'power4.out',
       },

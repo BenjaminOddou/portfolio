@@ -420,7 +420,7 @@ const { data: images } = useFetch<ImageKit[]>('/api/imgkit')
 │   │   ├── checkmark.svg
 │   │   └── ...svg
 ├── components # The components/ directory is where all Vue components can be imported inside pages or other components
-│   ├── svg # iInteractive svg build as vue components
+│   ├── svg # Interactive svg build as vue components
 │   │   ├── ArrowButton.vue
 │   │   └── ...svg
 │   ├── FAQquestion.vue

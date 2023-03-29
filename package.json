@@ -24,7 +24,7 @@
   "dependencies": {
     "@yeger/vue-masonry-wall": "^3.4.4",
     "gsap": "npm:@gsap/shockingly@^3.11.5",
-    "photoswipe": "^5.3.6"
+    "photoswipe": "^5.3.7"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.37.0",
@@ -32,12 +32,12 @@
     "@commitlint/cli": "^17.5.1",
     "@commitlint/config-conventional": "^17.4.4",
     "@kevinmarrec/nuxt-pwa": "^0.17.0",
-    "@nuxt/image-edge": "^1.0.0-27991759.1a5eea1",
+    "@nuxt/image-edge": "^1.0.0-28000486.357efad",
     "@nuxtjs/color-mode": "^3.2.0",
     "@nuxtjs/eslint-config-typescript": "^12.0.0",
-    "@nuxtjs/tailwindcss": "^6.6.4",
+    "@nuxtjs/tailwindcss": "^6.6.5",
     "@pinia/nuxt": "^0.4.7",
-    "eslint": "^8.36.0",
+    "eslint": "^8.37.0",
     "eslint-plugin-nuxt": "^4.0.0",
     "eslint-plugin-tailwindcss": "^3.10.1",
     "husky": "^8.0.3",

@@ -343,10 +343,10 @@ onMounted(() => {
     </svg>
     <div
       id="section-about"
-      class="relative mx-auto max-w-[2500px] px-6 pt-56 pb-[calc(8rem_+_10vh)] sm:px-[10%]"
+      class="relative mx-auto max-w-[2500px] px-6 pb-[calc(8rem_+_10vh)] pt-56 sm:px-[10%]"
     >
       <svg
-        id="big-line" class="absolute top-1/3 -left-3 z-0 h-4/5 w-11/12 fill-transparent stroke-light-lavender stroke-[8px] dark:stroke-light-orange lg:w-4/6"
+        id="big-line" class="absolute -left-3 top-1/3 z-0 h-4/5 w-11/12 fill-transparent stroke-light-lavender stroke-[8px] dark:stroke-light-orange lg:w-4/6"
         xmlns="http://www.w3.org/2000/svg" stroke-linecap="round" preserveAspectRatio="none" viewBox="0 0 520 425"
       >
         <path d="M0 81c53-31 129-50 188-61 84-15 210-31 283 17 21 15 41 51 44 73 3 23-20 64-44 82-31 22-65 39-83 70-21 37-27 74-26 114 0 15 0 35 2 53" vector-effect="non-scaling-stroke" />
@@ -375,7 +375,7 @@ onMounted(() => {
             </svg>
           </div>
         </div>
-        <div class="z-[1] pt-5 pl-4 text-[calc(1rem_+_2vw)] font-light italic">
+        <div class="z-[1] pl-4 pt-5 text-[calc(1rem_+_2vw)] font-light italic">
           <span id="about_block" class="block">moi c'est Benjamin ! Mon histoire avec la photographie remonte à
             mon enfance, lors de voyages et de colonies de vacances. J'avais
             plaisir à capturer et partager mes aventures et mes souvenirs au
@@ -457,7 +457,7 @@ onMounted(() => {
             class="grid w-full grid-cols-[92%_8%] pb-8 text-start md:grid-cols-[95%_5%]"
           >
             <div id="see-all-titles" class="relative h-full overflow-hidden">
-              <div class="absolute top-0 left-0 text-lg font-semibold">
+              <div class="absolute left-0 top-0 text-lg font-semibold">
                 TOUT DÉVELOPPER
               </div>
               <div

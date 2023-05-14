@@ -50,7 +50,7 @@ onMounted(() => {
 
     <div
       id="end-navbar"
-      class="fixed top-6 right-0 z-[11] mr-6 grid grid-cols-2"
+      class="fixed right-0 top-6 z-[11] mr-6 grid grid-cols-2"
     >
       <button
         aria-label="Affichage du Mode Sombre/Lumineux"

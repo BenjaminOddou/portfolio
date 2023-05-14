@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import Botpoison from '@botpoison/browser'
-const { $gsap: gsap } = useNuxtApp()
 
+const { $gsap: gsap } = useNuxtApp()
 const alertMessage = alertStore()
 const config = useRuntimeConfig()
 const botpoison = new Botpoison({
@@ -193,7 +193,7 @@ onMounted(() => {
 <template>
   <div
     id="formsection"
-    class="mx-auto mb-0 grid max-w-[2500px] px-[10vw] pt-[10vh] pb-0 lg:mx-auto lg:mb-0"
+    class="mx-auto mb-0 grid max-w-[2500px] px-[10vw] pb-0 pt-[10vh] lg:mx-auto lg:mb-0"
   >
     <div
       id="contact-container"
@@ -208,7 +208,7 @@ onMounted(() => {
             me contacter
           </div>
         </div>
-        <div class="mx-0 mt-0 mb-8 flex flex-wrap overflow-hidden">
+        <div class="mx-0 mb-8 mt-0 flex flex-wrap overflow-hidden">
           <div id="subtitle-contact" class="cursor-text">
             Champs Obligatoires
           </div>
@@ -291,7 +291,7 @@ onMounted(() => {
             *
           </p>
         </div>
-        <div class="relative mx-0 mt-2 mb-4 flex items-center overflow-hidden">
+        <div class="relative mx-0 mb-4 mt-2 flex items-center overflow-hidden">
           <input id="check" v-model="checked" type="checkbox" required>
           <label id="label-check" class="ml-2 cursor-pointer" for="check">
             Je consens à transmettre mes informations à : Benjamin Oddou

@@ -1,9 +1,8 @@
 <script setup lang="ts">
 const { $gsap: gsap, $SplitText: SplitText } = useNuxtApp()
-
-setResponseStatus(404)
+const event = useRequestEvent()
+setResponseStatus(event, 404)
 const isRoute = routeStore()
-
 const { data: images } = await useFetch<ImageKit[][]>('/api/imgkit', {
   transform: (images) => {
     const tmp = images
@@ -79,7 +78,7 @@ onMounted(() => {
 
 <template>
   <div class="relative h-screen w-screen overflow-hidden">
-    <div class="absolute top-1/2 left-1/2 flex h-[150vh] -translate-x-1/2 -translate-y-1/2 rotate-[22.5deg] transform-gpu flex-col justify-center opacity-50">
+    <div class="absolute left-1/2 top-1/2 flex h-[150vh] -translate-x-1/2 -translate-y-1/2 rotate-[22.5deg] transform-gpu flex-col justify-center opacity-50">
       <div v-for="(row, i) in images" :key="i" :style="`animation-duration: ${10 + 4 * i}s; transform: translateX(25%)`" class="flex animate-[runner_linear_infinite]">
         <div v-for="j in 2" :key="j" class="flex">
           <div v-for="(image, k) in row" :key="k">
@@ -106,7 +105,7 @@ onMounted(() => {
           404
         </div>
         <div
-          class="mt-[1vh] mb-[2vh] p-2 text-base leading-snug sm:text-[2.5vw] lg:text-[29.8px]"
+          class="mb-[2vh] mt-[1vh] p-2 text-base leading-snug sm:text-[2.5vw] lg:text-[29.8px]"
         >
           <div id="content" class="overflow-hidden text-center">
             Désolé, la page que vous recherchez semble introuvable

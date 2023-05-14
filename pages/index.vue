@@ -252,7 +252,7 @@ onMounted(() => {
           </div>
           <div
             id="call-text"
-            class="absolute top-2/3 left-[70%] z-20 hidden w-1/5 max-w-[12rem] gap-2 sm:grid md:left-3/4 lt:top-1/2"
+            class="absolute left-[70%] top-2/3 z-20 hidden w-1/5 max-w-[12rem] gap-2 sm:grid md:left-3/4 lt:top-1/2"
           >
             <span class="hidden cursor-text font-bold lt:block">Réservation disponible !</span>
             <span class="hidden cursor-text text-[0.9rem] lt:block">Veuillez remplir le formulaire en bas tout en précisant le type
@@ -271,7 +271,7 @@ onMounted(() => {
                 >
                   <span
                     id="arrow"
-                    class="absolute inset-y-0 left-[0.625rem] m-auto h-[0.125rem] w-[1.125rem] bg-transparent transition-all duration-500 ease-smooth before:absolute before:top-[-0.25rem] before:right-[0.0625rem] before:h-[0.625rem] before:w-[0.625rem] before:rotate-45 before:border-t-[0.125rem] before:border-r-[0.125rem] before:border-white before:content-[''] group-hover:translate-x-4 group-hover:bg-white dark:before:border-jet dark:group-hover:bg-jet"
+                    class="absolute inset-y-0 left-[0.625rem] m-auto h-[0.125rem] w-[1.125rem] bg-transparent transition-all duration-500 ease-smooth before:absolute before:right-[0.0625rem] before:top-[-0.25rem] before:h-[0.625rem] before:w-[0.625rem] before:rotate-45 before:border-r-[0.125rem] before:border-t-[0.125rem] before:border-white before:content-[''] group-hover:translate-x-4 group-hover:bg-white dark:before:border-jet dark:group-hover:bg-jet"
                   />
                 </span>
                 <span
@@ -317,7 +317,7 @@ onMounted(() => {
               matérialiser nos&#160;<b>souvenirs</b>&#160;et&#160;nos&#160;<b>émotions vécues</b></span>
           </div>
           <span
-            class="link-about mt-2 mb-4 w-[10%] border-t-2 border-current sm:mt-[1vw] sm:mb-[2vw] md:border-t-[3px]"
+            class="link-about mb-4 mt-2 w-[10%] border-t-2 border-current sm:mb-[2vw] sm:mt-[1vw] md:border-t-[3px]"
           />
           <span>
             <NuxtLink
@@ -354,7 +354,7 @@ onMounted(() => {
           >Paysage / Mariage / Portrait / Nature / Architecture /
             Astrophotographie</span>
           <span
-            class="link-portfolio mt-2 mb-4 w-[20%] border-t-2 border-current sm:mt-[1vw] sm:mb-[2vw] md:border-t-[3px]"
+            class="link-portfolio mb-4 mt-2 w-[20%] border-t-2 border-current sm:mb-[2vw] sm:mt-[1vw] md:border-t-[3px]"
           />
           <span>
             <NuxtLink

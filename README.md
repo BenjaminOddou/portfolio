@@ -55,11 +55,11 @@ To contribute to the project, you can read the [Contributing document](CONTRIBUT
 Install [nvm](https://github.com/nvm-sh/nvm). Open the `terminal` and run one of the following :
 
 ```sh
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
 ```
 
 ```sh
-wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh
+wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
 ```
 
 To verify that [nvm](https://github.com/nvm-sh/nvm) has been installed, do:

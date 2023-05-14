@@ -16,7 +16,7 @@ const isLink = linkStore()
     >
       <div style="perspective: 1000px; perspective-origin: bottom;">
         <span class="splitted">{{ title }}</span>
-        <span class="splitted absolute top-0 left-0">{{ title }}</span>
+        <span class="splitted absolute left-0 top-0">{{ title }}</span>
       </div>
     </NuxtLink>
   </li>

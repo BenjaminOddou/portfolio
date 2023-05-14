@@ -246,12 +246,12 @@ onUnmounted(() => {
   <div id="galerie-page">
     <div
       id="return-to-top-container"
-      class="absolute top-[calc(100vh_-_70px)] left-[calc(100vw_-_80px)] z-[4] sm:av:hidden"
+      class="absolute left-[calc(100vw_-_80px)] top-[calc(100vh_-_70px)] z-[4] sm:av:hidden"
     >
       <button
         id="return-to-top"
         aria-label="Retourner en Haut de la Page"
-        class="h-[50px] w-[50px] scale-0 rounded-full bg-jet-8a transition-bg-color duration-500 ease-[ease] after:absolute after:top-[21px] after:left-[19px] after:h-3 after:w-3 after:-rotate-45 after:border-t-2 after:border-r-2 after:border-white after:content-[''] dark:bg-white-8a dark:after:border-jet"
+        class="h-[50px] w-[50px] scale-0 rounded-full bg-jet-8a transition-bg-color duration-500 ease-[ease] after:absolute after:left-[19px] after:top-[21px] after:h-3 after:w-3 after:-rotate-45 after:border-r-2 after:border-t-2 after:border-white after:content-[''] dark:bg-white-8a dark:after:border-jet"
         @click="scrollTop(2, 'power3.inOut')"
       />
     </div>
@@ -265,7 +265,7 @@ onUnmounted(() => {
       >
         <div
           id="title-galerie-container"
-          class="absolute top-[100px] right-0 min-h-[320px] sm:top-[15vh]"
+          class="absolute right-0 top-[100px] min-h-[320px] sm:top-[15vh]"
         >
           <div
             id="header-content"

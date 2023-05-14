@@ -78,7 +78,7 @@ onMounted(() => {
 <template>
   <div
     id="cursor"
-    class="pointer-events-none fixed top-0 left-0 z-[1500] h-[35px] w-[35px] rounded-[50%] bg-cursor opacity-0"
+    class="pointer-events-none fixed left-0 top-0 z-[1500] h-[35px] w-[35px] rounded-[50%] bg-cursor opacity-0"
   />
 </template>
 

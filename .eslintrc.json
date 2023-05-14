@@ -14,6 +14,7 @@
     "README.md"
   ],
   "rules": {
+    "antfu/top-level-function": "off",
     "import/no-named-as-default": 0,
     "no-console": "off",
     "tailwindcss/enforces-negative-arbitrary-values": "off",

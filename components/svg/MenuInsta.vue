@@ -6,13 +6,12 @@ const isNotHover = () => tl.reverse()
 onMounted(() => {
   tl = gsap.timeline().pause()
   tl
-    .to('#dot',
-      {
-        duration: 0.3,
-        scale: 0,
-        transformOrigin: 'center',
-        ease: 'sine.inOut',
-      })
+    .to('#dot', {
+      duration: 0.3,
+      scale: 0,
+      transformOrigin: 'center',
+      ease: 'sine.inOut',
+    })
     .to(
       '#lens1',
       {

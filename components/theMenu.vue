@@ -48,7 +48,7 @@ onMounted(() => {
           })
           xTo.tween.pause()
           yTo.tween.pause()
-          // eslint-disable-next-line @typescript-eslint/no-use-before-define
+          // eslint-disable-next-line ts/no-use-before-define
           gsap.ticker.add(updateSkew)
           // make the proxy sit right on top and add it to the DOM so that bounds work
           gsap.set(proxy, {

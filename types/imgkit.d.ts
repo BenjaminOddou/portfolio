@@ -46,16 +46,16 @@ declare global {
     The1500X1500 = '1500x1500',
     The1554X1036 = '1554x1036',
     The600X750 = '600x750',
-    The910X1365 = '910x1365'
+    The910X1365 = '910x1365',
   }
 
   export enum FileType {
-    Image = 'image'
+    Image = 'image',
   }
 
   export enum MIME {
     ImageJPEG = 'image/jpeg',
-    ImageWebp = 'image/webp'
+    ImageWebp = 'image/webp',
   }
 
   export enum Tag {
@@ -65,11 +65,11 @@ declare global {
     Mariage = 'mariage',
     Nature = 'nature',
     Paysage = 'paysage',
-    Portrait = 'portrait'
+    Portrait = 'portrait',
   }
 
   export enum Type {
-    File = 'file'
+    File = 'file',
   }
 
   export interface VersionInfo {
@@ -78,6 +78,6 @@ declare global {
   }
 
   export enum Name {
-    Version1 = 'Version 1'
+    Version1 = 'Version 1',
   }
 }

@@ -21,7 +21,7 @@ const items = ref(images.value?.slice(0, 25))
 const filter = ref('*')
 const isRoute = routeStore()
 
-const scrollTop = (duration: number, ease: string) => {
+function scrollTop(duration: number, ease: string) {
   const Smooth = ScrollSmoother.get() as globalThis.ScrollSmoother
   gsap.to(Smooth, {
     duration,
@@ -30,7 +30,7 @@ const scrollTop = (duration: number, ease: string) => {
   })
 }
 
-const reFilter = async (newFilter: string, event: MouseEvent) => {
+async function reFilter(newFilter: string, event: MouseEvent) {
   scrollTop(1, 'expo.out')
   document
     .querySelectorAll<HTMLButtonElement>('.filters-group-container > button')
@@ -44,7 +44,7 @@ const reFilter = async (newFilter: string, event: MouseEvent) => {
   ScrollTrigger.refresh()
 }
 
-const handleClick = () => {
+function handleClick() {
   countImages.value = 0
   const cacheImageNumber = imageNumber.value
   imageNumber.value = imageNumber.value + 25
@@ -52,7 +52,7 @@ const handleClick = () => {
   items.value = items.value?.concat(newItems as ImageKit[])
 }
 
-const refresh = async () => {
+async function refresh() {
   await nextTick()
   ScrollTrigger.refresh()
 }

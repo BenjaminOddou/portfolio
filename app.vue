@@ -21,14 +21,14 @@ isLink.$subscribe(() => {
   thisLink = location.href
 })
 
-const onBeforeLeave = (_el: Element) => {
+function onBeforeLeave(_el: Element) {
   isLock.$patch({
     isReady: true,
   })
   ScrollTrigger.killAll()
 }
 
-const onLeave = (_el: Element, done: any) => {
+function onLeave(_el: Element, done: any) {
   const menuItems = document.querySelectorAll(
     '.menu-item',
   ) as NodeListOf<HTMLAnchorElement>
@@ -103,7 +103,7 @@ const onLeave = (_el: Element, done: any) => {
     )
 }
 
-const onEnter = (_el: Element, done: any) => {
+function onEnter(_el: Element, done: any) {
   gsap
     .timeline()
     .set('#quadbz', {
@@ -139,7 +139,7 @@ const onEnter = (_el: Element, done: any) => {
     )
 }
 
-const onAfterEnter = (_el: Element) => {
+function onAfterEnter(_el: Element) {
   ScrollTrigger.refresh()
   delay(100).then(() => {
     isLock.$patch({

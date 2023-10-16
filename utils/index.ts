@@ -1,5 +1,5 @@
 // Delay
-export const delay = (n: number) => {
+export function delay(n: number) {
   n = n || 2000
   return new Promise<void>((resolve) => {
     setTimeout(() => {

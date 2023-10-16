@@ -1,7 +1,7 @@
 <script setup lang="ts">
 const { $gsap: gsap } = useNuxtApp()
 
-const setColorTheme = (newTheme: 'light' | 'dark') => {
+function setColorTheme(newTheme: 'light' | 'dark') {
   useColorMode().preference = newTheme
 }
 onMounted(() => {

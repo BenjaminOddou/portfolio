@@ -27,11 +27,9 @@ export default defineNuxtConfig({
   alias: {
     pinia: '/node_modules/@pinia/nuxt/node_modules/pinia/dist/pinia.mjs',
   },
-  schemaOrg: {
-    meta: {
-      host: 'https://www.benjaminoddou-photographe.com',
-      inLanguage: 'fr-FR',
-    },
+  site: {
+    url: 'https://www.benjaminoddou-photographe.com',
+    name: 'Benjamin Oddou Photographe',
   },
   image: {
     provider: 'imagekit',

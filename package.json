@@ -1,12 +1,17 @@
 {
-  "version": "0.1.5",
+  "type": "module",
+  "version": "0.2.0",
   "private": true,
+  "author": {
+    "name": "Benjamin Oddou",
+    "email": "benjaminoddou@hotmail.fr"
+  },
+  "license": "MIT",
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "PORT=8000 nuxt preview",
-    "test": "nuxi test",
     "upck": "npx --yes npm-check-updates -u --reject gsap",
     "lighthouse": "npx unlighthouse --site https://www.benjaminoddou-photographe.com",
     "eslint-fix": "eslint . --fix",
@@ -16,33 +21,25 @@
     "release:major": "standard-version -a --release-as major",
     "prepare": "husky install"
   },
-  "author": {
-    "name": "Benjamin Oddou",
-    "email": "benjaminoddou@hotmail.fr"
-  },
-  "license": "MIT",
   "dependencies": {
-    "@yeger/vue-masonry-wall": "^3.4.4",
-    "gsap": "npm:@gsap/shockingly@^3.11.5",
-    "photoswipe": "^5.3.7"
+    "@yeger/vue-masonry-wall": "^5.0.2",
+    "gsap": "github:BenjaminOddou/gsap-shockingly-green#main",
+    "photoswipe": "^5.4.2"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^0.38.6",
+    "@antfu/eslint-config": "1.0.0-beta.27",
     "@botpoison/browser": "^0.1.30",
-    "@commitlint/cli": "^17.6.3",
-    "@commitlint/config-conventional": "^17.6.3",
+    "@commitlint/cli": "^17.8.0",
+    "@commitlint/config-conventional": "^17.8.0",
     "@kevinmarrec/nuxt-pwa": "^0.17.0",
-    "@nuxt/image-edge": "^1.0.0-28059208.2abef1b",
-    "@nuxtjs/color-mode": "^3.2.0",
-    "@nuxtjs/eslint-config-typescript": "^12.0.0",
-    "@nuxtjs/tailwindcss": "^6.6.8",
-    "@pinia/nuxt": "^0.4.10",
-    "eslint": "^8.40.0",
-    "eslint-plugin-nuxt": "^4.0.0",
-    "eslint-plugin-tailwindcss": "^3.11.0",
+    "@nuxt/image-edge": "^1.0.0-rc.3-28282346.a10323e",
+    "@nuxtjs/color-mode": "^3.3.0",
+    "@nuxtjs/tailwindcss": "^6.8.0",
+    "@pinia/nuxt": "^0.5.0",
+    "eslint": "^8.51.0",
     "husky": "^8.0.3",
-    "nuxt": "^3.4.3",
-    "nuxt-schema-org": "^2.1.3",
+    "nuxt": "^3.7.4",
+    "nuxt-schema-org": "^3.0.1",
     "sitemap": "^7.1.1",
     "standard-version": "^9.5.0"
   }

@@ -15,7 +15,7 @@ const Mail = ref('')
 const Objet = ref('')
 const Message = ref('')
 
-const submitForm = async () => {
+async function submitForm() {
   loading.value = true
   try {
     const { solution } = await botpoison.challenge()
@@ -64,8 +64,7 @@ onMounted(() => {
     '.stars:not(#last-star)',
   )
   const boxAnima = document.querySelectorAll<HTMLDivElement>('.box-animation')
-  const boxAnima2
-    = document.querySelectorAll<HTMLDivElement>('.box-animation_2')
+  const boxAnima2 = document.querySelectorAll<HTMLDivElement>('.box-animation_2')
   const placeHolders = document.querySelectorAll<HTMLElement>(
     'input[type=\'email\'], input[type=\'text\'], textarea, select',
   )
@@ -78,25 +77,19 @@ onMounted(() => {
         toggleActions: 'play none none reset',
       },
     })
-    .fromTo(
-      '#title-contact',
+    .from(
+      '#titleContact',
       {
         yPercent: 100,
-      },
-      {
-        yPercent: 0,
         duration: 0.7,
         delay: 0.2,
         ease: 'power4.out',
       },
     )
-    .fromTo(
-      '#subtitle-contact',
+    .from(
+      '#subtitleContact',
       {
         yPercent: 100,
-      },
-      {
-        yPercent: 0,
         duration: 0.7,
         ease: 'power4.out',
       },
@@ -201,17 +194,17 @@ onMounted(() => {
     >
       <form class="relative w-full" @submit.prevent="submitForm()">
         <div class="overflow-hidden">
-          <div
-            id="title-contact"
+          <p
+            id="titleContact"
             class="baron cursor-text text-[24.775px] lg:text-[2.5vw] 2xl:text-[42px]"
           >
             me contacter
-          </div>
+          </p>
         </div>
         <div class="mx-0 mb-8 mt-0 flex flex-wrap overflow-hidden">
-          <div id="subtitle-contact" class="cursor-text">
+          <p id="subtitleContact" class="cursor-text">
             Champs Obligatoires
-          </div>
+          </p>
           <p class="stars ml-1">
             *
           </p>

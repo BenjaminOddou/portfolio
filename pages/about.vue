@@ -138,7 +138,7 @@ onMounted(() => {
   const aboutblockTextChild = new SplitText('#description span', {
     type: 'lines',
   })
-  // eslint-disable-next-line no-unused-vars, unused-imports/no-unused-vars
+  // eslint-disable-next-line unused-imports/no-unused-vars
   const aboutblockTextParent = new SplitText('#description span', {
     type: 'lines',
     linesClass: 'overflow-hidden',

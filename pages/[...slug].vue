@@ -23,7 +23,7 @@ useHead({
 
 onMounted(() => {
   const home = document.querySelector<HTMLDivElement>('#home')
-  // eslint-disable-next-line no-unused-vars, unused-imports/no-unused-vars
+  // eslint-disable-next-line unused-imports/no-unused-vars
   const qCqP = new SplitText('#ErrorCode', {
     type: 'chars',
     charsClass: 'overflow-hidden',

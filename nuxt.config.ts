@@ -20,9 +20,9 @@ export default defineNuxtConfig({
     'nuxt-schema-org',
     '@kevinmarrec/nuxt-pwa',
     '@nuxtjs/color-mode',
-    '@nuxt/image-edge',
     '@nuxtjs/tailwindcss',
     '@pinia/nuxt',
+    '@nuxt/image',
   ],
   alias: {
     pinia: '/node_modules/@pinia/nuxt/node_modules/pinia/dist/pinia.mjs',

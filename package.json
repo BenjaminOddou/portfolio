@@ -8,6 +8,7 @@
   },
   "license": "MIT",
   "scripts": {
+    "preinstall": "bash ./scripts/build.sh",
     "build": "nuxt build",
     "dev": "nuxt dev",
     "generate": "nuxt generate",

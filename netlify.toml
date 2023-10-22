@@ -1,5 +1,3 @@
-[build.environment]
-NPM_CONFIG_USERCONFIG = ".npmrc-netlify"
 [[plugins]]
 package = "netlify-plugin-submit-sitemap"
 	[plugins.inputs]

@@ -1,4 +1,0 @@
-//npm.pkg.github.com/:_authToken=${GITHUB_TOKEN}
-@BenjaminOddou:registry=https://npm.pkg.github.com
-@BenjaminOddou:always-auth=true
-legacy-peer-deps=true

@@ -23,7 +23,7 @@
   },
   "dependencies": {
     "@yeger/vue-masonry-wall": "^5.0.2",
-    "gsap": "git+https://oauth2:$GITHUB_TOKEN@github.com/BenjaminOddou/gsap-shockingly-green.git",
+    "gsap": "git+https://${GITHUB_TOKEN}:x-oauth-basic@github.com/BenjaminOddou/gsap-shockingly-green.git",
     "photoswipe": "^5.4.2"
   },
   "devDependencies": {

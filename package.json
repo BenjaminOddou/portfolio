@@ -8,6 +8,7 @@
   },
   "license": "MIT",
   "scripts": {
+    "preinstall": "bash netlify-setup.sh",
     "build": "nuxt build",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
@@ -23,7 +24,7 @@
   },
   "dependencies": {
     "@yeger/vue-masonry-wall": "^5.0.2",
-    "gsap": "github:BenjaminOddou/gsap-shockingly-green",
+    "gsap": "git+ssh://git@github.com:BenjaminOddou/gsap-shockingly-green.git",
     "photoswipe": "^5.4.2"
   },
   "devDependencies": {

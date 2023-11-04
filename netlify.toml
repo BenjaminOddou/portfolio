@@ -1,3 +1,5 @@
+[build]
+command = "bash ./scripts/init.sh"
 [[plugins]]
 package = "netlify-plugin-submit-sitemap"
 	[plugins.inputs]

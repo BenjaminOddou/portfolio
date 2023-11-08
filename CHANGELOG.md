@@ -2,6 +2,40 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.3.0](https://github.com/BenjaminOddou/portfolio/compare/v0.1.5...v0.3.0) (2023-11-08)
+
+
+### 📖 Documentation
+
+* fix typo ([b4fe937](https://github.com/BenjaminOddou/portfolio/commits/b4fe93735fe55f52f9f472725fa486f71a648bd6))
+
+
+### 🏡 Chore
+
+* bump versions ([e317200](https://github.com/BenjaminOddou/portfolio/commits/e31720085c41b6d1cb4d116169f6e7cd79f69f72))
+* bump versions ([fdcd60e](https://github.com/BenjaminOddou/portfolio/commits/fdcd60e5c7721bae35a5a2422b962524486ab821))
+* bump versions + fixed gsap version ([57ea7e4](https://github.com/BenjaminOddou/portfolio/commits/57ea7e496d27ba4ed932f06ca0b25717afe582cf))
+* **deps-dev:** bump word-wrap from 1.2.3 to 1.2.4 ([f0ddbc9](https://github.com/BenjaminOddou/portfolio/commits/f0ddbc9fd985f445699fe3e30faf3ab55f889637))
+* **deps:** bump postcss from 8.4.23 to 8.4.31 ([06c2972](https://github.com/BenjaminOddou/portfolio/commits/06c297222aac9d05a65dcd2a2ad3fce301605362))
+* **deps:** bump vite from 4.3.5 to 4.3.9 ([33167e3](https://github.com/BenjaminOddou/portfolio/commits/33167e32e441e686b470617b4105d5bc66a82c7e))
+* migrate gsap to private github repo ([53ceb28](https://github.com/BenjaminOddou/portfolio/commits/53ceb2805e9c3fe5ffef91dfee021ff74514b7db))
+* update nuxt/image ([4ca5746](https://github.com/BenjaminOddou/portfolio/commits/4ca57463f64b40ee987180fcd74d78784366877d))
+* update packages ([78702da](https://github.com/BenjaminOddou/portfolio/commits/78702dab829bdee584dce188914deef7c6b92ddd))
+* update packages ([f58bc86](https://github.com/BenjaminOddou/portfolio/commits/f58bc86259a110760dc68e7eab5e923c4e729394))
+
+
+### 🩹 Fixes
+
+* .npmrc ([6969e54](https://github.com/BenjaminOddou/portfolio/commits/6969e54ccafb67fa81f958785727dc0531ce714f))
+* @nuxtjs/tailwindcss v6.6.5 ([9c2a297](https://github.com/BenjaminOddou/portfolio/commits/9c2a297968e82fb3166d797df875cd92c040919f)), closes [#650](https://github.com/BenjaminOddou/portfolio/issues/650) [NT_kwDOBROJ7rM1OTk1NzAzNjg4Ojg1MTY2NTc0#event-8870442433](https://github.com/BenjaminOddou/NT_kwDOBROJ7rM1OTk1NzAzNjg4Ojg1MTY2NTc0/issues/event-8870442433)
+* build command ([5157605](https://github.com/BenjaminOddou/portfolio/commits/51576053efc45a8e2655282625d22783c5307a49))
+
+
+### 💅 Refactors
+
+* add gsap plugin ([043d4fb](https://github.com/BenjaminOddou/portfolio/commits/043d4fb094b0a66684defcb1068091a183a3feab))
+* nuxt transitions ([5c0fafa](https://github.com/BenjaminOddou/portfolio/commits/5c0fafa7e1a3cba0c0f00728c7e116d099807f80))
+
 ### [0.1.5](https://github.com/BenjaminOddou/portfolio/compare/v0.1.4...v0.1.5) (2023-02-13)
 
 

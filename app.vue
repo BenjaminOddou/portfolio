@@ -452,19 +452,7 @@ onMounted(() => {
 
     <div id="smooth-content">
       <div id="to-offset">
-        <router-view v-slot="{ Component }">
-          <Transition
-            mode="out-in"
-            :css="false"
-            @before-leave="onBeforeLeave"
-            @leave="onLeave"
-            @enter="onEnter"
-            @after-enter="onAfterEnter"
-          >
-            <component :is="Component" v-if="Component" />
-          </Transition>
-        </router-view>
-        <!-- <NuxtPage
+        <NuxtPage
           :transition="{
             mode: 'out-in',
             css: false,
@@ -473,7 +461,7 @@ onMounted(() => {
             onEnter,
             onAfterEnter,
           }"
-        /> -->
+        />
       </div>
     </div>
   </div>

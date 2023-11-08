@@ -74,11 +74,10 @@ onMounted(() => {
       scrollTrigger: {
         trigger: '#contact-container',
         start: 'top 100%',
-        toggleActions: 'play none none reset',
       },
     })
     .from(
-      '#titleContact',
+      '#meContacter',
       {
         yPercent: 100,
         duration: 0.7,
@@ -195,14 +194,14 @@ onMounted(() => {
       <form class="relative w-full" @submit.prevent="submitForm()">
         <div class="overflow-hidden">
           <p
-            id="titleContact"
-            class="baron cursor-text text-[24.775px] lg:text-[2.5vw] 2xl:text-[42px]"
+            id="meContacter"
+            class="baron text-[25px] lg:text-[2.5vw] 2xl:text-[42px]"
           >
             me contacter
           </p>
         </div>
         <div class="mx-0 mb-8 mt-0 flex flex-wrap overflow-hidden">
-          <p id="subtitleContact" class="cursor-text">
+          <p id="subtitleContact">
             Champs Obligatoires
           </p>
           <p class="stars ml-1">

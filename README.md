@@ -436,6 +436,7 @@ const { data: images } = useFetch<ImageKit[]>('/api/imgkit')
 ├── CODE_OF_CONDUCT.md # Code of conduct
 ├── CONTRIBUTING.md # Contributing guide
 ├── LICENSE # MIT License
+├── netlify-setup.sh # Use SSH key in netlify
 ├── netlify.toml # Configuration file for netlify
 ├── nuxt.config.ts # Nuxt configuration file
 ├── package-lock.json # Aggregates an immutable version of the package.json file

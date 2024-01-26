@@ -43,7 +43,7 @@
   "editor.formatOnPaste": false,
   "editor.renderWhitespace": "trailing",
   "editor.linkedEditing": true,
-  "editor.occurrencesHighlight": false,
+  "editor.occurrencesHighlight": "off",
   "editor.suggest.insertMode": "replace",
   "editor.acceptSuggestionOnCommitCharacter": false,
   "explorer.autoReveal": false,

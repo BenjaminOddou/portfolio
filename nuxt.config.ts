@@ -18,7 +18,7 @@ export default defineNuxtConfig({
   },
   modules: [
     'nuxt-schema-org',
-    '@kevinmarrec/nuxt-pwa',
+    '@vite-pwa/nuxt',
     '@nuxtjs/color-mode',
     '@nuxtjs/tailwindcss',
     '@pinia/nuxt',
@@ -49,28 +49,6 @@ export default defineNuxtConfig({
     dataValue: 'theme',
   },
   pwa: {
-    workbox: {
-      enabled: true,
-    },
-    icon: {
-      source: './assets/pwa-512x512.png',
-    },
-    meta: {
-      lang: 'fr',
-      name: '',
-      author: 'Benjamin Oddou',
-      ogSiteName: 'Benjamin Oddou Photographe',
-      ogHost: 'benjaminoddou-photographe.com',
-      ogImage: {
-        path: '/banner.jpg',
-        width: 1874,
-        height: 1150,
-        type: 'image/jpeg',
-      },
-      twitterCard: 'summary_large_image',
-      twitterCreator: '@benjamin_oddou',
-      twitterSite: '@benjamin_oddou',
-    },
     manifest: {
       name: 'Benjamin Oddou Photographe',
       short_name: 'Benjamin Oddou',
@@ -80,6 +58,29 @@ export default defineNuxtConfig({
       background_color: '#ffffff',
       display: 'standalone',
       lang: 'fr',
+      icons: [
+        {
+          src: 'pwa-64x64.png',
+          sizes: '64x64',
+          type: 'image/png',
+        },
+        {
+          src: 'pwa-192x192.png',
+          sizes: '192x192',
+          type: 'image/png',
+        },
+        {
+          src: 'pwa-512x512.png',
+          sizes: '512x512',
+          type: 'image/png',
+        },
+        {
+          src: 'maskable-icon-512x512.png',
+          sizes: '512x512',
+          type: 'image/png',
+          purpose: 'maskable',
+        },
+      ],
     },
   },
 })

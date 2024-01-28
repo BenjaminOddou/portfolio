@@ -169,6 +169,7 @@ useHead({
   ],
   link: [
     { rel: 'canonical', href: `${router.meta.url}` },
+    { rel: 'apple-touch-icon', href: '/apple-touch-icon-180x180.png' },
     { rel: 'mask-icon', href: '/safari-pinned-tab.svg', color: '#fca87f' },
     { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
     { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' },
@@ -426,6 +427,7 @@ onMounted(() => {
 </script>
 
 <template>
+  <NuxtPwaManifest />
   <div id="smooth-wrapper">
     <ThePreloader />
 

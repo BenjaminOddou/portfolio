@@ -1,6 +1,6 @@
 {
   "type": "module",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "private": true,
   "author": {
     "name": "Benjamin Oddou",
@@ -10,7 +10,7 @@
   "scripts": {
     "preinstall": "bash ./scripts/init.sh",
     "build": "nuxt build",
-    "dev": "nuxt dev",
+    "dev": "nuxt dev --host",
     "generate": "nuxt generate",
     "preview": "PORT=8000 nuxt preview",
     "upck": "npx --yes npm-check-updates -u",
@@ -27,7 +27,7 @@
     "photoswipe": "^5.4.3"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "2.8.3",
+    "@antfu/eslint-config": "2.11.5",
     "@botpoison/browser": "^0.1.30",
     "@commitlint/cli": "^19.2.1",
     "@commitlint/config-conventional": "^19.1.0",

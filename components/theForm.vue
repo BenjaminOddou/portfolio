@@ -80,8 +80,8 @@ onMounted(() => {
       '#meContacter',
       {
         yPercent: 100,
-        duration: 0.7,
-        delay: 0.2,
+        duration: 1,
+        delay: 0.3,
         ease: 'power4.out',
       },
     )
@@ -103,7 +103,7 @@ onMounted(() => {
         stagger: 0.2,
         ease: 'power3.out',
       },
-      '<+=0.5',
+      '<+=0.3',
     )
     .fromTo(
       boxAnima2,
@@ -193,17 +193,17 @@ onMounted(() => {
     >
       <form class="relative w-full" @submit.prevent="submitForm()">
         <div class="overflow-hidden">
-          <p
+          <div
             id="meContacter"
             class="baron text-[25px] lg:text-[2.5vw] 2xl:text-[42px]"
           >
             me contacter
-          </p>
+          </div>
         </div>
         <div class="mx-0 mb-8 mt-0 flex flex-wrap overflow-hidden">
-          <p id="subtitleContact">
+          <div id="subtitleContact">
             Champs Obligatoires
-          </p>
+          </div>
           <p class="stars ml-1">
             *
           </p>

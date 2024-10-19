@@ -8,9 +8,27 @@ import { MorphSVGPlugin } from 'gsap/MorphSVGPlugin'
 import { DrawSVGPlugin } from 'gsap/DrawSVGPlugin'
 
 export default defineNuxtPlugin(() => {
-  if (process.client)
-    gsap.registerPlugin(ScrollTrigger, ScrollSmoother, Draggable, InertiaPlugin, SplitText, MorphSVGPlugin, DrawSVGPlugin)
+  if (import.meta.client) {
+    gsap.registerPlugin(
+      ScrollTrigger,
+      ScrollSmoother,
+      Draggable,
+      InertiaPlugin,
+      SplitText,
+      MorphSVGPlugin,
+      DrawSVGPlugin
+    )
+  }
   return {
-    provide: { gsap, ScrollTrigger, ScrollSmoother, Draggable, InertiaPlugin, SplitText, MorphSVGPlugin, DrawSVGPlugin },
+    provide: {
+      gsap,
+      ScrollTrigger,
+      ScrollSmoother,
+      Draggable,
+      InertiaPlugin,
+      SplitText,
+      MorphSVGPlugin,
+      DrawSVGPlugin,
+    },
   }
 })

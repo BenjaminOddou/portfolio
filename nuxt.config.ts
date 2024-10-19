@@ -9,6 +9,7 @@ export default defineNuxtConfig({
       gzip: false,
     },
   },
+
   runtimeConfig: {
     IMAGEKIT_B64_API: '',
     public: {
@@ -16,6 +17,7 @@ export default defineNuxtConfig({
       BOTPOISON_PK: '',
     },
   },
+
   modules: [
     'nuxt-schema-org',
     '@vite-pwa/nuxt',
@@ -24,13 +26,16 @@ export default defineNuxtConfig({
     '@pinia/nuxt',
     '@nuxt/image',
   ],
+
   alias: {
     pinia: '/node_modules/@pinia/nuxt/node_modules/pinia/dist/pinia.mjs',
   },
+
   site: {
     url: 'https://www.benjaminoddou-photographe.com',
     name: 'Benjamin Oddou Photographe',
   },
+
   image: {
     provider: 'imagekit',
     imagekit: {
@@ -44,10 +49,12 @@ export default defineNuxtConfig({
       '2xl': 1679,
     },
   },
+
   colorMode: {
     classSuffix: '',
     dataValue: 'theme',
   },
+
   pwa: {
     manifest: {
       name: 'Benjamin Oddou Photographe',
@@ -83,4 +90,6 @@ export default defineNuxtConfig({
       ],
     },
   },
+
+  compatibilityDate: '2024-10-19',
 })

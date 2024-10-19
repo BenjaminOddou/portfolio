@@ -1,5 +1,4 @@
 <script setup lang="ts">
-// @ts-expect-error-next-line
 import PhotoSwipeLightbox from 'photoswipe/lightbox'
 import 'photoswipe/style.css'
 

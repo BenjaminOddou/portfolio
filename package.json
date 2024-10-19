@@ -23,24 +23,24 @@
     "prepare": "husky install"
   },
   "dependencies": {
-    "@yeger/vue-masonry-wall": "^5.0.12",
+    "@yeger/vue-masonry-wall": "^5.0.16",
     "photoswipe": "^5.4.4"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "2.21.1",
+    "@antfu/eslint-config": "3.8.0",
     "@botpoison/browser": "^0.1.30",
-    "@commitlint/cli": "^19.3.0",
-    "@commitlint/config-conventional": "^19.2.2",
-    "@nuxt/image": "^1.7.0",
-    "@nuxtjs/color-mode": "^3.4.2",
-    "@nuxtjs/tailwindcss": "^6.12.0",
-    "@pinia/nuxt": "^0.5.1",
-    "@vite-pwa/assets-generator": "^0.2.4",
-    "@vite-pwa/nuxt": "^0.8.1",
-    "eslint": "^9.5.0",
-    "husky": "^9.0.11",
-    "nuxt": "^3.12.2",
-    "nuxt-schema-org": "^3.3.8",
+    "@commitlint/cli": "^19.5.0",
+    "@commitlint/config-conventional": "^19.5.0",
+    "@nuxt/image": "^1.8.1",
+    "@nuxtjs/color-mode": "^3.5.1",
+    "@nuxtjs/tailwindcss": "^6.12.2",
+    "@pinia/nuxt": "^0.5.5",
+    "@vite-pwa/assets-generator": "^0.2.6",
+    "@vite-pwa/nuxt": "^0.10.5",
+    "eslint": "^9.13.0",
+    "husky": "^9.1.6",
+    "nuxt": "^3.13.2",
+    "nuxt-schema-org": "^3.4.1",
     "sitemap": "^8.0.0",
     "standard-version": "^9.5.0"
   }

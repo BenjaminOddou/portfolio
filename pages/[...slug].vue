@@ -1,7 +1,5 @@
 <script setup lang="ts">
 const { $gsap: gsap, $SplitText: SplitText } = useNuxtApp()
-const event = useRequestEvent()
-setResponseStatus(event, 404)
 const isRoute = routeStore()
 const { data: images } = await useFetch<ImageKit[][]>('/api/imgkit', {
   transform: (images) => {
@@ -23,7 +21,6 @@ useHead({
 
 onMounted(() => {
   const home = document.querySelector<HTMLDivElement>('#home')
-  // eslint-disable-next-line unused-imports/no-unused-vars
   const qCqP = new SplitText('#ErrorCode', {
     type: 'chars',
     charsClass: 'overflow-hidden',
@@ -89,7 +86,7 @@ onMounted(() => {
                   ? 'w-[100vh] rounded-[20vh]'
                   : 'w-[30vh] rounded-[50%]'
               }`"
-            />
+            ></div>
           </div>
         </div>
       </div>

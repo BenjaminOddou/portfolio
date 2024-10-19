@@ -15,9 +15,7 @@ useHead({
 
 onMounted(() => {
   const Smooth = ScrollSmoother.get() as globalThis.ScrollSmoother
-  const buttonsToForm = document.querySelectorAll(
-    '.to-form',
-  ) as NodeListOf<HTMLButtonElement>
+  const buttonsToForm = document.querySelectorAll<HTMLButtonElement>('.to-form')
   const titleHero = new SplitText('#titleHero', {
     type: 'lines, chars',
   })

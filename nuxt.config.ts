@@ -19,17 +19,13 @@ export default defineNuxtConfig({
   },
 
   modules: [
+    '@pinia/nuxt',
     'nuxt-schema-org',
     '@vite-pwa/nuxt',
     '@nuxtjs/color-mode',
     '@nuxtjs/tailwindcss',
-    '@pinia/nuxt',
     '@nuxt/image',
   ],
-
-  alias: {
-    pinia: '/node_modules/@pinia/nuxt/node_modules/pinia/dist/pinia.mjs',
-  },
 
   site: {
     url: 'https://www.benjaminoddou-photographe.com',
@@ -91,5 +87,5 @@ export default defineNuxtConfig({
     },
   },
 
-  compatibilityDate: '2024-10-19',
+  compatibilityDate: '2025-01-01',
 })

@@ -1,4 +1,3 @@
-// @ts-expect-error-next-line
 import { defineStore } from 'pinia'
 
 export const scrollStore = defineStore({

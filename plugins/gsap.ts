@@ -1,11 +1,11 @@
 import { gsap } from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import { ScrollSmoother } from 'gsap/ScrollSmoother'
 import { Draggable } from 'gsap/Draggable'
-import { InertiaPlugin } from 'gsap/InertiaPlugin'
-import { SplitText } from 'gsap/SplitText'
-import { MorphSVGPlugin } from 'gsap/MorphSVGPlugin'
 import { DrawSVGPlugin } from 'gsap/DrawSVGPlugin'
+import { InertiaPlugin } from 'gsap/InertiaPlugin'
+import { MorphSVGPlugin } from 'gsap/MorphSVGPlugin'
+import { ScrollSmoother } from 'gsap/ScrollSmoother'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { SplitText } from 'gsap/SplitText'
 
 export default defineNuxtPlugin(() => {
   if (import.meta.client) {
@@ -16,7 +16,7 @@ export default defineNuxtPlugin(() => {
       InertiaPlugin,
       SplitText,
       MorphSVGPlugin,
-      DrawSVGPlugin
+      DrawSVGPlugin,
     )
   }
   return {

@@ -1,12 +1,12 @@
 // types/nuxt.d.ts
-import { gsap } from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import { ScrollSmoother } from 'gsap/ScrollSmoother'
-import { Draggable } from 'gsap/Draggable'
-import { InertiaPlugin } from 'gsap/InertiaPlugin'
-import { SplitText } from 'gsap/SplitText'
-import { MorphSVGPlugin } from 'gsap/MorphSVGPlugin'
-import { DrawSVGPlugin } from 'gsap/DrawSVGPlugin'
+import type { gsap } from 'gsap'
+import type { Draggable } from 'gsap/Draggable'
+import type { DrawSVGPlugin } from 'gsap/DrawSVGPlugin'
+import type { InertiaPlugin } from 'gsap/InertiaPlugin'
+import type { MorphSVGPlugin } from 'gsap/MorphSVGPlugin'
+import type { ScrollSmoother } from 'gsap/ScrollSmoother'
+import type { ScrollTrigger } from 'gsap/ScrollTrigger'
+import type { SplitText } from 'gsap/SplitText'
 
 declare module '#app' {
   interface NuxtApp {

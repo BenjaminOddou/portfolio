@@ -71,7 +71,8 @@ onMounted(() => {
   if (ScrollTrigger.isTouch === 1) {
     document
       .querySelector<HTMLDivElement>('#return-to-top-container')
-      ?.classList.replace(
+      ?.classList
+      .replace(
         'top-[calc(100vh_-_70px)]',
         'top-[calc(100svh_-_70px)]',
       )

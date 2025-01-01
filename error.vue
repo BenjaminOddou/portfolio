@@ -1,6 +1,10 @@
 <script setup lang="ts">
-const { $gsap: gsap, $SplitText: SplitText } = useNuxtApp()
-const isRoute = routeStore()
+import type { NuxtError } from '#app'
+
+const props = defineProps({
+  error: Object as () => NuxtError,
+})
+
 const { data: images } = await useFetch<ImageKit[][]>('/api/imgkit', {
   transform: (images) => {
     const tmp = images
@@ -13,63 +17,6 @@ const { data: images } = await useFetch<ImageKit[][]>('/api/imgkit', {
 
     return result
   },
-})
-
-useHead({
-  title: 'Oups...',
-})
-
-onMounted(() => {
-  const home = document.querySelector<HTMLDivElement>('#home')
-  const qCqP = new SplitText('#ErrorCode', {
-    type: 'chars',
-    charsClass: 'overflow-hidden',
-  })
-  const qCqC = new SplitText('#ErrorCode', {
-    type: 'chars',
-  })
-  const textContentP = new SplitText('#content', {
-    type: 'lines',
-    linesClass: 'overflow-hidden',
-  })
-  const textContentC = new SplitText('#content', {
-    type: 'chars',
-  })
-  const tl1 = gsap.timeline().pause()
-  isRoute.$subscribe(() => {
-    tl1.play()
-  })
-
-  tl1
-    .from(qCqC.chars, {
-      xPercent: 100,
-      duration: 1.2,
-      ease: 'power4.out',
-    })
-    .from(
-      textContentC.chars,
-      {
-        yPercent: 100,
-        duration: 0.8,
-        ease: 'power4.out',
-        stagger: 0.03,
-        onComplete: () => {
-          textContentP.revert()
-          textContentC.revert()
-        },
-      },
-      '<+0.3',
-    )
-    .from(
-      home,
-      {
-        autoAlpha: 0,
-        scale: 0.7,
-        duration: 1,
-        ease: 'back.out(1.4)',
-      },
-      '<+=0.6',
-    )
 })
 </script>
 
@@ -86,7 +33,7 @@ onMounted(() => {
                   ? 'w-[100vh] rounded-[20vh]'
                   : 'w-[30vh] rounded-[50%]'
               }`"
-            ></div>
+            />
           </div>
         </div>
       </div>
@@ -99,22 +46,22 @@ onMounted(() => {
           id="ErrorCode"
           class="baron flex w-full translate-y-[15%] justify-center text-[115px] leading-tight sm:text-[20vw] lg:text-[198.4px]"
         >
-          404
+          {{ props.error?.statusCode }}
         </div>
         <div
           class="mb-[2vh] mt-[1vh] p-2 text-base leading-snug sm:text-[2.5vw] lg:text-[29.8px]"
         >
           <div id="content" class="overflow-hidden text-center">
-            Désolé, la page que vous recherchez semble introuvable
+            {{ props.error?.message }}
           </div>
         </div>
         <button id="home">
-          <NuxtLink
-            to="/"
+          <a
+            href="/"
             class="button mx-auto flex w-full min-w-[225px] cursor-pointer justify-center p-2 disabled:pointer-events-none disabled:bg-light-lavender dark:disabled:pointer-events-none dark:disabled:bg-light-orange sm:w-2/3"
           >
-            Retourner à l'Accueil 🏠
-          </NuxtLink>
+            Retourner à l'Accueil
+          </a>
         </button>
       </div>
     </div>

@@ -7,6 +7,9 @@
     "email": "benjaminoddou@hotmail.fr"
   },
   "license": "MIT",
+  "engines": {
+    "node": ">=22"
+  },
   "scripts": {
     "preinstall": "bash ./scripts/init.sh",
     "build": "nuxt build",

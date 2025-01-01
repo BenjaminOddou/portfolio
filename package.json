@@ -7,9 +7,6 @@
     "email": "benjaminoddou@hotmail.fr"
   },
   "license": "MIT",
-  "engines": {
-    "node": ">=22"
-  },
   "scripts": {
     "preinstall": "bash ./scripts/init.sh",
     "build": "nuxt build",
@@ -46,5 +43,8 @@
     "nuxt-schema-org": "^4.0.4",
     "sitemap": "^8.0.0",
     "standard-version": "^9.5.0"
+  },
+  "overrides": {
+    "vue": "latest"
   }
 }

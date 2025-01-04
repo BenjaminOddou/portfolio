@@ -8,6 +8,9 @@ export default defineNuxtConfig({
       brotli: true,
       gzip: false,
     },
+    externals: {
+      inline: ['@vue/server-renderer'],
+    },
   },
 
   runtimeConfig: {

@@ -24,6 +24,7 @@
   },
   "dependencies": {
     "@yeger/vue-masonry-wall": "^5.0.16",
+    "nuxt": "^3.15.0",
     "photoswipe": "^5.4.4"
   },
   "devDependencies": {
@@ -39,12 +40,8 @@
     "@vite-pwa/nuxt": "^0.10.6",
     "eslint": "^9.17.0",
     "husky": "^9.1.7",
-    "nuxt": "^3.15.0",
     "nuxt-schema-org": "^4.0.4",
     "sitemap": "^8.0.0",
     "standard-version": "^9.5.0"
-  },
-  "overrides": {
-    "vue": "latest"
   }
 }

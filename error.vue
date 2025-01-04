@@ -29,7 +29,7 @@ const { data: images } = await useFetch<ImageKit[][]>('/api/imgkit', {
             <div
               :style="`background-image: url(${image.url});`"
               :class="`flex-none h-[30vh] m-[3vw] bg-center bg-cover ${
-                image.tags?.find((tag) => tag === 'large' as string)
+                image.tags?.find((tag: string) => tag === 'large' as string)
                   ? 'w-[100vh] rounded-[20vh]'
                   : 'w-[30vh] rounded-[50%]'
               }`"

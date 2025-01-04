@@ -8,9 +8,6 @@ export default defineNuxtConfig({
       brotli: true,
       gzip: false,
     },
-    externals: {
-      inline: ['@vue/server-renderer'],
-    },
   },
 
   runtimeConfig: {
@@ -59,7 +56,7 @@ export default defineNuxtConfig({
       name: 'Benjamin Oddou Photographe',
       short_name: 'Benjamin Oddou',
       description:
-        'Galerie en ligne de Benjamin Oddou, photographe en quête de nouveaux challenges. Réservez une séance !',
+        'Galerie en ligne de Benjamin Oddou. Réservez une séance !',
       theme_color: '#ffffff',
       background_color: '#ffffff',
       display: 'standalone',

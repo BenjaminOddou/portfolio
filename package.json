@@ -24,8 +24,7 @@
   },
   "dependencies": {
     "@yeger/vue-masonry-wall": "^5.0.16",
-    "photoswipe": "^5.4.4",
-    "pinia": "^2.3.0"
+    "photoswipe": "^5.4.4"
   },
   "devDependencies": {
     "@antfu/eslint-config": "3.12.1",
@@ -44,8 +43,5 @@
     "nuxt-schema-org": "^4.0.4",
     "sitemap": "^8.0.0",
     "standard-version": "^9.5.0"
-  },
-  "overrides": {
-    "vue": "latest"
   }
 }

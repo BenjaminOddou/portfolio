@@ -1,7 +1,6 @@
 import { defineStore } from 'pinia'
 
-export const scrollStore = defineStore({
-  id: 'smooth-store',
+export const scrollStore = defineStore('smooth-store', {
   state: () => {
     return {
       isReady: true,
@@ -9,8 +8,7 @@ export const scrollStore = defineStore({
   },
 })
 
-export const routeStore = defineStore({
-  id: 'page-store',
+export const routeStore = defineStore('page-store', {
   state: () => {
     return {
       isNewPage: 0,
@@ -18,8 +16,7 @@ export const routeStore = defineStore({
   },
 })
 
-export const linkStore = defineStore({
-  id: 'link-store',
+export const linkStore = defineStore('link-store', {
   state: () => {
     return {
       isNewLink: 0,
@@ -27,8 +24,7 @@ export const linkStore = defineStore({
   },
 })
 
-export const alertStore = defineStore({
-  id: 'alert-store',
+export const alertStore = defineStore('alert-store', {
   state: () => {
     return {
       header: 'Information',

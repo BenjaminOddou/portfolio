@@ -8,9 +8,6 @@ export default defineNuxtConfig({
       brotli: true,
       gzip: false,
     },
-    externals: {
-      traceInclude: ['node_modules/@vue/server-renderer/index.js'],
-    },
   },
 
   runtimeConfig: {

@@ -43,5 +43,8 @@
     "nuxt-schema-org": "^4.0.4",
     "sitemap": "^8.0.0",
     "standard-version": "^9.5.0"
+  },
+  "overrides": {
+    "vue": "latest"
   }
 }

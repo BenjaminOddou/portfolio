@@ -25,7 +25,7 @@
   "dependencies": {
     "@vue/server-renderer": "^3.5.13",
     "@yeger/vue-masonry-wall": "^5.0.16",
-    "nuxt": "^3.14.1592",
+    "nuxt": "^3.13.2",
     "photoswipe": "^5.4.4"
   },
   "devDependencies": {

@@ -13,4 +13,4 @@ providers = [
 ]
 
 [functions]
-external_node_modules = [ "@vue/server-renderer" ]
+included_files = [ "./node_modules/@vue/server-renderer/**/*" ]

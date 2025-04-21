@@ -46,8 +46,8 @@ async function reFilter(newFilter: string, event: MouseEvent) {
   }
   else {
     items.value = images.value
-      ?.filter(image => image.tags?.includes(newFilter as Tag))
-      .slice(0, imageNumber.value)
+      ?.slice(0, imageNumber.value)
+      .filter(image => image.tags?.includes(newFilter as Tag))
   }
 
   await nextTick()
@@ -365,6 +365,7 @@ onUnmounted(() => {
         >
           <template #default="{ item }: { item: ImageKit }">
             <a
+              v-show="item.tags?.find((tag) => tag === filter)"
               :href="item.url"
               :data-pswp-width="item.width"
               :data-pswp-height="item.height"

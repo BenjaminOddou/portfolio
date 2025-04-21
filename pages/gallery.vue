@@ -39,6 +39,17 @@ async function reFilter(newFilter: string, event: MouseEvent) {
   const target = event.currentTarget as HTMLButtonElement
   target.classList.add('is-filtered')
   filter.value = newFilter
+
+  // Filter the items based on the new filter
+  if (newFilter === '*') {
+    items.value = images.value?.slice(0, imageNumber.value)
+  }
+  else {
+    items.value = images.value
+      ?.filter(image => image.tags?.includes(newFilter as Tag))
+      .slice(0, imageNumber.value)
+  }
+
   await nextTick()
   ScrollTrigger.refresh()
 }
@@ -354,7 +365,6 @@ onUnmounted(() => {
         >
           <template #default="{ item }: { item: ImageKit }">
             <a
-              v-show="item.tags?.find((tag) => tag === filter)"
               :href="item.url"
               :data-pswp-width="item.width"
               :data-pswp-height="item.height"

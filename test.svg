@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="none" viewBox="0 0 248 248" aria-hidden="true">
+  <path class="pricing-hero-circle-path" fill="url(#pricing-hero-circle-gradient-1)" fill-rule="evenodd" d="M62 124c34.242 0 62-27.758 62-62 0 34.242 27.758 62 62 62-34.242 0-62 27.758-62 62 0-34.242-27.758-62-62-62Zm0 0c-34.242 0-62 27.758-62 62 0 34.242 27.758 62 62 62 34.242 0 62-27.758 62-62 0 34.242 27.758 62 62 62 34.242 0 62-27.758 62-62 0-34.242-27.758-62-62-62 34.242 0 62-27.758 62-62 0-34.242-27.758-62-62-62-34.242 0-62 27.758-62 62 0-34.242-27.758-62-62-62C27.758 0 0 27.758 0 62c0 34.242 27.758 62 62 62Z" clip-rule="evenodd"></path>
+  <path class="pricing-hero-circle-path" fill="url(#pricing-hero-circle-gradient-2)" fill-rule="evenodd" d="M62 124c34.242 0 62-27.758 62-62 0 34.242 27.758 62 62 62-34.242 0-62 27.758-62 62 0-34.242-27.758-62-62-62Zm0 0c-34.242 0-62 27.758-62 62 0 34.242 27.758 62 62 62 34.242 0 62-27.758 62-62 0 34.242 27.758 62 62 62 34.242 0 62-27.758 62-62 0-34.242-27.758-62-62-62 34.242 0 62-27.758 62-62 0-34.242-27.758-62-62-62-34.242 0-62 27.758-62 62 0-34.242-27.758-62-62-62C27.758 0 0 27.758 0 62c0 34.242 27.758 62 62 62Z" clip-rule="evenodd"></path>
+  <path class="pricing-hero-circle-path" fill="url(#pricing-hero-circle-gradient-3)" fill-rule="evenodd" d="M62 124c34.242 0 62-27.758 62-62 0 34.242 27.758 62 62 62-34.242 0-62 27.758-62 62 0-34.242-27.758-62-62-62Zm0 0c-34.242 0-62 27.758-62 62 0 34.242 27.758 62 62 62 34.242 0 62-27.758 62-62 0 34.242 27.758 62 62 62 34.242 0 62-27.758 62-62 0-34.242-27.758-62-62-62 34.242 0 62-27.758 62-62 0-34.242-27.758-62-62-62-34.242 0-62 27.758-62 62 0-34.242-27.758-62-62-62C27.758 0 0 27.758 0 62c0 34.242 27.758 62 62 62Z" clip-rule="evenodd"></path>
+  <path class="pricing-hero-circle-path" fill="url(#pricing-hero-circle-gradient-4)" fill-rule="evenodd" d="M62 124c34.242 0 62-27.758 62-62 0 34.242 27.758 62 62 62-34.242 0-62 27.758-62 62 0-34.242-27.758-62-62-62Zm0 0c-34.242 0-62 27.758-62 62 0 34.242 27.758 62 62 62 34.242 0 62-27.758 62-62 0 34.242 27.758 62 62 62 34.242 0 62-27.758 62-62 0-34.242-27.758-62-62-62 34.242 0 62-27.758 62-62 0-34.242-27.758-62-62-62-34.242 0-62 27.758-62 62 0-34.242-27.758-62-62-62C27.758 0 0 27.758 0 62c0 34.242 27.758 62 62 62Z" clip-rule="evenodd"></path>
+  <path class="pricing-hero-circle-path" fill="url(#pricing-hero-circle-gradient-5)" fill-rule="evenodd" d="M62 124c34.242 0 62-27.758 62-62 0 34.242 27.758 62 62 62-34.242 0-62 27.758-62 62 0-34.242-27.758-62-62-62Zm0 0c-34.242 0-62 27.758-62 62 0 34.242 27.758 62 62 62 34.242 0 62-27.758 62-62 0 34.242 27.758 62 62 62 34.242 0 62-27.758 62-62 0-34.242-27.758-62-62-62 34.242 0 62-27.758 62-62 0-34.242-27.758-62-62-62-34.242 0-62 27.758-62 62 0-34.242-27.758-62-62-62C27.758 0 0 27.758 0 62c0 34.242 27.758 62 62 62Z" clip-rule="evenodd"></path>
+  <path fill="url(#pattern-pricing-hero-circles-0)" fill-opacity=".6" fill-rule="evenodd" d="M62 124c34.242 0 62-27.758 62-62 0 34.242 27.758 62 62 62-34.242 0-62 27.758-62 62 0-34.242-27.758-62-62-62Zm0 0c-34.242 0-62 27.758-62 62 0 34.242 27.758 62 62 62 34.242 0 62-27.758 62-62 0 34.242 27.758 62 62 62 34.242 0 62-27.758 62-62 0-34.242-27.758-62-62-62 34.242 0 62-27.758 62-62 0-34.242-27.758-62-62-62-34.242 0-62 27.758-62 62 0-34.242-27.758-62-62-62C27.758 0 0 27.758 0 62c0 34.242 27.758 62 62 62Z" clip-rule="evenodd" style="mix-blend-mode:multiply"></path>
+  <defs>
+    <linearGradient id="pricing-hero-circle-gradient-1" x1="11.577" x2="202.12" y1="62.232" y2="148.687" gradientUnits="userSpaceOnUse">
+      <stop offset=".152" stop-color="#0ae448"></stop>
+      <stop offset=".855" stop-color="#abff84"></stop>
+    </linearGradient>
+    <linearGradient id="pricing-hero-circle-gradient-2" x1="11.577" x2="202.12" y1="62.232" y2="148.687" gradientUnits="userSpaceOnUse">
+      <stop offset=".152" stop-color="#dfdcff"></stop>
+      <stop offset=".855" stop-color="#a69eff"></stop>
+    </linearGradient>
+    <linearGradient id="pricing-hero-circle-gradient-3" x1="11.577" x2="202.12" y1="62.232" y2="148.687" gradientUnits="userSpaceOnUse">
+      <stop offset=".152" stop-color="#ffe9fe"></stop>
+      <stop offset=".855" stop-color="#ff96f9"></stop>
+    </linearGradient>
+    <linearGradient id="pricing-hero-circle-gradient-4" x1="11.577" x2="202.12" y1="62.232" y2="148.687" gradientUnits="userSpaceOnUse">
+      <stop offset=".152" stop-color="#9bedff"></stop>
+      <stop offset=".855" stop-color="#00bae2"></stop>
+    </linearGradient>
+    <linearGradient id="pricing-hero-circle-gradient-5" x1="11.577" x2="202.12" y1="62.232" y2="148.687" gradientUnits="userSpaceOnUse">
+      <stop offset=".152" stop-color="#0AE448"></stop>
+      <stop offset=".855" stop-color="#ABFF84"></stop>
+    </linearGradient>
+    <pattern id="pattern-pricing-hero-circles-0" width=".806" height=".806" patternContentUnits="objectBoundingBox">
+      <use xlink:href="#svg-noise" transform="scale(.00161)"></use>
+    </pattern>
+  </defs>
+</svg>

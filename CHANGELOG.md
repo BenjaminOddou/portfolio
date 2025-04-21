@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.5.0](https://github.com/BenjaminOddou/portfolio/compare/v0.4.2...v0.5.0) (2025-04-21)
+
+
+### 🏡 Chore
+
+* bump packages ([d2e0f32](https://github.com/BenjaminOddou/portfolio/commits/d2e0f327439c09b8d10eabf007ecbd128de313a4))
+* bump packages ([82d1ee4](https://github.com/BenjaminOddou/portfolio/commits/82d1ee468f01348692a555250f7bdc66d6752d2f))
+* bump packages ([d4f604b](https://github.com/BenjaminOddou/portfolio/commits/d4f604b6654e8026ad5bb6e8ca2d35527cc035bf))
+* engine package.json ([829cfb3](https://github.com/BenjaminOddou/portfolio/commits/829cfb3701cd5163daf5a55d451bb34f98efc906))
+* minor fix and bump packages ([faf19df](https://github.com/BenjaminOddou/portfolio/commits/faf19df717ae97dfd91d8f189c550b52245429d2))
+
+
+### 🩹 Fixes
+
+* image disposition after filter ([5364932](https://github.com/BenjaminOddou/portfolio/commits/536493220dfc3433fd0d9a524ec7d25597d581de))
+* pinia defineStore ([51f1cdb](https://github.com/BenjaminOddou/portfolio/commits/51f1cdb52e57943d1da4c33ec0a2f736d0879f43))
+* pinia deploy ([a2010de](https://github.com/BenjaminOddou/portfolio/commits/a2010dec0d34eaf912aa04eb1ecbcfe9168dc461))
+* typescript syntax ([686bc71](https://github.com/BenjaminOddou/portfolio/commits/686bc710dc6f57d2c87a5b9ab8b7636a4f53b154))
+
 ### 0.4.2 (2024-10-19)
 
 

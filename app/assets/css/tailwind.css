@@ -38,11 +38,13 @@
     @apply bg-white dark:bg-jet;
   }
   input[type='checkbox'] {
+    appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;
     @apply flex h-[15px] w-[15px] cursor-pointer items-center justify-center border border-current p-0 outline-none;
   }
   select {
+    appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;
     @apply w-full cursor-pointer items-center justify-center bg-transparent p-2;

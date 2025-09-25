@@ -176,7 +176,7 @@ npx husky-init
 
 ## 📜 Scripts
 
-### Nuxt API commands (see [Documentation](https://v3.nuxtjs.org/api/commands/dev))
+### Nuxt API commands (see [Documentation](https://nuxt.com/docs/4.x/api/commands/dev))
 
 #### Run development server
 
@@ -391,64 +391,71 @@ const { data: images } = useFetch<ImageKit[]>('/api/imgkit')
 ├── .versionrc.json # Changelog format configuration file
 ├── .vscode
 │   └── settings.json # VSCode local settings
-├── app.vue # Entry point and general backbone of the app. This is the main component in Nuxt 3 applications
-├── assets # The assets/ directory is used to add all the website's assets that the build tool (Vite) will process.
-│   ├── css
-│   │   └── tailwind.css # Tailwind directives
-│   └── svg # Non-interactive SVGs
-│       └── checkmark.svg
 ├── CHANGELOG.md # File that tracks all changes
 ├── CODE_OF_CONDUCT.md # Code of conduct
-├── components # The components/ directory is where all Vue components can be imported inside pages or other components
-│   ├── FAQquestion.vue
-│   ├── svg # Interactive SVGs built as Vue components
-│   │   ├── ArrowButton.vue
-│   │   ├── Awwwards.vue
-│   │   ├── LogoBO.vue
-│   │   ├── MenuGit.vue
-│   │   ├── MenuInsta.vue
-│   │   ├── MenuMail.vue
-│   │   └── MenuYtbe.vue
-│   ├── theAlert.vue
-│   ├── theCursor.vue
-│   ├── theFooter.vue
-│   ├── theForm.vue
-│   ├── theHeader.vue
-│   ├── theMenu.vue
-│   ├── TheMenuLink.vue
-│   └── thePreloader.vue
 ├── CONTRIBUTING.md # Contributing guide
-├── error.vue # Error page component
-├── eslint.config.js # ESLint config file
 ├── LICENSE # MIT License
+├── README.md # This document 👋
+├── app # Application files, see https://nuxt.com/docs/4.x/guide/directory-structure/app/app
+│   ├── app.vue
+│   ├── assets
+│   │   ├── css
+│   │   │   └── tailwind.css
+│   │   └── svg
+│   │       └── checkmark.svg
+│   ├── components
+│   │   ├── FAQquestion.vue
+│   │   ├── TheMenuLink.vue
+│   │   ├── svg
+│   │   │   ├── ArrowButton.vue
+│   │   │   ├── Awwwards.vue
+│   │   │   ├── LogoBO.vue
+│   │   │   ├── MenuGit.vue
+│   │   │   ├── MenuInsta.vue
+│   │   │   ├── MenuMail.vue
+│   │   │   └── MenuYtbe.vue
+│   │   ├── theAlert.vue
+│   │   ├── theCursor.vue
+│   │   ├── theFooter.vue
+│   │   ├── theForm.vue
+│   │   ├── theHeader.vue
+│   │   ├── theMenu.vue
+│   │   └── thePreloader.vue
+│   ├── error.vue
+│   ├── pages
+│   │   ├── about.vue
+│   │   ├── gallery.vue
+│   │   └── index.vue
+│   ├── plugins
+│   │   ├── gsap.client.ts
+│   │   └── vue-masonry-wall.ts
+│   ├── types
+│   │   ├── gsap.d.ts
+│   │   └── imgkit.d.ts
+│   └── utils
+│       ├── index.ts
+│       └── piniaStore.ts
+├── eslint.config.js # ESLint config file
 ├── netlify.toml # Configuration file for Netlify
 ├── nuxt.config.ts # Nuxt configuration file
 ├── package-lock.json # Aggregates an immutable version of the package.json file
 ├── package.json # Contains all the dependencies and scripts of the application
-├── pages # All pages belong here. Nuxt provides a file-based routing to create routes within the app using Vue Router under the hood.
-│   ├── about.vue # About page
-│   ├── gallery.vue # Gallery page
-│   └── index.vue # Home page
-├── plugins # All Nuxt and Vue plugins
-│   ├── gsap.ts # GSAP plugin
-│   └── vue-masonry-wall.ts # Vue Masonry Wall plugin
-├── public # Files that shouldn't be processed by the build tool (Vite)
-│   ├── _redirects # Redirects rules for Netlify
-│   ├── apple-touch-icon-180x180.png
-│   ├── banner.jpg
-│   ├── browserconfig.xml
-│   ├── favicon.ico
-│   ├── logo.png
-│   ├── maskable-icon-512x512.png
-│   ├── me.jpg
-│   ├── mstile-150x150.png
-│   ├── pwa-192x192.png
-│   ├── pwa-512x512.png
-│   ├── pwa-64x64.png
-│   ├── robots.txt
-│   └── safari-pinned-tab.svg
+├── public
+│   ├── _redirects
+│   ├── apple-touch-icon-180x180.png
+│   ├── banner.jpg
+│   ├── browserconfig.xml
+│   ├── favicon.ico
+│   ├── logo.png
+│   ├── maskable-icon-512x512.png
+│   ├── me.jpg
+│   ├── mstile-150x150.png
+│   ├── pwa-192x192.png
+│   ├── pwa-512x512.png
+│   ├── pwa-64x64.png
+│   ├── robots.txt
+│   └── safari-pinned-tab.svg
 ├── pwa-assets.config.ts # PWA assets configuration file
-├── README.md # This document 👋
 ├── scripts
 │   └── init.sh # Initialization script
 ├── server # Directory which registers API and server handlers (Nitro routes) with HMR support
@@ -461,12 +468,7 @@ const { data: images } = useFetch<ImageKit[]>('/api/imgkit')
 │   ├── .gitkeep # Empty hidden file to keep tmp folder in GitHub repo
 │   ├── imgkit.json # Sample data from ImageKit cURL command (not in GitHub repo ❌)
 │   └── tmp.ts # Output TypeScript API generated with QuickType command (not in GitHub repo ❌)
-├── types # TypeScript declaration files
-│   ├── gsap.d.ts # TypeScript declaration file for GSAP
-│   └── imgkit.d.ts # TypeScript declaration file for ImageKit API
-└── utils # Auto-imported functions
-├── index.ts # Helper functions
-└── piniaStore.ts # State management store functions
+└── tsconfig.json
 ```
 
 ## 🚀 Deploy

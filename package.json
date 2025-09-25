@@ -20,29 +20,31 @@
     "release:patch": "standard-version -a --release-as patch",
     "release:minor": "standard-version -a --release-as minor",
     "release:major": "standard-version -a --release-as major",
-    "prepare": "husky install"
+    "prepare": "nuxt prepare",
+    "husky": "husky install"
   },
   "dependencies": {
-    "@yeger/vue-masonry-wall": "^5.0.18",
-    "nuxt": "^3.16.2",
+    "@yeger/vue-masonry-wall": "^5.1.0",
+    "dotenv": "^17.2.2",
+    "nuxt": "^4.1.2",
     "photoswipe": "^5.4.4",
-    "vue": "^3.5.13",
-    "vue-router": "^4.5.0"
+    "vue": "^3.5.22",
+    "vue-router": "^4.5.1"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "4.12.0",
+    "@antfu/eslint-config": "5.4.1",
     "@botpoison/browser": "^0.1.30",
-    "@commitlint/cli": "^19.8.0",
-    "@commitlint/config-conventional": "^19.8.0",
-    "@nuxt/image": "^1.10.0",
+    "@commitlint/cli": "^20.0.0",
+    "@commitlint/config-conventional": "^20.0.0",
+    "@nuxt/image": "^1.11.0",
     "@nuxtjs/color-mode": "^3.5.2",
-    "@nuxtjs/tailwindcss": "^6.13.2",
-    "@pinia/nuxt": "^0.11.0",
-    "@vite-pwa/assets-generator": "^1.0.0",
-    "@vite-pwa/nuxt": "^1.0.0",
-    "eslint": "^9.25.0",
+    "@nuxtjs/tailwindcss": "^6.14.0",
+    "@pinia/nuxt": "^0.11.2",
+    "@vite-pwa/assets-generator": "^1.0.1",
+    "@vite-pwa/nuxt": "^1.0.4",
+    "eslint": "^9.36.0",
     "husky": "^9.1.7",
-    "nuxt-schema-org": "^5.0.5",
+    "nuxt-schema-org": "^5.0.9",
     "sitemap": "^8.0.0",
     "standard-version": "^9.5.0"
   }

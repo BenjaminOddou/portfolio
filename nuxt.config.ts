@@ -10,6 +10,10 @@ export default defineNuxtConfig({
     },
   },
 
+  tailwindcss: {
+    cssPath: '~/assets/css/tailwind.css',
+  },
+
   runtimeConfig: {
     IMAGEKIT_B64_API: '',
     public: {
@@ -26,6 +30,29 @@ export default defineNuxtConfig({
     '@nuxtjs/tailwindcss',
     '@nuxt/image',
   ],
+
+  vite: {
+    // https://github.com/nuxt/nuxt/issues/26783#issuecomment-2058966800
+    optimizeDeps: {
+      include: [
+        '@yeger/vue-masonry-wall',
+        'gsap',
+        'gsap/Draggable',
+        'gsap/DrawSVGPlugin',
+        'gsap/InertiaPlugin',
+        'gsap/MorphSVGPlugin',
+        'gsap/ScrollSmoother',
+        'gsap/ScrollTrigger',
+        'gsap/SplitText',
+        '@unhead/schema-org/vue',
+        '@botpoison/browser',
+        'photoswipe/lightbox',
+        'photoswipe',
+        '@vue/devtools-kit',
+        '@vue/devtools-core',
+      ],
+    },
+  },
 
   site: {
     url: 'https://www.benjaminoddou-photographe.com',
@@ -87,5 +114,5 @@ export default defineNuxtConfig({
     },
   },
 
-  compatibilityDate: '2025-03-06',
+  compatibilityDate: '2025-09-25',
 })

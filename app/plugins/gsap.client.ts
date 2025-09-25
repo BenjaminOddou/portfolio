@@ -8,17 +8,15 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { SplitText } from 'gsap/SplitText'
 
 export default defineNuxtPlugin(() => {
-  if (import.meta.client) {
-    gsap.registerPlugin(
-      ScrollTrigger,
-      ScrollSmoother,
-      Draggable,
-      InertiaPlugin,
-      SplitText,
-      MorphSVGPlugin,
-      DrawSVGPlugin,
-    )
-  }
+  gsap.registerPlugin(
+    ScrollTrigger,
+    ScrollSmoother,
+    Draggable,
+    InertiaPlugin,
+    SplitText,
+    MorphSVGPlugin,
+    DrawSVGPlugin,
+  )
   return {
     provide: {
       gsap,

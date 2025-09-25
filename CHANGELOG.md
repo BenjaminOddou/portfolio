@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.0.0](https://github.com/BenjaminOddou/portfolio/compare/v0.5.0...v1.0.0) (2025-09-25)
+
+
+### 🩹 Fixes
+
+* refilter function ([7c7f8a1](https://github.com/BenjaminOddou/portfolio/commits/7c7f8a19b9f6ee97692aa0625b0984770ac99cd8))
+
+
+### 🏡 Chore
+
+* update to nuxt v4 ([731376f](https://github.com/BenjaminOddou/portfolio/commits/731376f0e9c3e7bf5c716de42418ef2a2fafd7a4))
+
 ## [0.5.0](https://github.com/BenjaminOddou/portfolio/compare/v0.4.2...v0.5.0) (2025-04-21)
 
 

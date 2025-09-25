@@ -18,7 +18,7 @@ Welcome to the repository of my personal website dedicated to **Photography** ðŸ
 
 ### Front-End
 
-1. <img src=".github/assets/nuxt.png" height="10" /> [Nuxt 3](https://nuxt.com)
+1. <img src=".github/assets/nuxt.png" height="10" /> [Nuxt 4](https://nuxt.com)
 2. <img src=".github/assets/tailwindcss.png" height="13" /> [Tailwind CSS](https://tailwindcss.com)
 3. <img src=".github/assets/gsap.png" height="14" /> [GSAP](https://gsap.com) with [Premium Plugins](https://gsap.com/pricing/)
 4. <img src=".github/assets/imagekit.png" height="12" /> [ImageKit CDN](https://imagekit.io)

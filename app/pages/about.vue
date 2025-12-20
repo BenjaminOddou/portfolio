@@ -219,7 +219,7 @@ onMounted(() => {
   const tl2 = gsap.timeline().pause()
   tl2
     .from(
-      seeAllTitles[1],
+      seeAllTitles[1]!,
       {
         yPercent: 100,
         duration: 0.9,
@@ -227,7 +227,7 @@ onMounted(() => {
       },
     )
     .to(
-      seeAllTitles[0],
+      seeAllTitles[0]!,
       {
         yPercent: -100,
         duration: 0.9,
@@ -546,7 +546,7 @@ onMounted(() => {
               <br>
               Les technologies utilisées : <br>
               - Design : Figma, Photoshop. <br>
-              - Technologies : Nuxt 3 (Vue JS), CSS (Tailwind CSS). <br>
+              - Technologies : Nuxt 4 (Vue JS), CSS (Tailwind CSS). <br>
               - Librairies JS : GSAP, PhotoSwipe. <br>
               - Gestion de formulaire : Formspark, Botpoison. <br>
               - Développement et mise en production : Visual Studio Code,

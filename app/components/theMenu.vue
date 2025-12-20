@@ -7,7 +7,7 @@ const { data: images } = await useFetch<ImageKit[]>('/api/imgkit', {
     const arr: ImageKit[] = []
     while (arr.length < 2) {
       const r = filter[Math.floor(Math.random() * filter.length)]
-      if (!arr.includes(r))
+      if (r && !arr.includes(r))
         arr.push(r)
     }
     return arr
@@ -15,23 +15,30 @@ const { data: images } = await useFetch<ImageKit[]>('/api/imgkit', {
 })
 
 onMounted(() => {
-  // Draggable images
   const clampSkew = gsap.utils.clamp(-6, 6)
   const AllImg = document.querySelectorAll<HTMLImageElement>('.img-drag')
   const Cursor = document.querySelector<HTMLDivElement>('#cursor')
+
   class DraggableImg {
     constructor(Image: HTMLImageElement) {
       const proxy = document.createElement('div')
-      const tracker = InertiaPlugin.track(proxy, 'x,y')[0]
+      const tracker = InertiaPlugin.track(proxy, 'x,y')[0]!
+
       const skewxTo = gsap.quickTo(Image, 'skewX')
       const skewyTo = gsap.quickTo(Image, 'skewY')
-      const xTo = gsap.quickTo(Image, 'x', {
-        duration: 0.3,
-      })
-      const yTo = gsap.quickTo(Image, 'y', {
-        duration: 0.3,
-      })
-      const drag = Draggable.create(proxy, {
+      const xTo = gsap.quickTo(Image, 'x', { duration: 0.3 })
+      const yTo = gsap.quickTo(Image, 'y', { duration: 0.3 })
+
+      let drag: Draggable | undefined
+      const updateSkew = () => {
+        const vx = tracker.get('x')
+        const vy = tracker.get('y')
+        skewxTo(clampSkew(vx / -50))
+        skewyTo(clampSkew(vy / -50))
+        !vx && !vy && !drag?.isPressed && gsap.ticker.remove(updateSkew)
+      }
+
+      drag = Draggable.create(proxy, {
         type: 'x,y',
         trigger: Image,
         bounds: '#content__drag-area',
@@ -41,16 +48,13 @@ onMounted(() => {
         zIndexBoost: false,
         inertia: true,
         onPressInit() {
-          // in case the user clicks while it's in the middle of animating, make the proxy jump to the Image position.
           gsap.set(proxy, {
             x: gsap.getProperty(Image, 'x'),
             y: gsap.getProperty(Image, 'y'),
           })
           xTo.tween.pause()
           yTo.tween.pause()
-          // eslint-disable-next-line ts/no-use-before-define
           gsap.ticker.add(updateSkew)
-          // make the proxy sit right on top and add it to the DOM so that bounds work
           gsap.set(proxy, {
             width: Image.offsetWidth,
             height: Image.offsetHeight,
@@ -61,59 +65,31 @@ onMounted(() => {
           })
         },
         onDrag() {
-          xTo(drag.x)
-          yTo(drag.y)
+          xTo(this.x)
+          yTo(this.y)
         },
         onDragStart() {
-          gsap
-            .timeline()
-            .set(AllImg, {
-              zIndex: 1,
-            })
-            .set(Image, {
-              zIndex: 2,
-            })
-            .set(Cursor, {
-              autoAlpha: 0,
-              backgroundColor: 'transparent',
-            })
+          gsap.timeline()
+            .set(AllImg, { zIndex: 1 })
+            .set(Image, { zIndex: 2 })
+            .set(Cursor, { autoAlpha: 0, backgroundColor: 'transparent' })
         },
         onDragEnd() {
-          gsap.set(Cursor, {
-            autoAlpha: 1,
-          })
+          gsap.set(Cursor, { autoAlpha: 1 })
         },
         onThrowUpdate() {
-          xTo(drag.x)
-          yTo(drag.y)
-          gsap.set(Cursor, {
-            backgroundColor: 'transparent',
-          })
+          xTo(this.x)
+          yTo(this.y)
+          gsap.set(Cursor, { backgroundColor: 'transparent' })
         },
       })[0]
-      const updateSkew = () => {
-        const vx = tracker.get('x')
-        const vy = tracker.get('y')
-        skewxTo(clampSkew(vx / -50))
-        skewyTo(clampSkew(vy / -50))
-        !vx && !vy && !drag.isPressed && gsap.ticker.remove(updateSkew)
-      }
 
       Image.parentNode?.append(proxy)
       Image.addEventListener('mouseenter', () => {
-        gsap.to(Cursor, {
-          opacity: 0,
-          duration: 1,
-          ease: 'power2.out',
-        })
+        gsap.to(Cursor, { opacity: 0, duration: 1, ease: 'power2.out' })
       })
       Image.addEventListener('mouseleave', () => {
-        gsap.to(Cursor, {
-          opacity: 1,
-          backgroundColor: '#CDC3C35A',
-          duration: 1,
-          ease: 'power2.out',
-        })
+        gsap.to(Cursor, { opacity: 1, backgroundColor: '#CDC3C35A', duration: 1, ease: 'power2.out' })
       })
     }
   }
@@ -124,9 +100,7 @@ onMounted(() => {
 <template>
   <div>
     <TheCursor />
-
     <TheHeader />
-
     <div
       id="navbar"
       class="baron fixed z-10 hidden h-full min-h-[320px] w-screen min-w-[320px] items-center bg-white text-[2rem] transition-bg-color duration-500 ease-[ease] dark:bg-jet sm:lt:text-[6vw] lg:lt:text-[calc(6px_*_992_/_100)]"

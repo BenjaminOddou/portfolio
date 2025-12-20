@@ -381,9 +381,9 @@ onMounted(() => {
         tl2.restart()
       }
     })
-    const menuItmSpan = Navlink.querySelectorAll<HTMLSpanElement>('.splitted')
-    const menuItmTxtTop = new SplitText(menuItmSpan[0], { type: 'chars' })
-    const menuItmTxtBtm = new SplitText(menuItmSpan[1], { type: 'chars' })
+    const menuItmSpan = Navlink.querySelectorAll('.splitted')
+    const menuItmTxtTop = new SplitText(menuItmSpan[0] as gsap.DOMTarget, { type: 'chars' })
+    const menuItmTxtBtm = new SplitText(menuItmSpan[1] as gsap.DOMTarget, { type: 'chars' })
     const tl3 = gsap.timeline().pause()
 
     tl3

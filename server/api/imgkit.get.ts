@@ -1,16 +1,15 @@
-// server/api/imgkit.get.ts
 import { Buffer } from 'node:buffer'
 
 export default defineEventHandler(async (event) => {
   const config = useRuntimeConfig(event)
 
-  const privateKey = config.imagekitApi
+  const privateKey = config.IMAGEKIT_API
 
   if (!privateKey) {
-    console.error('ERREUR : La variable imagekitApi est indefinie.')
+    console.error('DEBUG: Liste des clés dispos dans runtimeConfig :', Object.keys(config))
     throw createError({
       statusCode: 500,
-      statusMessage: 'Configuration serveur incorrecte (Cle manquante).',
+      statusMessage: `Clé introuvable. Clés dispos: ${Object.keys(config).join(', ')}`,
     })
   }
 
@@ -32,12 +31,11 @@ export default defineEventHandler(async (event) => {
       url: item.url,
     }))
   }
-
   catch (error: any) {
-    console.error('Erreur API ImageKit:', error.data || error.message)
+    console.error('Erreur ImageKit:', error.data || error.message)
     throw createError({
       statusCode: error.statusCode || 500,
-      statusMessage: 'Erreur lors de la communication avec ImageKit.',
+      statusMessage: 'Erreur ImageKit API',
     })
   }
 })

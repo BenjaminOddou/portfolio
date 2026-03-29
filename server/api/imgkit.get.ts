@@ -2,24 +2,19 @@ import { Buffer } from 'node:buffer'
 
 export default defineEventHandler(async (event) => {
   const config = useRuntimeConfig(event)
-
   const privateKey = config.imagekitApi
 
-  if (!privateKey) {
-    console.error('DEBUG: Liste des clés dispos dans runtimeConfig :', Object.keys(config))
+  if (!privateKey || privateKey.length === 0) {
     throw createError({
       statusCode: 500,
-      statusMessage: `Clé introuvable. Clés dispos: ${Object.keys(config).join(', ')}`,
+      statusMessage: `La clé 'imagekitApi' est présente mais VIDE. Vérifiez NUXT_IMAGEKIT_API sur Netlify.`,
     })
   }
 
   try {
     const b64Token = Buffer.from(`${privateKey}:`).toString('base64')
-
     const response = await $fetch<any[]>('https://api.imagekit.io/v1/files', {
-      headers: {
-        Authorization: `Basic ${b64Token}`,
-      },
+      headers: { Authorization: `Basic ${b64Token}` },
     })
 
     return response.map(item => ({
@@ -31,11 +26,7 @@ export default defineEventHandler(async (event) => {
       url: item.url,
     }))
   }
-  catch (error: any) {
-    console.error('Erreur ImageKit:', error.data || error.message)
-    throw createError({
-      statusCode: error.statusCode || 500,
-      statusMessage: 'Erreur ImageKit API',
-    })
+  catch {
+    throw createError({ statusCode: 500, statusMessage: 'Erreur API ImageKit' })
   }
 })

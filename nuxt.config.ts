@@ -15,10 +15,10 @@ export default defineNuxtConfig({
   },
 
   runtimeConfig: {
-    IMAGEKIT_API: '',
+    imagekitApi: process.env.IMAGEKIT_API,
     public: {
-      FORMSPARK_ACTION_URL: '',
-      BOTPOISON_PK: '',
+      formSparkActionUrl: process.env.FORMSPARK_ACTION_URL,
+      boitpoisonPk: process.env.BOTPOISON_PK,
     },
   },
 

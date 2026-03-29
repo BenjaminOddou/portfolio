@@ -5,7 +5,7 @@ const { $gsap: gsap } = useNuxtApp()
 const alertMessage = alertStore()
 const config = useRuntimeConfig()
 const botpoison = new Botpoison({
-  publicKey: config.public.BOTPOISON_PK,
+  publicKey: config.public.boitpoisonPk,
 })
 const loading = ref(false)
 const checked = ref(false)
@@ -19,7 +19,7 @@ async function submitForm() {
   loading.value = true
   try {
     const { solution } = await botpoison.challenge()
-    await $fetch(config.public.FORMSPARK_ACTION_URL, {
+    await $fetch(config.public.formSparkActionUrl, {
       method: 'POST',
       body: {
         Prénom: Prénom.value,

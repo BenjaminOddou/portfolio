@@ -3,7 +3,7 @@ import { Buffer } from 'node:buffer'
 export default defineEventHandler(async (event) => {
   const config = useRuntimeConfig(event)
 
-  const privateKey = config.IMAGEKIT_API
+  const privateKey = config.imagekitApi
 
   if (!privateKey) {
     console.error('DEBUG: Liste des clés dispos dans runtimeConfig :', Object.keys(config))

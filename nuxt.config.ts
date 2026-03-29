@@ -15,7 +15,7 @@ export default defineNuxtConfig({
   },
 
   runtimeConfig: {
-    IMAGEKIT_B64_API: '',
+    IMAGEKIT_B64_API: process.env.IMAGEKIT_B64_API,
     public: {
       FORMSPARK_ACTION_URL: '',
       BOTPOISON_PK: '',

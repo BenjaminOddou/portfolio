@@ -1,3 +1,5 @@
+import type ImageKit from '@@/app/types/imgkit'
+
 export default defineEventHandler(async () => {
   const config = useRuntimeConfig()
   const response = await $fetch<ImageKit[]>('https://api.imagekit.io/v1/files', {

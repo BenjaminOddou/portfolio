@@ -1,4 +1,3 @@
-// types/nuxt.d.ts
 import type { gsap } from 'gsap'
 import type { Draggable } from 'gsap/Draggable'
 import type { DrawSVGPlugin } from 'gsap/DrawSVGPlugin'

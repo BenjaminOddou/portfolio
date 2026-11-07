@@ -14,7 +14,7 @@ const TONES = {
       <div
         v-if="current"
         role="alert"
-        class="mb-3 w-2/3 max-w-[300px] rounded-2xl border-2 p-2 sm:max-w-[320px]"
+        class="mb-3 w-2/3 max-w-75 rounded-2xl border-2 p-2 sm:max-w-[320px]"
         :class="TONES[current.tone]"
       >
         <p class="px-2 text-sm sm:text-base">

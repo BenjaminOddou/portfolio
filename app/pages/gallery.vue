@@ -110,7 +110,7 @@ useScrollFrame(({ y }) => {
     <button
       type="button"
       aria-label="Retourner en Haut de la Page"
-      class="back-to-top fixed right-[30px] bottom-5 z-4 size-[50px] rounded-full bg-jet/55 transition-colors duration-500 after:absolute after:top-[21px] after:left-[19px] after:size-3 after:-rotate-45 after:border-t-2 after:border-r-2 after:border-white after:content-[''] sm:av:hidden dark:bg-white/55 dark:after:border-jet"
+      class="back-to-top fixed right-7.5 bottom-5 z-4 size-12.5 rounded-full bg-jet/55 transition-colors duration-500 after:absolute after:top-5.25 after:left-4.75 after:size-3 after:-rotate-45 after:border-t-2 after:border-r-2 after:border-white after:content-[''] sm:av:hidden dark:bg-white/55 dark:after:border-jet"
       :class="{ 'is-visible': isBackToTopVisible }"
       @click="scrollToTop"
     />
@@ -119,9 +119,9 @@ useScrollFrame(({ y }) => {
       class="z-0 mx-auto flex min-h-screen w-full max-w-[3600px] flex-col [--initsize:32px] sm:grid sm:grid-cols-[30%_70%] md:grid-cols-[25%_75%] xl:grid-cols-[22.5%_77.5%] 2xl:grid-cols-[20%_80%] lt:md:[--initsize:4.5vw] lt:xl:[--initsize:54px]"
     >
       <!-- ============ Colonne de gauche, collée en haut de l'écran ============ -->
-      <div class="sticky top-0 h-[420px] shrink-0 sm:z-2 sm:h-screen sm:self-start">
+      <div class="sticky top-0 h-105 shrink-0 sm:z-2 sm:h-screen sm:self-start">
         <!-- Titre vertical + signature -->
-        <div class="absolute top-[100px] right-0 min-h-80 sm:top-[15vh]">
+        <div class="absolute top-25 right-0 min-h-80 sm:top-[15vh]">
           <h1 class="ml-[20%] grid cursor-vertical-text gap-2 leading-none [writing-mode:vertical-rl]">
             <span class="overflow-hidden font-baron text-(length:--initsize)">
               <span class="reveal-left block [--ease:var(--ease-power2-out)]">photographies</span>
@@ -131,7 +131,7 @@ useScrollFrame(({ y }) => {
             </span>
           </h1>
           <svg
-            class="signature m-0 h-[calc(var(--initsize)*1.5)] w-[calc(var(--initsize)*3)] -translate-x-[calc(var(--initsize)*0.9)] -translate-y-[calc(var(--initsize)*2.3)] rotate-90 fill-none stroke-current stroke-5"
+            class="signature m-0 h-[calc(var(--initsize)*1.5)] w-[calc(var(--initsize)*3)] translate-x-[calc(-0.9*var(--initsize))] translate-y-[calc(-2.3*var(--initsize))] rotate-90 fill-none stroke-current stroke-5"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 1299 566"
             aria-hidden="true"
@@ -145,7 +145,7 @@ useScrollFrame(({ y }) => {
         <!-- Albums -->
         <nav
           aria-label="Albums"
-          class="filters absolute top-[100px] w-3/4 px-5 pb-5 text-xl leading-8 font-thin text-grey-gallery sm:top-[15vh] sm:-right-[70vw] sm:w-[70vw] sm:text-base md:-right-[75vw] md:w-[75vw] md:text-lg xl:-right-[77.5vw] xl:w-[77.5vw] xl:text-xl 2xl:-right-[80vw] 2xl:w-[80vw] av:sm:top-auto av:sm:right-auto av:sm:bottom-0 av:sm:w-full av:sm:max-w-[400px]"
+          class="filters absolute top-25 w-3/4 px-5 pb-5 text-xl leading-8 font-thin text-grey-gallery sm:top-[15vh] sm:right-[-70vw] sm:w-[70vw] sm:text-base md:right-[-75vw] md:w-[75vw] md:text-lg xl:right-[-77.5vw] xl:w-[77.5vw] xl:text-xl 2xl:right-[-80vw] 2xl:w-[80vw] av:sm:top-auto av:sm:right-auto av:sm:bottom-0 av:sm:w-full av:sm:max-w-100"
           :class="{ 'filters-hidden': areFiltersHidden }"
         >
           <div class="overflow-hidden font-baron text-xs leading-6 text-jet dark:text-white">
@@ -203,7 +203,7 @@ useScrollFrame(({ y }) => {
           </template>
         </MasonryWall>
 
-        <div class="mx-auto mt-2 w-auto max-w-[220px]">
+        <div class="mx-auto mt-2 w-auto max-w-55">
           <button v-if="hasMore" type="button" class="button flex w-full justify-center p-2" @click="limit += PAGE_SIZE">
             Voir plus
           </button>

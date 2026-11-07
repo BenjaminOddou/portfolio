@@ -76,7 +76,7 @@ onBeforeUnmount(() => {
 <template>
   <div ref="cursor" aria-hidden="true" class="cursor pointer-events-none fixed top-0 left-0 z-1500">
     <div
-      class="cursor-dot size-[35px] -translate-1/2 rounded-full bg-cursor"
+      class="cursor-dot size-8.75 -translate-1/2 rounded-full bg-cursor"
       :class="{ 'is-visible': isActive && !isHidden, 'is-enlarged': isEnlarged }"
     />
   </div>

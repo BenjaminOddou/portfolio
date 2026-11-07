@@ -201,8 +201,8 @@ defineExpose({
         </ul>
 
         <!-- Réseaux sociaux -->
-        <div class="absolute bottom-0 mb-1 flex h-[10vh] min-h-[60px] w-full justify-center md:lt:min-h-[70px]">
-          <div class="grid w-1/2 grid-cols-[repeat(4,55px)] items-center justify-center gap-[10px] md:grid-cols-[repeat(4,70px)] md:gap-[30px]">
+        <div class="absolute bottom-0 mb-1 flex h-[10vh] min-h-15 w-full justify-center md:lt:min-h-17.5">
+          <div class="grid w-1/2 grid-cols-[repeat(4,55px)] items-center justify-center gap-2.5 md:grid-cols-[repeat(4,70px)] md:gap-7.5">
             <a
               v-for="social in SOCIALS"
               :key="social.href"
@@ -210,7 +210,7 @@ defineExpose({
               :aria-label="social.label"
               :target="social.external ? '_blank' : undefined"
               :rel="social.external ? 'noopener' : undefined"
-              class="size-[55px] md:lt:size-[70px]"
+              class="size-13.75 md:lt:size-17.5"
             >
               <component :is="social.icon" />
             </a>

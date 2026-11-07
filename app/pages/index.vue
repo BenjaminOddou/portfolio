@@ -125,7 +125,7 @@ useScrollFrame(() => {
 <template>
   <div>
     <!-- ===================== EN-TÊTE ===================== -->
-    <section ref="hero" class="h-[110vh] min-h-[400px] overflow-hidden" :class="{ 'is-revealed': introStarted }">
+    <section ref="hero" class="h-[110vh] min-h-100 overflow-hidden" :class="{ 'is-revealed': introStarted }">
       <div class="o-container">
         <div class="relative h-[90vh] min-h-80 sm:h-screen">
           <div class="absolute top-0 grid h-3/5 w-full justify-center">
@@ -145,7 +145,7 @@ useScrollFrame(() => {
 
           <div ref="heroImage" class="z-0 size-full px-[10vw] py-[10vh] sm:px-[20vw]">
             <div
-              class="hero-image reveal-scale m-auto h-full max-h-[853px] w-[63vw] max-w-[63vw] rounded-[8rem] bg-cover bg-center bg-no-repeat sm:max-h-full sm:w-full sm:max-w-[454px] lt:rounded-[11rem] av:rounded-full [--delay:1.4s] [--duration:1.2s] [--from-scale:0.6]"
+              class="hero-image reveal-scale m-auto h-full max-h-213.25 w-[63vw] max-w-[63vw] rounded-[8rem] bg-cover bg-center bg-no-repeat sm:max-h-full sm:w-full sm:max-w-113.5 lt:rounded-[11rem] av:rounded-full [--delay:1.4s] [--duration:1.2s] [--from-scale:0.6]"
             />
           </div>
 
@@ -175,14 +175,14 @@ useScrollFrame(() => {
 
       <!-- Bouton « Réserver » (téléphones) -->
       <div class="reveal-scale z-1 mt-2 flex h-[4vh] w-full items-center justify-center sm:hidden [--delay:2.6s] [--ease:var(--ease-back-out)] [--from-scale:0.7]">
-        <button type="button" class="button h-full min-h-10 w-[65%] max-w-[300px] rounded-full" @click="goToContactForm">
+        <button type="button" class="button h-full min-h-10 w-[65%] max-w-75 rounded-full" @click="goToContactForm">
           Réserver un shooting !
         </button>
       </div>
     </section>
 
     <!-- ===================== À PROPOS ===================== -->
-    <section class="my-[10vw] h-[70vh] min-h-[400px] sm:my-[10vh] sm:min-h-full">
+    <section class="my-[10vw] h-[70vh] min-h-100 sm:my-[10vh] sm:min-h-full">
       <div class="p-container">
         <div v-reveal="{ start: 1 }" class="grid w-full justify-items-center self-center">
           <p class="mx-auto w-full text-center text-[24.544px] leading-[1.9] font-extralight md:text-[3.2vw] 2xl:text-[53.76px] [--duration:0.6s] [--stagger:25ms]">
@@ -191,7 +191,7 @@ useScrollFrame(() => {
           <span class="reveal-fade-up mt-2 mb-4 w-[10%] border-t-2 border-current sm:mt-[1vw] sm:mb-[2vw] md:border-t-3" :style="{ '--delay': aboutLinksDelay }" />
           <NuxtLink to="/about" class="reveal-fade-up group relative flex content-center justify-center" :style="{ '--delay': aboutLinksDelay }">
             <span class="text-center font-baron text-[16.864px] lg:text-[1.7vw] 2xl:text-[28.56px]">À propos de Benjamin</span>
-            <IconArrow class="-right-[12%]" />
+            <IconArrow class="right-[-12%]" />
           </NuxtLink>
         </div>
       </div>
@@ -202,7 +202,7 @@ useScrollFrame(() => {
       <div class="relative m-auto grid max-w-[2500px] grid-cols-[repeat(11,1fr)] items-start px-[5vw] sm:px-[10vw]">
         <div
           v-reveal
-          class="col-start-1 col-end-10 row-span-1 grid max-w-[650px] justify-items-start sm:col-start-7 sm:col-end-12 [--duration:1.4s]"
+          class="col-start-1 col-end-10 row-span-1 grid max-w-162.5 justify-items-start sm:col-start-7 sm:col-end-12 [--duration:1.4s]"
         >
           <span class="w-full cursor-text overflow-hidden font-baron text-[11.904px] lg:text-[1.2vw] 2xl:text-[20.16px]">
             <span class="reveal-up block">mes photographies</span>
@@ -213,7 +213,7 @@ useScrollFrame(() => {
           <span class="reveal-fade-up mt-2 mb-4 w-1/5 border-t-2 border-current sm:mt-[1vw] sm:mb-[2vw] md:border-t-3 [--delay:0.8s] [--duration:1s]" />
           <NuxtLink to="/gallery" class="reveal-fade-up group relative flex content-center justify-center [--delay:0.8s] [--duration:1s]">
             <span class="text-center font-baron text-[16.864px] lg:text-[1.7vw] 2xl:text-[28.56px]">voir la galerie</span>
-            <IconArrow class="-right-[18%]" />
+            <IconArrow class="right-[-18%]" />
           </NuxtLink>
         </div>
 

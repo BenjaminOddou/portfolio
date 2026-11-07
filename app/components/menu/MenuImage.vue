@@ -21,7 +21,7 @@ useDragAndThrow(element, {
   <div
     ref="element"
     data-cursor="hide"
-    class="relative h-[20vw] max-h-[200px] min-h-[150px] w-[16vw] max-w-[160px] min-w-[120px] select-none lt:max-h-[750px] lt:max-w-[600px]"
+    class="relative h-[20vw] max-h-50 min-h-37.5[16vw] max-w-40w-[120px] select-none lt:malt:max-h-187.5ax-w-[600px]"
   >
     <NuxtImg
       :src="image.filePath"

@@ -145,8 +145,13 @@ useScrollFrame(() => {
 
           <div ref="heroImage" class="z-0 size-full px-[10vw] py-[10vh] sm:px-[20vw]">
             <div
-              class="hero-image reveal-scale m-auto h-full max-h-213.25 w-[63vw] max-w-[63vw] rounded-[8rem] bg-cover bg-center bg-no-repeat sm:max-h-full sm:w-full sm:max-w-113.5 lt:rounded-[11rem] av:rounded-full [--delay:1.4s] [--duration:1.2s] [--from-scale:0.6]"
-            />
+              class="reveal-scale relative m-auto bg-[url(https://ik.imagekit.io/palladium/index-page/Hero_img_light.webp)] h-full max-h-213.25 w-[63vw] max-w-[63vw] rounded-[8rem] bg-cover bg-center bg-no-repeat sm:max-h-full sm:w-full sm:max-w-113.5 lt:rounded-[11rem] av:rounded-full [--delay:1.4s] [--duration:1.2s] [--from-scale:0.6]"
+            >
+              <!-- Version sombre en fondu par-dessus la version claire -->
+              <div
+                class="absolute inset-0 rounded-[inherit] bg-[url(https://ik.imagekit.io/palladium/index-page/Hero_img_dark.webp)] bg-cover bg-center bg-no-repeat opacity-0 transition-opacity duration-500 dark:opacity-100"
+              />
+            </div>
           </div>
 
           <!-- Encart « Réservation » (écrans moyens et grands) -->
@@ -239,21 +244,3 @@ useScrollFrame(() => {
     <ContactForm />
   </div>
 </template>
-
-<style scoped>
-/* Photo principale, différente en mode sombre */
-.hero-image {
-  background-image: url('https://ik.imagekit.io/palladium/index-page/Hero_img_light.webp');
-  transition-property: opacity, visibility, scale, background-image;
-}
-
-:global(.dark) .hero-image {
-  background-image: url('https://ik.imagekit.io/palladium/index-page/Hero_img_dark.webp');
-}
-
-/* Précharge les deux versions pour un changement de thème instantané */
-.hero-image::after {
-  content: url('https://ik.imagekit.io/palladium/index-page/Hero_img_light.webp') url('https://ik.imagekit.io/palladium/index-page/Hero_img_dark.webp');
-  display: none;
-}
-</style>

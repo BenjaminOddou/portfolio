@@ -155,7 +155,11 @@
   }
 
   input[type='checkbox']:checked::after {
-    @apply bg-white dark:bg-jet;
+    background-color: var(--color-white);
+  }
+
+  .dark input[type='checkbox']:checked::after {
+    background-color: var(--color-jet);
   }
 }
 

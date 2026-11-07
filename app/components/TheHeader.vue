@@ -1,275 +1,237 @@
 <script setup lang="ts">
-const { $gsap: gsap } = useNuxtApp()
+/** Barre fixe : logo (retour à l'accueil), bascule clair / sombre et bouton du menu. */
+const props = defineProps<{
+  menuOpen: boolean
+}>()
 
-function setColorTheme(newTheme: 'light' | 'dark') {
-  useColorMode().preference = newTheme
+const emit = defineEmits<{
+  toggleMenu: []
+}>()
+
+const colorMode = useColorMode()
+function toggleTheme() {
+  colorMode.preference = colorMode.value === 'dark' ? 'light' : 'dark'
 }
-onMounted(() => {
-  const reload = document.querySelector('#reload') as HTMLButtonElement
-  reload.addEventListener('click', () => {
-    location.href = '/'
-  })
 
-  // Animation Onload
-  gsap
-    .timeline()
-    .fromTo(
-      '#end-navbar',
-      { opacity: 0, x: 100 },
-      {
-        opacity: 1,
-        x: 0,
-        delay: 4.9,
-        duration: 1,
-        ease: 'back.out(1.4)',
-      },
-    )
-    .fromTo(
-      '#reload',
-      { opacity: 0, x: -100 },
-      {
-        opacity: 1,
-        x: 0,
-        duration: 1,
-        ease: 'back.out(1.4)',
-      },
-      '<',
-    )
-})
+// Survol du burger (souris uniquement) : il prend la forme d'une flèche.
+// L'état est remis à zéro quand le menu s'ouvre ou se ferme.
+const isBurgerHovered = ref(false)
+watch(() => props.menuOpen, () => (isBurgerHovered.value = false))
 </script>
 
 <template>
   <div>
-    <button
-      id="reload"
-      aria-label="Retour à l'Accueil"
-      class="menu fixed-el fixed top-[1.4rem] z-[11] ml-6"
-    >
-      <SvgLogoBO class="fill-current stroke-current stroke-[10]" />
-    </button>
+    <!-- Lien classique (et non NuxtLink) : recharge complètement la page d'accueil -->
+    <a href="/" aria-label="Retour à l'Accueil" class="header-button slide-from-left fixed top-[1.4rem] z-11 ml-6">
+      <IconLogo class="fill-current stroke-current stroke-10" />
+    </a>
 
-    <div
-      id="end-navbar"
-      class="fixed right-0 top-6 z-[11] mr-6 grid grid-cols-2"
-    >
-      <button
-        aria-label="Affichage du Mode Sombre/Lumineux"
-        class="menu toggle fixed-el"
-        @click="setColorTheme($colorMode.value === 'dark' ? 'light' : 'dark')"
-      >
-        <div>
-          <svg
-            class="sun origin-center translate-y-0 animate-[20s_linear_infinite_spin] fill-jet stroke-jet dark:translate-y-16 dark:animate-none dark:fill-white dark:stroke-white"
-            viewBox="0 0 24 24"
-          >
+    <div class="slide-from-right fixed top-6 right-0 z-11 mr-6 grid grid-cols-2">
+      <button type="button" aria-label="Affichage du Mode Sombre/Lumineux" class="header-button theme-toggle" @click="toggleTheme">
+        <span>
+          <svg class="sun animate-[rotate-full_20s_linear_infinite] fill-jet stroke-jet dark:translate-y-16 dark:animate-none dark:fill-white dark:stroke-white" viewBox="0 0 24 24" aria-hidden="true">
             <path d="M1 12h1m2.2-7.8.7.7M12 1v1m7.8 2.2-.7.7M23 12h-1m-2.2 7.8-.7-.7M12 23v-1m-7.8-2.2.7-.7" />
             <circle cx="12" cy="12" r="6" />
           </svg>
-          <svg
-            class="moon translate-y-16 fill-jet stroke-jet dark:translate-y-0 dark:fill-white dark:stroke-white"
-            viewBox="0 0 24 24"
-          >
+          <svg class="moon translate-y-16 fill-jet stroke-jet dark:translate-y-0 dark:fill-white dark:stroke-white" viewBox="0 0 24 24" aria-hidden="true">
             <path d="M18 16A10 10 0 0 1 8 6c0-.9.1-1.8.4-2.6A9.9 9.9 0 0 0 1 13a10 10 0 0 0 10 10c4.6 0 8.5-3.1 9.6-7.4-.8.3-1.7.4-2.6.4z" />
             <path d="M15 1v4m-2-2h4" class="star-1" />
             <path d="M21 7v4m-2-2h4" class="star-2" />
           </svg>
-        </div>
+        </span>
       </button>
 
       <button
-        id="button-burger"
+        type="button"
         aria-label="Affichage/Désactivation du Menu"
-        class="menu fixed-el"
+        :aria-expanded="menuOpen"
+        class="header-button burger"
+        :class="{ 'is-open': menuOpen, 'is-hovered': isBurgerHovered }"
+        @click="emit('toggleMenu')"
+        @pointerenter="isBurgerHovered = $event.pointerType === 'mouse'"
+        @pointerleave="isBurgerHovered = false"
       >
-        <div class="burger-bar bg-jet dark:bg-white" />
-        <div class="burger-bar bg-jet dark:bg-white" />
-        <div class="burger-bar bg-jet dark:bg-white" />
+        <span v-for="bar in 3" :key="bar" class="burger-bar bg-jet dark:bg-white" />
       </button>
     </div>
   </div>
 </template>
 
 <style scoped>
-/*
-Menu Burger
-*/
-.menu {
-  width: var(--dimensions);
-  height: var(--dimensions);
-  --dimensions: 40px;
-  color: currentColor;
+/* ---------- Apparition après le préchargeur ---------- */
+.slide-from-left {
+  animation: slide-in-left 1s var(--ease-back-out) 4.9s both;
 }
 
-@media (min-width: 768px) and (min-height: 576px) {
-  .menu {
-    --dimensions: 50px;
+.slide-from-right {
+  animation: slide-in-right 1s var(--ease-back-out) 4.9s both;
+}
+
+@keyframes slide-in-left {
+  from {
+    opacity: 0;
+    transform: translateX(-100px);
   }
 }
 
-#button-burger {
-  width: calc(var(--dimensions) - 1px);
+@keyframes slide-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+}
+
+/* ---------- Taille commune des boutons ---------- */
+.header-button {
+  --size: 40px;
+  display: block;
+  width: var(--size);
+  height: var(--size);
+}
+
+@media (min-width: 768px) and (min-height: 576px) {
+  .header-button {
+    --size: 50px;
+  }
+}
+
+/* ---------- Burger : 3 barres → croix (ouvert) / flèche (survol) ---------- */
+.burger {
+  --bar: calc(var(--size) / 10);
+  width: calc(var(--size) - 1px);
   margin: 0 auto;
 }
 
-#button-burger .burger-bar {
+.burger-bar {
+  display: block;
   float: right;
-  width: calc(var(--dimensions) - 3 * var(--baseh));
-  height: calc(var(--dimensions) / 10);
-  --baseh: calc(var(--dimensions) / 10);
+  width: calc(var(--size) - 3 * var(--bar));
+  height: var(--bar);
+  transform-origin: center;
   transition: all 0.25s ease;
 }
 
-#button-burger .burger-bar:nth-of-type(2) {
-  margin-top: var(--baseh);
-  margin-bottom: var(--baseh);
+.burger-bar:nth-child(2) {
+  margin: var(--bar) 0;
 }
 
-#button-burger.is-open .burger-bar:nth-of-type(1) {
-  transform: translateY(calc(2 * var(--baseh))) rotateZ(45deg);
-  transform-origin: center;
+/* Menu ouvert : croix */
+.burger.is-open .burger-bar:nth-child(1) {
+  transform: translateY(calc(2 * var(--bar))) rotateZ(45deg);
 }
 
-#button-burger.is-open .burger-bar:nth-of-type(2) {
+.burger.is-open .burger-bar:nth-child(2) {
   opacity: 0;
 }
 
-#button-burger.is-open .burger-bar:nth-of-type(3) {
-  transform: translateY(calc(-2 * var(--baseh))) rotateZ(-45deg);
-  transform-origin: center;
+.burger.is-open .burger-bar:nth-child(3) {
+  transform: translateY(calc(-2 * var(--bar))) rotateZ(-45deg);
 }
 
-#button-burger.is-open.is-hovered .burger-bar:nth-of-type(1) {
-  width: calc(var(--dimensions) - 3 * var(--baseh));
-  transform: translateY(calc(2 * var(--baseh)));
-  transform-origin: center;
+/* Menu fermé + survol : flèche vers la gauche */
+.burger.is-hovered .burger-bar:nth-child(1) {
+  width: calc(3 * var(--bar));
+  transform: translateX(calc(-3 * var(--bar) - 1px)) rotateZ(-45deg);
 }
 
-#button-burger.is-open.is-hovered .burger-bar:nth-of-type(2) {
-  opacity: 0;
-}
-
-#button-burger.is-open.is-hovered .burger-bar:nth-of-type(3) {
-  width: calc(var(--dimensions) - 3 * var(--baseh));
-  transform: translateY(calc(-2 * var(--baseh)));
-  transform-origin: center;
-}
-
-#button-burger.is-hovered .burger-bar:nth-of-type(1) {
-  width: calc(3 * var(--baseh));
-  transform: translateX(
-      calc(calc(-4 * var(--baseh)) - calc(-1 * var(--baseh) + 1px))
-    )
-    rotateZ(-45deg);
-  transform-origin: center;
-}
-
-#button-burger.is-hovered .burger-bar:nth-of-type(2) {
-  width: calc(var(--dimensions) - 3 * var(--baseh));
+.burger.is-hovered .burger-bar:nth-child(2) {
   transform: rotateZ(-90deg);
-  transform-origin: center;
 }
 
-#button-burger.is-hovered .burger-bar:nth-of-type(3) {
-  width: calc(3 * var(--baseh));
-  transform: translateX(calc(-1 * var(--baseh) + 1px))
-    translateY(calc(-4 * var(--baseh))) rotateZ(45deg);
-  transform-origin: center;
+.burger.is-hovered .burger-bar:nth-child(3) {
+  width: calc(3 * var(--bar));
+  transform: translateX(calc(-1 * var(--bar) + 1px)) translateY(calc(-4 * var(--bar))) rotateZ(45deg);
 }
 
-/* DARK MODE BUTTON */
+/* Menu ouvert + survol : deux barres parallèles */
+.burger.is-open.is-hovered .burger-bar:nth-child(1) {
+  width: calc(var(--size) - 3 * var(--bar));
+  transform: translateY(calc(2 * var(--bar)));
+}
 
-.toggle {
+.burger.is-open.is-hovered .burger-bar:nth-child(2) {
+  opacity: 0;
+}
+
+.burger.is-open.is-hovered .burger-bar:nth-child(3) {
+  width: calc(var(--size) - 3 * var(--bar));
+  transform: translateY(calc(-2 * var(--bar)));
+}
+
+/* ---------- Bascule soleil / lune ---------- */
+.theme-toggle {
   position: relative;
   z-index: 1;
-  padding: 0;
-  margin: 0;
-  display: block;
-  width: var(--dimensions);
-  height: var(--dimensions);
 }
 
-.toggle svg {
+.theme-toggle > span {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.theme-toggle svg {
+  position: absolute;
   display: block;
+  stroke-width: 2px;
   stroke-linecap: square;
   stroke-linejoin: round;
-  position: absolute;
-  left: var(--left, -2px);
-  top: var(--top, 14px);
-  stroke-width: var(--stroke-width, 2px);
+  transition: translate 0.5s ease;
 }
 
-.toggle svg.line {
-  --stroke-width: 3px;
-  width: 52px;
-  height: 36px;
-  stroke-width: 3px;
-  stroke-linecap: square;
+.sun {
+  top: 5px;
+  left: 5px;
+  width: calc(var(--size) - 10px);
+  height: calc(var(--size) - 10px);
 }
 
-.toggle div {
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  position: absolute;
-  left: 0px;
-  top: 0px;
-}
-
-.toggle svg.sun {
-  --left: 5px;
-  --top: 5px;
-  width: calc(var(--dimensions) - 10px);
-  height: calc(var(--dimensions) - 10px);
-}
-
-.toggle svg.moon {
-  --left: calc((var(--dimensions) - (0.8 * (var(--dimensions) - 10px))) / 2);
-  --top: calc((var(--dimensions) - (0.8 * (var(--dimensions) - 10px))) / 2);
-  width: calc(0.8 * (var(--dimensions) - 10px));
-  height: calc(0.8 * (var(--dimensions) - 10px));
+.moon {
+  --moon-size: calc(0.8 * (var(--size) - 10px));
+  top: calc((var(--size) - var(--moon-size)) / 2);
+  left: calc((var(--size) - var(--moon-size)) / 2);
+  width: var(--moon-size);
+  height: var(--moon-size);
 }
 
 .moon .star-1 {
   transform-origin: 15px 3px;
-  animation: star 5s linear infinite;
+  animation: twinkle 5s linear infinite;
 }
 
 .moon .star-2 {
   transform-origin: 21px 9px;
-  animation: star2 5s linear infinite;
+  animation: twinkle-late 5s linear infinite;
 }
 
-@keyframes star {
+@keyframes twinkle {
   5%,
   20% {
     opacity: 0;
-    transform: scale(0) rotate(90deg) translateZ(0);
+    transform: scale(0) rotate(90deg);
   }
-
   25%,
   100% {
     opacity: 1;
-    transform: scale(1) rotate(180deg) translateZ(0);
+    transform: scale(1) rotate(180deg);
   }
 }
 
-@keyframes star2 {
+@keyframes twinkle-late {
   0%,
   60% {
     opacity: 1;
-    transform: scale(1) rotate(0) translateZ(0);
+    transform: scale(1) rotate(0);
   }
-
   65%,
   70% {
     opacity: 0;
-    transform: scale(0) rotate(90deg) translateZ(0);
+    transform: scale(0) rotate(90deg);
   }
-
   75%,
   100% {
     opacity: 1;
-    transform: scale(1) rotate(180deg) translateZ(0);
+    transform: scale(1) rotate(180deg);
   }
 }
 </style>

@@ -1,1 +1,0 @@
-npm install --no-save git+https://${GIT_TOKEN}:x-oauth-basic@github.com/BenjaminOddou/gsap.git

@@ -1,27 +1,24 @@
-import { SitemapStream, streamToPromise } from 'sitemap'
+/** Pages référencées dans le plan du site */
+const PAGES = ['/', '/gallery', '/about']
 
-export default defineEventHandler(() => {
-  const sitemap = new SitemapStream({
-    hostname: 'https://www.benjaminoddou-photographe.com',
-    lastmodDateOnly: false,
-  })
+/**
+ * GET /sitemap.xml — plan du site pour les moteurs de recherche.
+ * Format : https://www.sitemaps.org/protocol.html
+ */
+export default defineEventHandler((event) => {
+  const lastModified = new Date().toISOString()
 
-  // Alternatively create array of objects like so : const endpoints = [{url: '/', changefreq: 'weekly'}, {url: '/gallery', changefreq: 'monthly'}, ...]
-  const endpoints = ['/', '/gallery', '/about']
-  const changeFreq = 'weekly'
-  const Priority = 0.9
-  const date = new Date().toISOString()
+  const urls = PAGES.map(path => `  <url>
+    <loc>${SITE.url}${path}</loc>
+    <lastmod>${lastModified}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>`)
 
-  // If using array of objects, reference them as like so : url: enpoint.url, changefreq: endpoint.changefreq
-  for (const endpoint of endpoints) {
-    sitemap.write({
-      url: endpoint,
-      changefreq: changeFreq,
-      priority: Priority,
-      lastmod: date,
-    })
-  }
-
-  sitemap.end()
-  return streamToPromise(sitemap)
+  setResponseHeader(event, 'content-type', 'application/xml; charset=utf-8')
+  return `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${urls.join('\n')}
+</urlset>
+`
 })

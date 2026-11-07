@@ -1,0 +1,280 @@
+@import 'tailwindcss';
+@import 'lenis/dist/lenis.css';
+
+/* ==========================================================================
+   Variantes personnalisées
+   ========================================================================== */
+
+/* Mode sombre piloté par la classe `.dark` posée sur <html> par @nuxtjs/color-mode */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Points de rupture sur la HAUTEUR de l'écran (ex. `lt:text-lg`, `sm:av:hidden`) */
+@custom-variant lt (@media (min-height: 576px));
+@custom-variant av (@media (min-height: 768px));
+
+/* ==========================================================================
+   Thème (remplace tailwind.config.js)
+   « static » : toutes les variables sont émises, on peut donc les utiliser
+   dans du CSS classique (ex. `var(--ease-power4-out)`).
+   ========================================================================== */
+@theme static {
+  /* Palette du site (la palette par défaut de Tailwind est désactivée) */
+  --color-*: initial;
+  --color-white: #ffffff;
+  --color-jet: #2a2a2a;
+  --color-dark-orange: #cc7246;
+  --color-light-orange: #fca87f;
+  --color-dark-lavender: #616d97;
+  --color-light-lavender: #d1d3e0;
+  --color-grey: #9ca3af;
+  --color-grey-gallery: #b4b4b4;
+  --color-dark-grey: #6b6b6b;
+  --color-light-grey: #787878;
+  --color-dark-grey-alt: #3a3a3a;
+  --color-light-grey-alt: #dddddd;
+  --color-cursor: #cdc3c35a;
+  --color-teal-100: #ccfbf1;
+  --color-teal-500: #14b8a6;
+  --color-teal-900: #134e4a;
+  --color-red-100: #fee2e2;
+  --color-red-500: #ef4444;
+  --color-red-600: #dc2626;
+  --color-red-900: #7f1d1d;
+
+  /* Points de rupture en largeur */
+  --breakpoint-*: initial;
+  --breakpoint-sm: 576px;
+  --breakpoint-md: 768px;
+  --breakpoint-it: 864px;
+  --breakpoint-lg: 992px;
+  --breakpoint-xl: 1200px;
+  --breakpoint-2xl: 1680px;
+
+  /* Polices (fichiers gérés par @nuxt/fonts) */
+  --font-*: initial;
+  --font-sans: 'Roboto', sans-serif;
+  --font-baron: 'Baron Neue', sans-serif;
+
+  /* Courbes d'accélération : équivalents CSS des courbes GSAP utilisées auparavant.
+     Les mêmes courbes existent en JavaScript dans app/utils/motion.ts. */
+  --ease-smooth: cubic-bezier(0.65, 0, 0.076, 1);
+  --ease-power1-out: cubic-bezier(0.5, 1, 0.89, 1);
+  --ease-power2-out: cubic-bezier(0.33, 1, 0.68, 1);
+  --ease-power2-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --ease-power3-out: cubic-bezier(0.25, 1, 0.5, 1);
+  --ease-power3-in-out: cubic-bezier(0.76, 0, 0.24, 1);
+  --ease-power4-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-sine-in-out: cubic-bezier(0.37, 0, 0.63, 1);
+  --ease-expo-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-back-out: cubic-bezier(0.34, 1.4, 0.64, 1);
+  --ease-back-in-out: cubic-bezier(0.68, -0.5, 0.32, 1.5);
+
+  /* Animations en boucle */
+  --animate-spin-slow: rotate-full 15s linear infinite;
+  --animate-runner: runner linear infinite;
+}
+
+@keyframes rotate-full {
+  to {
+    rotate: 360deg;
+  }
+}
+
+/* Défilement horizontal infini (page d'erreur) */
+@keyframes runner {
+  from {
+    transform: translateX(25%);
+  }
+  to {
+    transform: translateX(-25%);
+  }
+}
+
+/* ==========================================================================
+   Styles de base
+   ========================================================================== */
+@layer base {
+  html {
+    /* Évite le décalage de la page quand le défilement est verrouillé */
+    scrollbar-gutter: stable;
+  }
+
+  body {
+    @apply min-h-80 min-w-80 bg-white font-sans text-jet transition-colors duration-500 dark:bg-jet dark:text-white;
+    text-rendering: optimizeSpeed;
+  }
+
+  /* Tailwind v4 ne met plus de curseur « main » sur les boutons */
+  button:not(:disabled),
+  [role='button']:not(:disabled) {
+    cursor: pointer;
+  }
+
+  /* ----- Champs de formulaire ----- */
+  input,
+  textarea,
+  select {
+    @apply w-full rounded-none bg-transparent p-2 outline-none;
+  }
+
+  textarea {
+    @apply h-full resize-none;
+  }
+
+  ::placeholder {
+    @apply text-grey;
+  }
+
+  input:focus::placeholder,
+  textarea:focus::placeholder {
+    @apply text-current;
+  }
+
+  select {
+    @apply cursor-pointer appearance-none;
+  }
+
+  select:invalid,
+  select option[value=''] {
+    @apply text-grey;
+  }
+
+  input[type='checkbox'] {
+    @apply flex size-[15px] cursor-pointer appearance-none items-center justify-center border border-current p-0;
+  }
+
+  input[type='checkbox']::after {
+    content: '';
+    width: 15px;
+    height: 15px;
+    mask: url('../svg/checkmark.svg') 0 1px;
+  }
+
+  input[type='checkbox']:checked {
+    @apply border-transparent bg-current;
+  }
+
+  input[type='checkbox']:checked::after {
+    @apply bg-white dark:bg-jet;
+  }
+}
+
+/* ==========================================================================
+   Composants réutilisables
+   ========================================================================== */
+@layer components {
+  /* Bouton plein (Envoyer, Voir plus, Réserver…) */
+  .button {
+    @apply bg-jet text-white transition-all duration-450 ease-smooth hover:bg-light-grey active:bg-dark-grey dark:bg-white dark:text-jet dark:hover:bg-dark-grey dark:hover:text-white dark:active:bg-light-grey dark:active:text-white;
+  }
+
+  /* Conteneurs de mise en page */
+  .o-container {
+    @apply mx-auto max-w-[2500px] px-[8.5vw];
+  }
+
+  .p-container {
+    @apply mx-auto grid h-full max-w-[2500px] px-[10vw] sm:px-[20vw];
+  }
+
+  /* -------------------------------------------------------------------------
+     Animations d'apparition (remplacent les timelines GSAP)
+
+     Un élément `.reveal-*` passe à son état final quand lui-même ou un de
+     ses parents reçoit la classe `.is-revealed` (posée par la directive
+     `v-reveal` au défilement, ou par `usePageIntro()` à l'arrivée sur la page).
+
+     Variables réglables sur chaque élément (ex. classe `[--delay:0.8s]`) :
+       --duration   durée               (défaut 1s)
+       --ease       courbe              (défaut power4.out)
+       --delay      délai               (défaut 0s)
+       --stagger    décalage par index  (défaut 0s)
+       --i          index de l'élément  (posé par <SplitText>)
+       --from-y     décalage vertical de départ de .reveal-fade-up (défaut 20px)
+       --from-scale échelle de départ de .reveal-scale (défaut 0)
+     ------------------------------------------------------------------------- */
+  .reveal-up,
+  .reveal-left,
+  .reveal-fade,
+  .reveal-fade-up,
+  .reveal-scale {
+    transition-duration: var(--duration, 1s);
+    transition-timing-function: var(--ease, var(--ease-power4-out));
+    transition-delay: calc(var(--delay, 0s) + var(--i, 0) * var(--stagger, 0s));
+  }
+
+  /* Glisse depuis le bas (à placer dans un parent masqué, ex. `.split-mask`) */
+  .reveal-up {
+    translate: 0 100%;
+    transition-property: translate;
+  }
+
+  /* Glisse depuis la gauche */
+  .reveal-left {
+    translate: -100% 0;
+    transition-property: translate;
+  }
+
+  /* Fondu */
+  .reveal-fade {
+    opacity: 0;
+    visibility: hidden;
+    transition-property: opacity, visibility;
+  }
+
+  /* Fondu + légère montée */
+  .reveal-fade-up {
+    opacity: 0;
+    visibility: hidden;
+    translate: 0 var(--from-y, 20px);
+    transition-property: opacity, visibility, translate;
+  }
+
+  /* Fondu + zoom */
+  .reveal-scale {
+    opacity: 0;
+    visibility: hidden;
+    scale: var(--from-scale, 0);
+    transition-property: opacity, visibility, scale;
+  }
+
+  .is-revealed .reveal-up,
+  .reveal-up.is-revealed,
+  .is-revealed .reveal-left,
+  .reveal-left.is-revealed {
+    translate: 0 0;
+  }
+
+  .is-revealed .reveal-fade,
+  .reveal-fade.is-revealed,
+  .is-revealed .reveal-fade-up,
+  .reveal-fade-up.is-revealed,
+  .is-revealed .reveal-scale,
+  .reveal-scale.is-revealed {
+    opacity: 1;
+    visibility: visible;
+    translate: 0 0;
+    scale: 1;
+  }
+
+  /* Masque d'un mot découpé par <SplitText> : on ne coupe que le bas,
+     pour laisser dépasser accents et italiques */
+  .split-mask {
+    display: inline-block;
+    clip-path: inset(-0.3em -0.3em 0 -0.3em);
+  }
+}
+
+/* ==========================================================================
+   Accessibilité : animations réduites si l'utilisateur le demande
+   ========================================================================== */
+@media (prefers-reduced-motion: reduce) {
+  .reveal-up,
+  .reveal-left,
+  .reveal-fade,
+  .reveal-fade-up,
+  .reveal-scale {
+    transition-duration: 0s;
+    transition-delay: 0s;
+  }
+}

@@ -1,68 +1,62 @@
 <script setup lang="ts">
+/**
+ * Page d'erreur (404, 500…) : le code d'erreur sur fond de photos qui défilent
+ * en diagonale sur trois rangées.
+ */
 import type { NuxtError } from '#app'
 
-const props = defineProps({
-  error: Object as () => NuxtError,
-})
+defineProps<{
+  error: NuxtError
+}>()
 
-const { data: images } = await useFetch<ImageKit[][]>('/api/imgkit', {
+const ROW_COUNT = 3
+
+const { data: rows } = await useFetch('/api/images', {
+  query: { folder: '404-page' },
+  // Répartit les photos en 3 rangées de tailles proches
   transform: (images) => {
-    const tmp = images
-      .flat()
-      .filter(image => image.filePath.includes('404'))
-      .sort((imageA, imageB) => (imageA.name > imageB.name ? 1 : -1))
-    const result: ImageKit[][] = []
-    for (let i = 3; i > 0; i--)
-      result.push(tmp.splice(0, Math.ceil(tmp.length / i)))
-
-    return result
+    const remaining = [...images]
+    return Array.from({ length: ROW_COUNT }, (_, i) => remaining.splice(0, Math.ceil(remaining.length / (ROW_COUNT - i))))
   },
+  default: () => [],
 })
 </script>
 
 <template>
   <div class="relative h-screen w-screen overflow-hidden">
-    <div class="absolute left-1/2 top-1/2 flex h-[150vh] -translate-x-1/2 -translate-y-1/2 rotate-[22.5deg] transform-gpu flex-col justify-center opacity-50">
-      <div v-for="(row, i) in images" :key="i" :style="`animation-duration: ${10 + 4 * i}s; transform: translateX(25%)`" class="flex animate-[runner_linear_infinite]">
-        <div v-for="j in 2" :key="j" class="flex">
-          <div v-for="(image, k) in row" :key="k">
-            <div
-              :style="`background-image: url(${image.url});`"
-              :class="`flex-none h-[30vh] m-[3vw] bg-center bg-cover ${
-                image.tags?.find((tag: string) => tag === 'large' as string)
-                  ? 'w-[100vh] rounded-[20vh]'
-                  : 'w-[30vh] rounded-[50%]'
-              }`"
-            />
-          </div>
-        </div>
+    <!-- Photos qui défilent (chaque rangée est dupliquée pour une boucle sans saut) -->
+    <div class="absolute top-1/2 left-1/2 flex h-[150vh] -translate-1/2 rotate-[22.5deg] transform-gpu flex-col justify-center opacity-50" aria-hidden="true">
+      <div
+        v-for="(row, i) in rows"
+        :key="i"
+        class="flex animate-runner"
+        :style="{ animationDuration: `${10 + 4 * i}s` }"
+      >
+        <template v-for="copy in 2" :key="copy">
+          <div
+            v-for="image in row"
+            :key="`${copy}-${image.filePath}`"
+            class="m-[3vw] h-[30vh] flex-none bg-cover bg-center"
+            :class="image.tags?.includes('large') ? 'w-[100vh] rounded-[20vh]' : 'w-[30vh] rounded-full'"
+            :style="{ backgroundImage: `url(${image.url})` }"
+          />
+        </template>
       </div>
     </div>
-    <div class="absolute z-[1] m-auto h-full w-full">
-      <div
-        class="mx-auto grid h-full w-1/2 min-w-[220px] max-w-[700px] -translate-y-[10%] content-center justify-center"
-      >
-        <div
-          id="ErrorCode"
-          class="baron flex w-full translate-y-[15%] justify-center text-[115px] leading-tight sm:text-[20vw] lg:text-[198.4px]"
-        >
-          {{ props.error?.statusCode }}
-        </div>
-        <div
-          class="mb-[2vh] mt-[1vh] p-2 text-base leading-snug sm:text-[2.5vw] lg:text-[29.8px]"
-        >
-          <div id="content" class="overflow-hidden text-center">
-            {{ props.error?.message }}
-          </div>
-        </div>
-        <button id="home">
-          <a
-            href="/"
-            class="button mx-auto flex w-full min-w-[225px] cursor-pointer justify-center p-2 disabled:pointer-events-none disabled:bg-light-lavender dark:disabled:pointer-events-none dark:disabled:bg-light-orange sm:w-2/3"
-          >
-            Retourner à l'Accueil
-          </a>
-        </button>
+
+    <!-- Message -->
+    <div class="absolute z-1 m-auto size-full">
+      <div class="mx-auto grid h-full w-1/2 max-w-[700px] min-w-[220px] -translate-y-[10%] content-center justify-center">
+        <h1 class="flex w-full translate-y-[15%] justify-center font-baron text-[115px] leading-tight sm:text-[20vw] lg:text-[198.4px]">
+          {{ error.status }}
+        </h1>
+        <p class="mt-[1vh] mb-[2vh] overflow-hidden p-2 text-center text-base leading-snug sm:text-[2.5vw] lg:text-[29.8px]">
+          {{ error.message }}
+        </p>
+        <!-- Lien classique : recharge entièrement le site pour sortir de l'erreur -->
+        <a href="/" class="button mx-auto flex w-full min-w-[225px] justify-center p-2 sm:w-2/3">
+          Retourner à l'Accueil
+        </a>
       </div>
     </div>
   </div>

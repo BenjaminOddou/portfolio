@@ -1,103 +1,106 @@
 <script setup lang="ts">
-const { $gsap: gsap } = useNuxtApp()
+/**
+ * Écran de chargement (première visite) : le logo se dessine puis se remplit,
+ * avant qu'une vague ne dévoile la page. À la fin, le défilement est
+ * déverrouillé et la page joue son animation d'introduction.
+ */
+const SHAPES = {
+  full: 'M 0 0 V 100 Q 50 100 100 100 V 0 z',
+  bump: 'M 0 0 V 70 Q 50 90 100 70 V 0 z',
+  gone: 'M 0 0 V 0 Q 50 0 100 0 V 0 z',
+}
 
-const isLock = scrollStore()
-const isRoute = routeStore()
+const path = useTemplateRef('path')
+const logo = useTemplateRef('logo')
+const isDone = ref(false)
+const scroll = useSmoothScroll()
+const triggerPageIntro = usePageIntroTrigger()
 
-onMounted(() => {
-  const preloaderContainer = document.querySelector(
-    '#preloader-container',
-  ) as HTMLDivElement
-  gsap
-    .timeline()
-    .to('#quadbz2', {
-      attr: {
-        d: 'M 0 0 V 70 Q 50 90 100 70 V 0 z',
-      },
-      duration: 0.3,
-      ease: 'power3.in',
-      delay: 2,
-    })
-    .to('#quadbz2', {
-      attr: {
-        d: 'M 0 0 V 0 Q 50 0 100 0 V 0 z',
-      },
-      duration: 0.8,
-      ease: 'power3',
-      onComplete: () => {
-        preloaderContainer.classList.add('hidden')
-        isLock.$patch({
-          isReady: false,
-        })
-        isRoute.isNewPage++
-      },
-    })
-    .fromTo(
-      '#logoBO',
-      {
-        yPercent: 0,
-      },
-      {
-        yPercent: -100,
-        duration: 1.4,
-        ease: 'power4.out',
-      },
-      2,
-    )
+onMounted(async () => {
+  // À 2 s : le logo remonte pendant que la vague se retire
+  logo.value?.animate(
+    [
+      { transform: 'none' },
+      { transform: 'translateY(-100%)' },
+    ],
+    {
+      duration: 1400,
+      delay: 2000,
+      easing: cssEase.power4Out,
+      fill: 'forwards',
+    },
+  )
+  await wait(2)
+  await morphPath(path.value!, SHAPES.full, SHAPES.bump, { duration: 0.3, ease: ease.power3.in })
+  await morphPath(path.value!, SHAPES.bump, SHAPES.gone, { duration: 0.8, ease: ease.power3.out })
+
+  isDone.value = true
+  scroll.unlock()
+  triggerPageIntro()
 })
 </script>
 
 <template>
-  <div
-    id="preloader-container"
-    class="fixed z-50 h-full w-full overflow-hidden"
-  >
+  <div v-if="!isDone" class="fixed inset-0 z-50 overflow-hidden" aria-hidden="true">
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      version="1.1"
-      class="absolute left-0 top-0 h-full w-full fill-light-lavender dark:fill-light-orange"
       viewBox="0 0 100 100"
       preserveAspectRatio="none"
+      class="absolute inset-0 size-full fill-light-lavender dark:fill-light-orange"
     >
-      <path
-        id="quadbz2"
-        stroke="tranparent"
-        vector-effect="non-scaling-stroke"
-        d="M 0 0 V 100 Q 50 100 100 100 V 0 z"
-      />
+      <path ref="path" :d="SHAPES.full" />
     </svg>
-    <div class="relative z-10 grid h-full w-full place-items-center">
-      <div class="z-30 h-1/4 w-1/2 overflow-hidden">
-        <SvgLogoBO id="logoBO" class="h-full w-full animate-[filldark_0.8s_ease-in-out_1.5s_forwards] fill-transparent stroke-jet stroke-[20] dark:animate-[fillwhite_0.8s_ease-in-out_1.5s_forwards] dark:stroke-white" />
+    <div class="relative z-10 grid size-full place-items-center">
+      <div class="h-1/4 w-1/2 overflow-hidden">
+        <div ref="logo" class="size-full">
+          <IconLogo class="logo size-full fill-transparent stroke-current stroke-20 text-jet dark:text-white" />
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <style scoped>
-#logoBO:deep() path:nth-child(1) {
+/* Le contour de chaque lettre se dessine (longueur du tracé = dasharray)… */
+.logo :deep(path) {
+  animation: draw-line var(--duration) ease-in-out var(--delay) forwards;
+}
+
+.logo :deep(path:nth-child(1)) {
+  --duration: 1.5s;
+  --delay: 0s;
   stroke-dasharray: 7880;
   stroke-dashoffset: 7880;
-  animation: line-anim 1.5s ease-in-out forwards;
 }
 
-#logoBO:deep() path:nth-child(2) {
+.logo :deep(path:nth-child(2)) {
+  --duration: 1.3s;
+  --delay: 0.2s;
   stroke-dasharray: 5289;
   stroke-dashoffset: 5289;
-  animation: line-anim 1.3s ease-in-out forwards;
-  animation-delay: 200ms;
 }
 
-#logoBO:deep() path:nth-child(3) {
+.logo :deep(path:nth-child(3)) {
+  --duration: 1.1s;
+  --delay: 0.4s;
   stroke-dasharray: 2408;
   stroke-dashoffset: 2408;
-  animation: line-anim 1.1s ease-in-out forwards;
-  animation-delay: 400ms;
 }
 
-@keyframes line-anim {
+/* … puis le logo se remplit */
+.logo {
+  animation: fill-logo 0.8s ease-in-out 1.5s forwards;
+}
+
+@keyframes draw-line {
   to {
     stroke-dashoffset: 0;
+  }
+}
+
+@keyframes fill-logo {
+  to {
+    fill: currentColor;
   }
 }
 </style>

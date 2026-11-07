@@ -1,0 +1,15 @@
+# Réglages pnpm : https://pnpm.io/settings
+
+# Retire seul les exceptions à l'âge minimum de publication devenues inutiles
+minimumReleaseAgeExcludePrune: true
+
+# Sécurité : refuse un paquet publié avec un niveau de confiance plus faible que
+# ses versions précédentes (ex. publié sans provenance), signe possible de piratage
+trustPolicy: no-downgrade
+
+# Shell portable pour les scripts (ex. `PORT=8000 nuxt preview` marche aussi sous Windows)
+shellEmulator: true
+
+# Dépendances autorisées à exécuter un script à l'installation
+allowBuilds:
+  esbuild: true # vérifie son binaire natif

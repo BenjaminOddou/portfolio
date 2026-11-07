@@ -1,14 +1,14 @@
+# Dépendances et fichiers générés
 node_modules
-*.log
-*.local
 .nuxt
 .nitro
 .cache
 .output
-.unlighthouse
-.env
-dist
-.DS_Store
-**/.DS_Store
-tmp/*[.json, .ts]
 .netlify
+dist
+
+# Fichiers locaux
+.env
+*.log
+*.local
+.DS_Store

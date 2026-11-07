@@ -140,7 +140,7 @@
   }
 
   input[type='checkbox'] {
-    @apply flex size-[15px] cursor-pointer appearance-none items-center justify-center border border-current p-0;
+    @apply flex size-3.75 cursor-pointer appearance-none items-center justify-center border border-current p-0;
   }
 
   input[type='checkbox']::after {
